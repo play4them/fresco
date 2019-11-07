@@ -1,0 +1,11 @@
+{
+  "name": "fresco",
+  "scripts": {
+    "publish": "lerna publish",
+    "bootstrap": "lerna bootstrap --hoist"
+  },
+  "devDependencies": {
+    "lerna": "^3.18.3"
+  },
+  "version": "0.0.1"
+}

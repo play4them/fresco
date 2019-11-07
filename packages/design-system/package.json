@@ -1,0 +1,61 @@
+{
+  "name": "@fresco/components",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Jesse McLean, Brett Klassen",
+  "repository": "git://github.com/play4them/fresco.git",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "unpkg": "dist/index.umd.js",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch"
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "@storybook/react": "^5.2.5",
+    "@types/jest": "^24.0.21",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
+    "microbundle": "0.12.0-next.3",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  },
+  "dependencies": {
+    "@emotion/babel-preset-css-prop": "^10.0.23",
+    "@emotion/core": "^10.0.22",
+    "@emotion/styled": "^10.0.23",
+    "@mdi/js": "^4.5.95",
+    "@mdi/react": "^1.2.1",
+    "@reach/alert": "^0.5.0",
+    "@reach/alert-dialog": "^0.5.0",
+    "@reach/dialog": "^0.5.0",
+    "@reach/menu-button": "^0.5.0",
+    "@reach/portal": "^0.5.0",
+    "@reach/tabs": "^0.5.0",
+    "@reach/tooltip": "^0.5.0",
+    "@reach/visually-hidden": "^0.5.0",
+    "@styled-system/css": "^5.0.23",
+    "@styled-system/should-forward-prop": "^5.1.2",
+    "emotion-theming": "^10.0.19",
+    "polished": "^3.4.2",
+    "react-copy-to-clipboard": "^5.0.1",
+    "react-switch": "^5.0.1",
+    "react-textarea-autosize": "^7.1.2",
+    "shortid": "^2.2.15",
+    "styled-system": "^5.1.2"
+  }
+}
