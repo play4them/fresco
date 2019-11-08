@@ -20,7 +20,33 @@ export default [
       }),
       external(),
       resolve(),
-      commonjs()
+      commonjs({
+        // https://github.com/rollup/rollup-plugin-commonjs#usage-in-monorepo
+        include: /node_modules/,
+        namedExports: {
+          // node_modules/prop-types/factoryWithTypeCheckers.js#L115
+          "prop-types": [
+            "array",
+            "bool",
+            "func",
+            "number",
+            "object",
+            "string",
+            "symbol",
+            "any",
+            "arrayOf",
+            "element",
+            "elementType",
+            "instanceOf",
+            "node",
+            "objectOf",
+            "oneOf",
+            "oneOfType",
+            "shape",
+            "exact"
+          ]
+        }
+      })
     ]
   }
 ];
