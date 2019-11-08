@@ -1,6 +1,6 @@
 {
   "name": "@play4them/fresco",
-  "version": "0.0.1-alpha.3",
+  "version": "0.0.1-alpha.4",
   "description": "Play4Them Design System",
   "main": "lib/index.js",
   "scripts": {
@@ -13,6 +13,7 @@
   "peerDependencies": {
     "@emotion/core": "10.x",
     "@emotion/styled": "10.x",
+    "emotion-theming": "^10.0.19",
     "react": "^16.x",
     "react-dom": "^16.x"
   },
@@ -22,16 +23,15 @@
     "rollup": "^1.26.3",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0"
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0"
   },
   "dependencies": {
     "@babel/core": "^7.7.2",
     "@emotion/babel-preset-css-prop": "^10.0.23",
-    "@emotion/core": "^10.0.22",
-    "@emotion/styled": "^10.0.23",
     "@styled-system/css": "^5.0.23",
     "@styled-system/should-forward-prop": "^5.1.2",
-    "emotion-theming": "^10.0.19",
+    "babel-plugin-emotion": "^10.0.23",
     "polished": "^3.4.2",
     "styled-system": "^5.1.2"
   }

@@ -1,26 +1,25 @@
 import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 import resolve from "rollup-plugin-node-resolve";
+import external from "rollup-plugin-peer-deps-external";
 
-import pkg from "./package.json";
+import packageJSON from "./package.json";
+const input = "./src/index.js";
 
 export default [
   // CommonJS
   {
-    input: "./src/index.js",
+    input,
     output: {
-      file: pkg.main,
+      file: packageJSON.main,
       format: "cjs"
     },
-    external: [
-      ...Object.keys(pkg.dependencies || {}),
-      ...Object.keys(pkg.peerDependencies || {})
-    ],
     plugins: [
       babel({
-        exclude: "node_modules/**"
+        exclude: ["node_modules/**"]
       }),
-      resolve({ preferBuiltins: false }),
+      external(),
+      resolve(),
       commonjs()
     ]
   }
