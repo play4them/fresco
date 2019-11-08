@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
-import shouldForwardProp from '@styled-system/should-forward-prop';
-import { compose } from 'styled-system';
+import styled from "@emotion/styled";
+import shouldForwardProp from "@styled-system/should-forward-prop";
+import { compose } from "styled-system";
 
 import {
   COMMON,
@@ -9,10 +9,10 @@ import {
   LAYOUT,
   POSITION,
   FLEX,
-  GRID,
-} from '../../systemProps';
+  GRID
+} from "../../systemProps";
 
-const Box = styled('div', { shouldForwardProp })(
+const Box = styled("div", { shouldForwardProp })(
   compose(
     COMMON,
     BORDER,
@@ -25,7 +25,7 @@ const Box = styled('div', { shouldForwardProp })(
 );
 
 Box.defaultProps = {
-  'data-playground-id': 'box',
+  "data-playground-id": "box"
 };
 
 export default Box;
