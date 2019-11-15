@@ -1,9 +1,13 @@
 {
   "name": "@play4them/fresco",
-  "version": "0.0.1-alpha.8",
+  "version": "0.0.1-alpha.15",
   "description": "Play4Them Design System",
   "main": "lib/index.js",
+  "browser": "lib/index.umd.js",
+  "module": "lib/index.es.js",
   "scripts": {
+    "prepublishOnly": "rm -rf lib && npm run build",
+    "postbuild": "npm pack && tar -xvzf *.tgz && rm -rf package *.tgz",
     "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 6006",
@@ -34,7 +38,9 @@
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.0"
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-uglify": "^6.0.3"
   },
   "dependencies": {
     "@babel/core": "^7.7.2",

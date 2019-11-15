@@ -5,11 +5,11 @@ export { Badge } from "./badge";
 export { Box } from "./box";
 export { Button, IconButton } from "./buttons";
 export { Checkbox } from "./checkbox";
-// export {
-//   CodeSnippet,
-//   InlineCodeSnippet,
-//   MultiLineCodeSnippet,
-// } from './codeSnippets';
+export {
+  CodeSnippet,
+  InlineCodeSnippet,
+  MultiLineCodeSnippet
+} from "./codeSnippets";
 export { Dialog } from "./dialog";
 export { GlobalStyles } from "./globalStyles";
 export { Icon } from "./icon";
