@@ -29,7 +29,7 @@ const Paragraph = styled('p', { shouldForwardProp })(
 );
 
 Paragraph.defaultProps = {
-  'data-playground-id': 'typography.paragraph',
+  'data-fresco-id': 'typography.paragraph',
   mt: 0,
   mb: 0,
   size: 400,

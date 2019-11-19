@@ -1,15 +1,15 @@
-import React from 'react';
-import { useTheme } from 'emotion-theming';
-import TextareaAutosize from 'react-textarea-autosize';
-import css from '@styled-system/css';
-import { rgba } from 'polished';
+import React from "react";
+import { useTheme } from "emotion-theming";
+import TextareaAutosize from "react-textarea-autosize";
+import css from "@styled-system/css";
+import { rgba } from "polished";
 
-import { Box } from '../../box';
-import { Text } from '../../typography';
+import { Box } from "../../box";
+import { Text } from "../../typography";
 
 const getBorderRadiusForControlHeight = height => {
-  if (height <= 40) return '3px';
-  return '5px';
+  if (height <= 40) return "3px";
+  return "5px";
 };
 
 const getTextSizeForControlHeight = height => {
@@ -27,7 +27,7 @@ const Textarea = ({ bg, height, ...rest }) => {
 
   return (
     <Box
-      data-playground-id="textarea"
+      data-fresco-id="textarea"
       borderRadius={br}
       bg={bg}
       overflow="hidden"
@@ -39,27 +39,27 @@ const Textarea = ({ bg, height, ...rest }) => {
     `}
     >
       <Text
-        data-playground-id="textarea.field"
+        data-fresco-id="textarea.field"
         as={TextareaAutosize}
         size={ts}
         display="block"
         width="100%"
         height={height}
         m={0}
-        px={p + 'px'}
+        px={p + "px"}
         py="10px"
         border={0}
         color="black"
         bg="transparent"
         css={css({
-          resize: 'none',
-          '::placeholder': {
-            color: 'black',
-            opacity: 1 / 3,
+          resize: "none",
+          "::placeholder": {
+            color: "black",
+            opacity: 1 / 3
           },
-          ':focus': {
-            outline: 0,
-          },
+          ":focus": {
+            outline: 0
+          }
         })}
         {...rest}
       />
@@ -68,8 +68,8 @@ const Textarea = ({ bg, height, ...rest }) => {
 };
 
 Textarea.defaultProps = {
-  bg: 'gray.0',
-  height: 40,
+  bg: "gray.0",
+  height: 40
 };
 
 export default Textarea;

@@ -1,10 +1,10 @@
-import React from 'react';
-import { mdiMagnify } from '@mdi/js';
-import { Box } from '../../box';
-import { Input } from '..';
+import React from "react";
+import { mdiMagnify } from "@mdi/js";
+import { Box } from "../../box";
+import { FormFieldInput, Input } from "..";
 
 export default {
-  title: 'Input',
+  title: "Input"
 };
 
 export const standard = () => (
@@ -39,4 +39,14 @@ export const iconBeforeHeight = () => (
       height={48}
     />
   </Box>
+);
+
+export const formFieldInput = () => (
+  <FormFieldInput
+    label="Email address"
+    description="We will send you your receipt"
+    input={{ placeholder: "name@example.com", type: "email" }}
+    hint="Make sure you can receive emails to this address"
+    validationMessage="This field is required"
+  />
 );

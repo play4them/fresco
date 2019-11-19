@@ -9,9 +9,9 @@ const RadioGroup = ({ options, stack }) => {
   const uid = uuidv4();
 
   return (
-    <Box data-playground-id="radioGroup" overflow="hidden">
+    <Box data-fresco-id="radioGroup" overflow="hidden">
       <Box
-        data-playground-id="radioGroup.list"
+        data-fresco-id="radioGroup.list"
         role="radiogroup"
         as="ul"
         display="flex"
@@ -27,7 +27,7 @@ const RadioGroup = ({ options, stack }) => {
         }}
       >
         {options.map((option, i) => (
-          <Box data-playground-id="radioGroup.item" as="li" key={i}>
+          <Box data-fresco-id="radioGroup.item" as="li" key={i}>
             <Radio name={uid} value={option.value}>
               {option.label}
             </Radio>

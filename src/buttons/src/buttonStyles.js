@@ -1,59 +1,54 @@
-import { useTheme } from 'emotion-theming';
-import { rgba } from 'polished';
-
-function buttonStyles(appearance, intent) {
-  const theme = useTheme();
-
+function buttonStyles(appearance, intent, theme) {
   const intents = {
     default: {
       base: theme.colors.gray[9],
       heavy: theme.colors.gray[9],
       light: theme.colors.gray[0],
-      contrast: '#fff',
+      contrast: "#fff"
     },
     primary: {
       base: theme.colors.indigo[4],
       heavy: theme.colors.indigo[6],
       light: theme.colors.indigo[0],
-      contrast: '#fff',
+      contrast: "#fff"
     },
     success: {
       base: theme.colors.teal[5],
       heavy: theme.colors.teal[7],
       light: theme.colors.teal[0],
-      contrast: '#fff',
+      contrast: "#fff"
     },
     warning: {
       base: theme.colors.yellow[5],
       heavy: theme.colors.yellow[6],
       light: theme.colors.yellow[0],
-      contrast: '#fff',
+      contrast: "#fff"
     },
     danger: {
       base: theme.colors.red[5],
       heavy: theme.colors.red[7],
       light: theme.colors.red[0],
-      contrast: '#fff',
-    },
+      contrast: "#fff"
+    }
   };
 
   switch (appearance) {
-    case 'primary':
+    case "primary":
       return {
         color: intents[intent].contrast,
         backgroundColor: intents[intent].base,
-        boxShadow: theme.shadows.elevations[1],
+        boxShadow: theme.shadows.elevations[1]
       };
-    case 'minimal':
+    case "minimal":
       return {
         color: intents[intent].heavy,
-        backgroundColor: 'transparent',
+        backgroundColor: "transparent"
       };
     default:
       return {
         color: intents[intent].heavy,
         backgroundColor: intents[intent].light,
-        boxShadow: theme.shadows.elevations[1],
+        boxShadow: theme.shadows.elevations[1]
       };
   }
 }

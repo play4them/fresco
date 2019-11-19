@@ -1,22 +1,16 @@
-import React from 'react';
-import { mdiChevronDown, mdiDownload } from '@mdi/js';
-import { rgba } from 'polished';
-import css from '@styled-system/css';
+import React from "react";
+import { mdiChevronDown, mdiDownload } from "@mdi/js";
+import { rgba } from "polished";
+import css from "@styled-system/css";
 
-import { Box, Text } from '../..';
-import { Button, IconButton } from '..';
+import { Box, Text } from "../..";
+import { Button, IconButton } from "..";
 
-import {
-  Menu,
-  MenuList,
-  MenuButton,
-  MenuItem,
-  MenuLink,
-} from '@reach/menu-button';
-import { Global } from '@emotion/core';
+import { Menu, MenuList, MenuButton, MenuItem } from "@reach/menu-button";
+import { Global } from "@emotion/core";
 
 export default {
-  title: 'Buttons',
+  title: "Buttons"
 };
 
 export const defaultAppearance = () => (
@@ -69,26 +63,26 @@ export const menuButton = () => (
   <>
     <Global
       styles={css({
-        '[data-reach-menu]': {
-          position: 'absolute',
-          display: 'block',
-          mt: '4px',
-          py: '6px',
-          borderRadius: '3px',
+        "[data-reach-menu]": {
+          position: "absolute",
+          display: "block",
+          mt: "4px",
+          py: "6px",
+          borderRadius: "3px",
           boxShadow: `
-            0 0px 1px ${rgba('#3b3e4d', 0.15)},
-            0 1px 2px ${rgba('#3b3e4d', 0.125)},
-            0 2px 4px ${rgba('#3b3e4d', 0.1)},
-            0 4px 8px ${rgba('#3b3e4d', 0.075)},
-            0 8px 16px ${rgba('#3b3e4d', 0.0625)}
-            `,
+            0 0px 1px ${rgba("#3b3e4d", 0.15)},
+            0 1px 2px ${rgba("#3b3e4d", 0.125)},
+            0 2px 4px ${rgba("#3b3e4d", 0.1)},
+            0 4px 8px ${rgba("#3b3e4d", 0.075)},
+            0 8px 16px ${rgba("#3b3e4d", 0.0625)}
+            `
         },
-        '[data-reach-menu-item]': {
+        "[data-reach-menu-item]": {
           '&[data-selected="true"], :focus': {
-            bg: 'gray.1',
-            outline: 0,
-          },
-        },
+            bg: "gray.1",
+            outline: 0
+          }
+        }
       })}
     />
     <Menu>

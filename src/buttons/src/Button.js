@@ -1,13 +1,15 @@
-import React from 'react';
+import React from "react";
+import PropTypes from "prop-types";
+import { useTheme } from "emotion-theming";
 
-import { Icon } from '../../icon';
-import { Text } from '../../typography';
+import { Icon } from "../../icon";
+import { Text } from "../../typography";
 
-import buttonStyles from './buttonStyles';
+import buttonStyles from "./buttonStyles";
 
 const getBorderRadiusForControlHeight = height => {
-  if (height <= 40) return '3px';
-  return '5px';
+  if (height <= 40) return "3px";
+  return "5px";
 };
 
 const getTextSizeForControlHeight = height => {
@@ -34,6 +36,7 @@ const Button = ({
   iconAfter,
   iconBefore,
   intent,
+  round,
   ...rest
 }) => {
   const br = getBorderRadiusForControlHeight(height);
@@ -43,7 +46,7 @@ const Button = ({
 
   return (
     <Text
-      data-playground-id="buttons.button"
+      data-fresco-id="buttons.button"
       size={ts}
       position="relative"
       display="inline-flex"
@@ -55,42 +58,42 @@ const Button = ({
       px={p}
       py={0}
       border={0}
-      borderRadius={br}
+      borderRadius={round ? 9999 : br}
       fontWeight={600}
-      lineHeight={height + 'px'}
+      lineHeight={height + "px"}
       overflow="hidden"
       css={{
-        ...buttonStyles(appearance, intent),
-        userSelect: 'none',
-        appearance: 'none',
-        cursor: 'pointer',
-        ':focus': {
-          outline: '1px dotted currentColor',
-          outlineOffset: '-4px',
-        },
+        ...buttonStyles(appearance, intent, useTheme()),
+        userSelect: "none",
+        appearance: "none",
+        cursor: "pointer",
+        ":focus": {
+          outline: "1px dotted currentColor",
+          outlineOffset: "-4px"
+        }
       }}
       {...rest}
     >
       {iconBefore && (
         <Icon
-          data-playground-id="buttons.button.iconBefore"
+          data-fresco-id="buttons.button.iconBefore"
           as="span"
           symbol={iconBefore}
           size={is}
-          mr={Math.round(is * 0.3) + 'px'}
-          ml={'-' + Math.round(is * 0.3) + 'px'}
+          mr={Math.round(is * 0.3) + "px"}
+          ml={"-" + Math.round(is * 0.3) + "px"}
           color="inherit"
         />
       )}
       {children}
       {iconAfter && (
         <Icon
-          data-playground-id="buttons.button.iconAfter"
+          data-fresco-id="buttons.button.iconAfter"
           as="span"
           symbol={iconAfter}
           size={is}
-          mr={'-' + Math.round(is * 0.3) + 'px'}
-          ml={Math.round(is * 0.3) + 'px'}
+          mr={"-" + Math.round(is * 0.3) + "px"}
+          ml={Math.round(is * 0.3) + "px"}
           color="inherit"
         />
       )}
@@ -98,11 +101,27 @@ const Button = ({
   );
 };
 
+Button.propTypes = {
+  appearance: PropTypes.oneOf(["default", "primary", "minimal"]).isRequired,
+  children: PropTypes.node,
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  iconAfter: PropTypes.node,
+  iconBefore: PropTypes.node,
+  intent: PropTypes.oneOf([
+    "default",
+    "primary",
+    "success",
+    "warning",
+    "danger"
+  ]).isRequired,
+  round: PropTypes.bool
+};
+
 Button.defaultProps = {
-  appearance: 'default',
-  as: 'button',
+  appearance: "default",
+  as: "button",
   height: 40,
-  intent: 'default',
+  intent: "default"
 };
 
 export default Button;

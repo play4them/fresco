@@ -13,19 +13,11 @@ import {
 } from "../../systemProps";
 
 const Box = styled("div", { shouldForwardProp })(
-  compose(
-    COMMON,
-    BORDER,
-    TYPOGRAPHY,
-    LAYOUT,
-    POSITION,
-    FLEX,
-    GRID
-  )
+  compose(COMMON, BORDER, TYPOGRAPHY, LAYOUT, POSITION, FLEX, GRID)
 );
 
 Box.defaultProps = {
-  "data-playground-id": "box"
+  "data-fresco-id": "📦"
 };
 
 export default Box;
