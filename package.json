@@ -1,6 +1,6 @@
 {
   "name": "@play4them/fresco",
-  "version": "0.0.1-alpha.15",
+  "version": "0.0.1-alpha.16",
   "description": "Play4Them Design System",
   "main": "lib/index.js",
   "browser": "lib/index.umd.js",
