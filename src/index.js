@@ -4,6 +4,7 @@ export { Avatar } from "./avatar";
 export { Badge } from "./badge";
 export { Box } from "./box";
 export { Button, IconButton } from "./buttons";
+export { Card } from "./card";
 export { Checkbox } from "./checkbox";
 export {
   CodeSnippet,
@@ -12,6 +13,7 @@ export {
 } from "./codeSnippets";
 export { CornerDialog } from "./cornerDialog";
 export { Dialog } from "./dialog";
+export { Flex } from "./flex";
 export {
   FormFieldDescription,
   FormFieldHint,

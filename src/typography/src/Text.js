@@ -1,6 +1,6 @@
-import styled from '@emotion/styled';
-import shouldForwardProp from '@styled-system/should-forward-prop';
-import { compose, variant } from 'styled-system';
+import styled from "@emotion/styled";
+import shouldForwardProp from "@styled-system/should-forward-prop";
+import { compose, variant } from "styled-system";
 
 import {
   COMMON,
@@ -9,30 +9,22 @@ import {
   LAYOUT,
   POSITION,
   FLEX,
-  GRID,
-} from '../../systemProps';
+  GRID
+} from "../../systemProps";
 
-const Text = styled('span', { shouldForwardProp })(
+const Text = styled("p", { shouldForwardProp })(
   variant({
-    prop: 'size',
-    scale: 'text',
+    prop: "size",
+    scale: "text"
   }),
-  compose(
-    COMMON,
-    BORDER,
-    TYPOGRAPHY,
-    LAYOUT,
-    POSITION,
-    FLEX,
-    GRID
-  )
+  compose(COMMON, BORDER, TYPOGRAPHY, LAYOUT, POSITION, FLEX, GRID)
 );
 
 Text.defaultProps = {
-  'data-fresco-id': 'typography.text',
+  "data-fresco-id": "typography.text",
   mt: 0,
   mb: 0,
-  size: 400,
+  size: 400
 };
 
 export default Text;
