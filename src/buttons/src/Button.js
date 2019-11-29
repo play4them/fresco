@@ -29,77 +29,77 @@ const getIconSizeForButton = height => {
   return 20;
 };
 
-const Button = ({
-  appearance,
-  children,
-  height,
-  iconAfter,
-  iconBefore,
-  intent,
-  round,
-  ...rest
-}) => {
-  const br = getBorderRadiusForControlHeight(height);
-  const is = getIconSizeForButton(height);
-  const p = Math.round(height / 2);
-  const ts = getTextSizeForControlHeight(height);
+const Button = React.forwardRef(
+  ({
+    appearance,
+    children,
+    height,
+    iconAfter,
+    iconBefore,
+    intent,
+    ref,
+    round,
+    ...rest
+  }) => {
+    const br = getBorderRadiusForControlHeight(height);
+    const is = getIconSizeForButton(height);
+    const p = Math.round(height / 2) + "px";
+    const ts = getTextSizeForControlHeight(height);
 
-  return (
-    <Text
-      data-fresco-id="buttons.button"
-      size={ts}
-      position="relative"
-      display="inline-flex"
-      justifyContent="center"
-      alignItems="center"
-      flexWrap="nowrap"
-      height={height}
-      m={0}
-      px={p}
-      py={0}
-      border={0}
-      borderRadius={round ? 9999 : br}
-      fontWeight={600}
-      lineHeight={height + "px"}
-      overflow="hidden"
-      css={{
-        ...buttonStyles(appearance, intent, useTheme()),
-        userSelect: "none",
-        appearance: "none",
-        cursor: "pointer",
-        ":focus": {
-          outline: "1px dotted currentColor",
-          outlineOffset: "-4px"
-        }
-      }}
-      {...rest}
-    >
-      {iconBefore && (
-        <Icon
-          data-fresco-id="buttons.button.iconBefore"
-          as="span"
-          symbol={iconBefore}
-          size={is}
-          mr={Math.round(is * 0.3) + "px"}
-          ml={"-" + Math.round(is * 0.3) + "px"}
-          color="inherit"
-        />
-      )}
-      {children}
-      {iconAfter && (
-        <Icon
-          data-fresco-id="buttons.button.iconAfter"
-          as="span"
-          symbol={iconAfter}
-          size={is}
-          mr={"-" + Math.round(is * 0.3) + "px"}
-          ml={Math.round(is * 0.3) + "px"}
-          color="inherit"
-        />
-      )}
-    </Text>
-  );
-};
+    return (
+      <Text
+        data-fresco-id="buttons.button"
+        ref={ref}
+        size={ts}
+        position="relative"
+        display="inline-flex"
+        justifyContent="center"
+        alignItems="center"
+        flexWrap="nowrap"
+        height={height}
+        m={0}
+        px={p}
+        py={0}
+        border={0}
+        borderRadius={round ? 9999 : br}
+        fontWeight={600}
+        lineHeight={height + "px"}
+        overflow="hidden"
+        css={{
+          ...buttonStyles(appearance, intent, useTheme()),
+          userSelect: "none",
+          appearance: "none",
+          cursor: "pointer"
+        }}
+        {...rest}
+      >
+        {iconBefore && (
+          <Icon
+            data-fresco-id="buttons.button.iconBefore"
+            as="span"
+            symbol={iconBefore}
+            size={is}
+            mr={Math.round(is * 0.3) + "px"}
+            ml={"-" + Math.round(is * 0.3) + "px"}
+            color="inherit"
+          />
+        )}
+        {children}
+        {iconAfter && (
+          <Icon
+            data-fresco-id="buttons.button.iconAfter"
+            as="span"
+            symbol={iconAfter}
+            size={is}
+            mr={"-" + Math.round(is * 0.3) + "px"}
+            ml={Math.round(is * 0.3) + "px"}
+            color="inherit"
+          />
+        )}
+      </Text>
+    );
+  }
+);
 
 Button.propTypes = {
   appearance: PropTypes.oneOf(["default", "primary", "minimal"]).isRequired,

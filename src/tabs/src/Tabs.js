@@ -1,29 +1,29 @@
-import React from 'react';
-import * as Reach from '@reach/tabs';
-import css from '@styled-system/css';
+import React from "react";
+import * as Reach from "@reach/tabs";
+import css from "@styled-system/css";
 
-import { Box } from '../../box';
-import { Heading } from '../../typography';
+import { Box } from "../../box";
+import { Heading } from "../../typography";
 
 // For some reason arrow keys aren't working and I can't explain why. Look into this further.
 // https://reacttraining.com/reach-ui/tabs
 
-const Tab = ({ children, isSelected, ...rest }) => (
+const Tab = ({ children, isSelected, ref, ...rest }) => (
   <Reach.Tab
     data-fresco-id="tab"
     css={css({
-      position: 'relative',
+      position: "relative",
       height: 48,
       m: 0,
-      mb: '-1px',
+      mb: "-1px",
       p: 0,
       border: 0,
-      bg: 'transparent',
-      appearance: 'none',
-      cursor: 'pointer',
-      ':not(:first-of-type)': {
-        ml: 'spacing.5',
-      },
+      bg: "transparent",
+      appearance: "none",
+      cursor: "pointer",
+      ":not(:first-of-type)": {
+        ml: "spacing.5"
+      }
     })}
     {...rest}
   >
@@ -33,7 +33,7 @@ const Tab = ({ children, isSelected, ...rest }) => (
       size={400}
       lineHeight="48px"
       textAlign="center"
-      color={isSelected ? 'gray.9' : 'gray.7'}
+      color={isSelected ? "gray.9" : "gray.7"}
     >
       {children}
     </Heading>
@@ -58,10 +58,10 @@ const Tabs = ({ data, ...rest }) => {
       <Reach.TabList
         data-fresco-id="tabs.list"
         css={css({
-          display: 'flex',
-          width: '100%',
-          borderBottom: '1px solid',
-          borderColor: 'gray.1',
+          display: "flex",
+          width: "100%",
+          borderBottom: "1px solid",
+          borderColor: "gray.1"
         })}
       >
         {data.map((tab, index) => (

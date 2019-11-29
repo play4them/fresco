@@ -16,7 +16,7 @@ export const formFieldTextarea = () => (
   <FormFieldTextarea
     label="Message"
     description="Write a message to your donors"
-    textarea={{ placeholder: "Your message..." }}
+    textareaProps={{ placeholder: "Your message..." }}
     hint="This could be a message of thanks or congratulations"
     validationMessage="This field is required"
   />

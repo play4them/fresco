@@ -23,7 +23,9 @@ export {
 export { GlobalStyles } from "./globalStyles";
 export { Icon } from "./icon";
 export { FormFieldInput, Input } from "./input";
+export { Pill } from "./pill";
 export { Radio, RadioGroup } from "./radio";
+export { Select } from "./select";
 export { Spinner } from "./spinner";
 export {
   COMMON,

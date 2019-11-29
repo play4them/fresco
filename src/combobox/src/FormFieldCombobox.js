@@ -9,12 +9,12 @@ import {
   FormFieldValidationMessage
 } from "../../formField";
 
-import Input from "./Input";
+import Combobox from "./Combobox";
 
-const FormFieldInput = ({
+const FormFieldCombobox = ({
   description,
   hint,
-  inputProps,
+  comboboxProps,
   label,
   validationMessage,
   ...rest
@@ -22,10 +22,10 @@ const FormFieldInput = ({
   const uid = uuidv4();
 
   return (
-    <Box data-fresco-id="formFieldInput" {...rest}>
-      {label && <FormFieldLabel label={label} htmlFor={uid} />}
+    <Box data-fresco-id="formFieldCombobox" {...rest}>
+      {label && <FormFieldLabel label={label} htmlFor={"listbox--" + uid} />}
       {description && <FormFieldDescription description={description} />}
-      <Input id={uid} {...inputProps} />
+      <Combobox id={uid} {...comboboxProps} />
       {hint && <FormFieldHint hint={hint} />}
       {validationMessage && (
         <FormFieldValidationMessage validationMessage={validationMessage} />
@@ -34,4 +34,4 @@ const FormFieldInput = ({
   );
 };
 
-export default FormFieldInput;
+export default FormFieldCombobox;

@@ -1,78 +1,78 @@
-import fonts from './fonts';
+import fonts from "./fonts";
 
 export default {
-  '900': {
+  "900": {
     fontFamily: fonts.display,
-    fontSize: '35px',
+    fontSize: "35px",
     fontWeight: 700,
-    lineHeight: '40px',
-    letterSpacing: '-0.01em',
-    marginTop: '52px',
+    lineHeight: "40px",
+    letterSpacing: "-0.01em"
+    // marginTop: '52px',
   },
-  '800': {
+  "800": {
     fontFamily: fonts.display,
-    fontSize: '29px',
+    fontSize: "29px",
     fontWeight: 700,
-    lineHeight: '32px',
-    letterSpacing: '-0.01em',
-    marginTop: '40px',
+    lineHeight: "32px",
+    letterSpacing: "-0.01em"
+    // marginTop: '40px',
   },
-  '700': {
+  "700": {
     fontFamily: fonts.display,
-    fontSize: '24px',
+    fontSize: "24px",
     fontWeight: 700,
-    lineHeight: '28px',
-    letterSpacing: '-0.01em',
-    marginTop: '40px',
+    lineHeight: "28px",
+    letterSpacing: "-0.01em"
+    // marginTop: '40px',
   },
-  '600': {
+  "600": {
     fontFamily: fonts.display,
-    fontSize: '20px',
+    fontSize: "20px",
     fontWeight: 700,
-    lineHeight: '24px',
-    letterSpacing: '-0.008em',
-    marginTop: '28px',
+    lineHeight: "24px",
+    letterSpacing: "-0.008em"
+    // marginTop: '28px',
   },
   // Default
-  '500': {
+  "500": {
     fontFamily: fonts.ui,
-    fontSize: '16px',
+    fontSize: "16px",
     fontWeight: 700,
-    lineHeight: '20px',
-    letterSpacing: '-0.006em',
-    marginTop: '24px',
+    lineHeight: "20px",
+    letterSpacing: "-0.006em"
+    // marginTop: '24px',
   },
-  '400': {
+  "400": {
     fontFamily: fonts.ui,
-    fontSize: '14px',
+    fontSize: "14px",
     fontWeight: 600,
-    lineHeight: '20px',
-    letterSpacing: '-0.003em',
-    marginTop: '16px',
+    lineHeight: "20px",
+    letterSpacing: "-0.003em"
+    // marginTop: '16px',
   },
-  '300': {
+  "300": {
     fontFamily: fonts.ui,
-    fontSize: '12px',
+    fontSize: "12px",
     fontWeight: 600,
-    lineHeight: '16px',
-    letterSpacing: 0,
-    marginTop: '16px',
+    lineHeight: "16px",
+    letterSpacing: 0
+    // marginTop: '16px',
   },
-  '200': {
+  "200": {
     fontFamily: fonts.ui,
-    fontSize: '11px',
+    fontSize: "11px",
     fontWeight: 600,
-    lineHeight: '16px',
-    letterSpacing: 0,
-    marginTop: '16px',
+    lineHeight: "16px",
+    letterSpacing: 0
+    // marginTop: '16px',
   },
-  '100': {
+  "100": {
     fontFamily: fonts.ui,
-    fontSize: '11px',
+    fontSize: "11px",
     fontWeight: 600,
-    textTransform: 'uppercase',
-    lineHeight: '16px',
-    letterSpacing: '0.054em',
-    marginTop: '16px',
-  },
+    textTransform: "uppercase",
+    lineHeight: "16px",
+    letterSpacing: "0.054em"
+    // marginTop: '16px',
+  }
 };

@@ -1,37 +1,37 @@
-import fonts from './fonts';
+import fonts from "./fonts";
 
 export default {
-  '600': {
+  "600": {
     fontFamily: fonts.display,
-    fontSize: '20px',
+    fontSize: "20px",
     fontWeight: 400,
-    lineHeight: '24px',
-    letterSpacing: '-0.0035em',
-    marginTop: 28,
+    lineHeight: "24px",
+    letterSpacing: "-0.0035em"
+    // marginTop: 28,
   },
-  '500': {
+  "500": {
     fontFamily: fonts.ui,
-    fontSize: '16px',
+    fontSize: "16px",
     fontWeight: 400,
-    lineHeight: '20px',
-    letterSpacing: '-0.0035em',
-    marginTop: 16,
+    lineHeight: "20px",
+    letterSpacing: "-0.0035em"
+    // marginTop: 16,
   },
   // Default
-  '400': {
+  "400": {
     fontFamily: fonts.ui,
-    fontSize: '14px',
+    fontSize: "14px",
     fontWeight: 400,
-    lineHeight: '20px',
-    letterSpacing: '-0.0035em',
-    marginTop: 12,
+    lineHeight: "20px",
+    letterSpacing: "-0.0035em"
+    // marginTop: 12,
   },
-  '300': {
+  "300": {
     fontFamily: fonts.ui,
-    fontSize: '12px',
+    fontSize: "12px",
     fontWeight: 400,
-    lineHeight: '16px',
-    letterSpacing: 0,
-    marginTop: 12,
-  },
+    lineHeight: "16px",
+    letterSpacing: 0
+    // marginTop: 12,
+  }
 };

@@ -10,9 +10,7 @@ export const standard = () => (
   <CornerDialog
     title="Corner dialog"
     button={{
-      children: "Learn More",
-      intent: "primary",
-      appearance: "primary"
+      children: "Learn More"
     }}
   >
     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.

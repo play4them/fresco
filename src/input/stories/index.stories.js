@@ -45,7 +45,7 @@ export const formFieldInput = () => (
   <FormFieldInput
     label="Email address"
     description="We will send you your receipt"
-    input={{ placeholder: "name@example.com", type: "email" }}
+    inputProps={{ placeholder: "name@example.com", type: "email" }}
     hint="Make sure you can receive emails to this address"
     validationMessage="This field is required"
   />

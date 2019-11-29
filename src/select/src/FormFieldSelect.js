@@ -9,12 +9,12 @@ import {
   FormFieldValidationMessage
 } from "../../formField";
 
-import Input from "./Input";
+import Select from "./Select";
 
-const FormFieldInput = ({
+const FormFieldSelect = ({
   description,
   hint,
-  inputProps,
+  selectProps,
   label,
   validationMessage,
   ...rest
@@ -22,10 +22,10 @@ const FormFieldInput = ({
   const uid = uuidv4();
 
   return (
-    <Box data-fresco-id="formFieldInput" {...rest}>
+    <Box data-fresco-id="formFieldSelect" {...rest}>
       {label && <FormFieldLabel label={label} htmlFor={uid} />}
       {description && <FormFieldDescription description={description} />}
-      <Input id={uid} {...inputProps} />
+      <Select id={uid} {...selectProps} />
       {hint && <FormFieldHint hint={hint} />}
       {validationMessage && (
         <FormFieldValidationMessage validationMessage={validationMessage} />
@@ -34,4 +34,4 @@ const FormFieldInput = ({
   );
 };
 
-export default FormFieldInput;
+export default FormFieldSelect;

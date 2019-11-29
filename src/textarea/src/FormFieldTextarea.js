@@ -15,7 +15,7 @@ const FormFieldTextarea = ({
   description,
   hint,
   label,
-  textarea,
+  textareaProps,
   validationMessage,
   ...rest
 }) => {
@@ -25,7 +25,7 @@ const FormFieldTextarea = ({
     <Box data-fresco-id="formFieldTextarea" {...rest}>
       {label && <FormFieldLabel label={label} htmlFor={uid} />}
       {description && <FormFieldDescription description={description} />}
-      <Textarea id={uid} {...textarea} />
+      <Textarea id={uid} {...textareaProps} />
       {hint && <FormFieldHint hint={hint} />}
       {validationMessage && (
         <FormFieldValidationMessage validationMessage={validationMessage} />

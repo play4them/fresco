@@ -47,7 +47,12 @@ const CornerDialog = ({ button, children, title, ...rest }) => (
             height={32}
             mr="layout.1"
           />
-          <Button height={32} {...button} />
+          <Button
+            intent="primary"
+            appearance="primary"
+            height={32}
+            {...button}
+          />
         </Box>
       </Box>
     </Box>
