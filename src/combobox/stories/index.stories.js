@@ -61,7 +61,10 @@ export const formField = () => (
         ]
       }}
       hint="Often times the place you were born"
-      validationMessage="This field is required"
+      validationMessage={{
+        message: "This field is required",
+        intent: "danger"
+      }}
     />
   </>
 );

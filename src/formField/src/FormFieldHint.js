@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Paragraph } from "../../typography";
+import { Text } from "../../typography";
 
 const FormFieldHint = ({ hint, ...rest }) => (
-  <Paragraph
+  <Text
     data-fresco-id="formField.hint"
     as="p"
     size={300}
@@ -12,7 +12,7 @@ const FormFieldHint = ({ hint, ...rest }) => (
     {...rest}
   >
     {hint}
-  </Paragraph>
+  </Text>
 );
 
 export default FormFieldHint;

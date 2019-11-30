@@ -1,10 +1,10 @@
-import React from 'react';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { mdiContentCopy } from '@mdi/js';
+import React from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { mdiContentCopy } from "@mdi/js";
 
-import { Box } from '../../box';
-import { IconButton } from '../../buttons';
-import { Text } from '../../typography';
+import { Box } from "../../box";
+import { IconButton } from "../../buttons";
+import { Text } from "../../typography";
 
 const height = 32;
 
@@ -14,7 +14,7 @@ const CodeSnippet = ({ children }) => (
     position="relative"
     display="flex"
     borderRadius="3px"
-    bg="gray.1"
+    bg="blue.0"
   >
     <Box
       data-fresco-id="codeSnippet.container"
@@ -30,9 +30,9 @@ const CodeSnippet = ({ children }) => (
         size={300}
         px="spacing.4"
         fontFamily="mono"
-        color="black"
+        color="blue.7"
       >
-        <Box as="pre" m={0} css={{ whiteSpace: 'nowrap' }}>
+        <Box as="pre" m={0} css={{ whiteSpace: "nowrap" }}>
           {children}
         </Box>
       </Text>
@@ -45,9 +45,9 @@ const CodeSnippet = ({ children }) => (
       right={height}
       width="32px"
       height="100%"
-      color="gray.1"
+      color="blue.0"
       css={{
-        backgroundImage: 'linear-gradient(to right, transparent, currentColor)',
+        backgroundImage: "linear-gradient(to right, transparent, currentColor)"
       }}
     />
 
@@ -56,7 +56,7 @@ const CodeSnippet = ({ children }) => (
         data-fresco-id="codeSnippet.copyToClipboard"
         label="Copy to clipboard"
         icon={mdiContentCopy}
-        intent="default"
+        intent="primary"
         appearance="minimal"
         height={height}
       />

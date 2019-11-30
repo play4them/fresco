@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { Box } from '../../box';
+import { Box } from "../../box";
 
 const InlineCodeSnippet = ({ children }) => (
   <Box
@@ -16,8 +16,8 @@ const InlineCodeSnippet = ({ children }) => (
     fontFamily="mono"
     fontSize="0.875em"
     verticalAlign="baseline"
-    color="black"
-    bg="gray.1"
+    color="blue.7"
+    bg="blue.0"
   >
     <Box data-fresco-id="inlineCodeSnippet.code" as="code" px="spacing.2">
       {children}

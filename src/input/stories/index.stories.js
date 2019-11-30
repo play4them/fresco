@@ -47,6 +47,6 @@ export const formFieldInput = () => (
     description="We will send you your receipt"
     inputProps={{ placeholder: "name@example.com", type: "email" }}
     hint="Make sure you can receive emails to this address"
-    validationMessage="This field is required"
+    validationMessage={{ message: "This field is required", intent: "danger" }}
   />
 );

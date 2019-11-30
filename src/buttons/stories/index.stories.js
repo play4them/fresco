@@ -29,6 +29,12 @@ export const withIcon = () => (
   </>
 );
 
+export const smaller = () => (
+  <>
+    <Button children="Download" height={32} />
+  </>
+);
+
 export const primaryAppearance = () => (
   <>
     <Button children="Default" appearance="primary" />

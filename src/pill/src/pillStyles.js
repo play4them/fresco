@@ -11,15 +11,15 @@ function pillStyles(appearance, intent) {
       contrast: "#fff"
     },
     primary: {
-      base: theme.colors.indigo[4],
-      heavy: theme.colors.indigo[6],
-      light: theme.colors.indigo[0],
+      base: theme.colors.blue[4],
+      heavy: theme.colors.blue[6],
+      light: theme.colors.blue[0],
       contrast: "#fff"
     },
     success: {
-      base: theme.colors.teal[5],
-      heavy: theme.colors.teal[7],
-      light: theme.colors.teal[0],
+      base: theme.colors.green[5],
+      heavy: theme.colors.green[7],
+      light: theme.colors.green[0],
       contrast: "#fff"
     },
     warning: {

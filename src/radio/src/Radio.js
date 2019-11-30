@@ -57,7 +57,7 @@ const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
             userSelect: "none"
           },
           ":checked + div": {
-            bg: "blue.5",
+            bg: "blue.4",
             boxShadow: `inset 0 0 0 1px ${rgba(
               theme.colors.gray[9],
               0

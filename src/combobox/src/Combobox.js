@@ -66,8 +66,8 @@ const Option = ({ decoration, value }) => (
     borderRadius="3px"
     css={css({
       "&[data-highlighted]": {
-        color: "indigo.6",
-        bg: "indigo.0"
+        color: "blue.6",
+        bg: "blue.0"
       },
       '[data-suggested-value="true"]': {
         fontWeight: 400

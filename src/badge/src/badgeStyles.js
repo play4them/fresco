@@ -1,4 +1,4 @@
-import { useTheme } from 'emotion-theming';
+import { useTheme } from "emotion-theming";
 
 function badgeStyles(appearance, intent) {
   const theme = useTheme();
@@ -8,49 +8,49 @@ function badgeStyles(appearance, intent) {
       base: theme.colors.gray[9],
       heavy: theme.colors.gray[9],
       light: theme.colors.gray[1],
-      contrast: '#fff',
+      contrast: "#fff"
     },
     primary: {
-      base: theme.colors.indigo[4],
-      heavy: theme.colors.indigo[6],
-      light: theme.colors.indigo[0],
-      contrast: '#fff',
+      base: theme.colors.blue[4],
+      heavy: theme.colors.blue[6],
+      light: theme.colors.blue[0],
+      contrast: "#fff"
     },
     success: {
-      base: theme.colors.teal[5],
-      heavy: theme.colors.teal[7],
-      light: theme.colors.teal[0],
-      contrast: '#fff',
+      base: theme.colors.green[5],
+      heavy: theme.colors.green[7],
+      light: theme.colors.green[0],
+      contrast: "#fff"
     },
     warning: {
       base: theme.colors.yellow[5],
       heavy: theme.colors.yellow[6],
       light: theme.colors.yellow[0],
-      contrast: '#fff',
+      contrast: "#fff"
     },
     danger: {
       base: theme.colors.red[5],
       heavy: theme.colors.red[7],
       light: theme.colors.red[0],
-      contrast: '#fff',
-    },
+      contrast: "#fff"
+    }
   };
 
   switch (appearance) {
-    case 'solid':
+    case "solid":
       return {
         color: intents[intent].contrast,
-        backgroundColor: intents[intent].base,
+        backgroundColor: intents[intent].base
       };
-    case 'subtle':
+    case "subtle":
       return {
         color: intents[intent].heavy,
-        backgroundColor: intents[intent].light,
+        backgroundColor: intents[intent].light
       };
     default:
       return {
         color: intents[intent].heavy,
-        backgroundColor: intents[intent].light,
+        backgroundColor: intents[intent].light
       };
   }
 }

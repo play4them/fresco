@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import { Alert, ToastAlert } from '..';
+import { Alert, ToastAlert } from "..";
 
 export default {
-  title: 'Alert',
+  title: "Alert"
 };
 
 export const standard = () => (
@@ -33,8 +33,8 @@ export const warning = () => (
 export const danger = () => (
   <Alert
     title="Danger Alert"
-    button={{
-      children: 'Try Again',
+    buttonProps={{
+      children: "Try Again"
     }}
     intent="danger"
   >

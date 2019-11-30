@@ -6,7 +6,7 @@ import { Button, IconButton } from "../../buttons";
 import { Heading, Paragraph } from "../../typography";
 import { mdiClose } from "@mdi/js";
 
-const CornerDialog = ({ button, children, title, ...rest }) => (
+const CornerDialog = ({ buttonProps, children, title, ...rest }) => (
   <Portal>
     <Box
       data-fresco-id="cornerDialog"
@@ -23,7 +23,7 @@ const CornerDialog = ({ button, children, title, ...rest }) => (
         display="inline-block"
         width="100%"
         maxWidth={360}
-        p={["layout.3", "layout.4"]}
+        p="layout.3"
         borderRadius="5px"
         textAlign="initial"
         bg="white"
@@ -36,7 +36,7 @@ const CornerDialog = ({ button, children, title, ...rest }) => (
           </Heading>
           <IconButton icon={mdiClose} appearance="minimal" height={32} />
         </Box>
-        <Paragraph size={400} mt="layout.1" color="gray.8">
+        <Paragraph size={400} mt="layout.1" color="gray.7">
           {children}
         </Paragraph>
         <Box display="flex" justifyContent="flex-end" mt="layout.3">
@@ -45,13 +45,13 @@ const CornerDialog = ({ button, children, title, ...rest }) => (
             intent="default"
             appearance="default"
             height={32}
-            mr="layout.1"
+            mr="spacing.2"
           />
           <Button
             intent="primary"
             appearance="primary"
             height={32}
-            {...button}
+            {...buttonProps}
           />
         </Box>
       </Box>

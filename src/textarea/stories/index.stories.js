@@ -18,6 +18,6 @@ export const formFieldTextarea = () => (
     description="Write a message to your donors"
     textareaProps={{ placeholder: "Your message..." }}
     hint="This could be a message of thanks or congratulations"
-    validationMessage="This field is required"
+    validationMessage={{ message: "This field is required", intent: "danger" }}
   />
 );

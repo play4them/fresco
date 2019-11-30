@@ -1,43 +1,43 @@
-import React from 'react';
-import { useTheme } from 'emotion-theming';
-import { default as ReachAlert } from '@reach/alert';
+import React from "react";
+import { useTheme } from "emotion-theming";
+import { default as ReachAlert } from "@reach/alert";
 import {
   mdiAlert,
   mdiAlertCircle,
   mdiCheckCircle,
   mdiClose,
-  mdiInformation,
-} from '@mdi/js';
+  mdiInformation
+} from "@mdi/js";
 
-import { Box } from '../../box';
-import { Button, IconButton } from '../../buttons';
-import { Icon } from '../../icon';
-import { Heading, Paragraph } from '../../typography';
+import { Box } from "../../box";
+import { Button, IconButton } from "../../buttons";
+import { Icon } from "../../icon";
+import { Heading, Paragraph } from "../../typography";
 
-const Alert = ({ button, children, intent, title, ...rest }) => {
+const Alert = ({ buttonProps, children, intent, title, ...rest }) => {
   const theme = useTheme();
 
   const intents = {
     default: {
       color: theme.colors.gray[5],
-      icon: mdiInformation,
+      icon: mdiInformation
     },
     primary: {
       color: theme.colors.blue[6],
-      icon: mdiInformation,
+      icon: mdiInformation
     },
     success: {
-      color: theme.colors.teal[6],
-      icon: mdiCheckCircle,
+      color: theme.colors.green[6],
+      icon: mdiCheckCircle
     },
     warning: {
       color: theme.colors.yellow[5],
-      icon: mdiAlert,
+      icon: mdiAlert
     },
     danger: {
       color: theme.colors.red[5],
-      icon: mdiAlertCircle,
-    },
+      icon: mdiAlertCircle
+    }
   };
 
   return (
@@ -53,7 +53,7 @@ const Alert = ({ button, children, intent, title, ...rest }) => {
       borderRadius="4px"
       bg="white"
       overflow="hidden"
-      boxShadow="elevations.1"
+      boxShadow="elevations.0"
       {...rest}
     >
       <Box
@@ -86,19 +86,19 @@ const Alert = ({ button, children, intent, title, ...rest }) => {
       <Box data-fresco-id="alert.content" flex={1} minHeight={40} py="10px">
         <Box display="flex" alignItems="center" flexWrap="wrap" flex={1}>
           {title && (
-            <Heading as="h4" size={400} mr={children && 'spacing.2'}>
+            <Heading as="h4" size={400} mr={children && "spacing.2"}>
               {title}
             </Heading>
           )}
           {children && (
-            <Paragraph as="p" size={400} color="gray.8">
+            <Paragraph as="p" size={400} color="gray.7">
               {children}
             </Paragraph>
           )}
         </Box>
-        {button && (
+        {buttonProps && (
           <Box mt="8px">
-            <Button height={32} {...button} />
+            <Button height={32} {...buttonProps} />
           </Box>
         )}
       </Box>
@@ -126,7 +126,7 @@ const Alert = ({ button, children, intent, title, ...rest }) => {
 };
 
 Alert.defaultProps = {
-  intent: 'default',
+  intent: "default"
 };
 
 export default Alert;

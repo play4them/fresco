@@ -1,18 +1,18 @@
 import React from "react";
 
-import { Paragraph } from "../../typography";
+import { Text } from "../../typography";
 
 const FormFieldDescription = ({ description, ...rest }) => (
-  <Paragraph
+  <Text
     data-fresco-id="formField.description"
     as="p"
     size={300}
     mb="spacing.2"
-    color="gray.8"
+    color="gray.7"
     {...rest}
   >
     {description}
-  </Paragraph>
+  </Text>
 );
 
 export default FormFieldDescription;

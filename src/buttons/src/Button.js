@@ -8,14 +8,14 @@ import { Text } from "../../typography";
 import buttonStyles from "./buttonStyles";
 
 const getBorderRadiusForControlHeight = height => {
-  if (height <= 40) return "3px";
+  if (height <= 32) return "3px";
   return "5px";
 };
 
 const getTextSizeForControlHeight = height => {
   if (height <= 24) return 300;
   if (height <= 28) return 300;
-  if (height <= 32) return 300;
+  if (height <= 32) return 400;
   if (height <= 36) return 400;
   if (height <= 40) return 400;
   return 500;
@@ -43,7 +43,7 @@ const Button = React.forwardRef(
   }) => {
     const br = getBorderRadiusForControlHeight(height);
     const is = getIconSizeForButton(height);
-    const p = Math.round(height / 2) + "px";
+    const p = Math.round(height / 3) + "px";
     const ts = getTextSizeForControlHeight(height);
 
     return (
@@ -62,7 +62,7 @@ const Button = React.forwardRef(
         py={0}
         border={0}
         borderRadius={round ? 9999 : br}
-        fontWeight={600}
+        fontWeight={500}
         lineHeight={height + "px"}
         overflow="hidden"
         css={{

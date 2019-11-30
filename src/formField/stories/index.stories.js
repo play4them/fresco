@@ -23,7 +23,12 @@ export const standard = () => {
       <FormFieldDescription description="Description of field" />
       <Input placeholder="Placeholder" id={uid} />
       <FormFieldHint hint="Some help about what to input" />
-      <FormFieldValidationMessage validationMessage="Error handling here" />
+      <FormFieldValidationMessage
+        validationMessage={{
+          message: "This field is required",
+          intent: "danger"
+        }}
+      />
     </Box>
   );
 };

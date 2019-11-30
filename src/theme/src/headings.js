@@ -4,7 +4,7 @@ export default {
   "900": {
     fontFamily: fonts.display,
     fontSize: "35px",
-    fontWeight: 700,
+    fontWeight: 800,
     lineHeight: "40px",
     letterSpacing: "-0.01em"
     // marginTop: '52px',
@@ -12,7 +12,7 @@ export default {
   "800": {
     fontFamily: fonts.display,
     fontSize: "29px",
-    fontWeight: 700,
+    fontWeight: 800,
     lineHeight: "32px",
     letterSpacing: "-0.01em"
     // marginTop: '40px',
@@ -20,7 +20,7 @@ export default {
   "700": {
     fontFamily: fonts.display,
     fontSize: "24px",
-    fontWeight: 700,
+    fontWeight: 800,
     lineHeight: "28px",
     letterSpacing: "-0.01em"
     // marginTop: '40px',

@@ -6,9 +6,9 @@ const FormFieldLabel = ({ label, ...rest }) => (
   <Heading
     data-fresco-id="formField.label"
     as="label"
-    size={400}
-    display="inline-block"
+    size={300}
     mb="spacing.1"
+    color="gray.8"
     {...rest}
   >
     {label}

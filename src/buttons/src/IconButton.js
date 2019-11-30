@@ -1,9 +1,9 @@
-import React from 'react';
-import { mdiCheckCircle } from '@mdi/js';
+import React from "react";
+import { mdiCheckCircle } from "@mdi/js";
 
-import { Icon } from '../../icon';
+import { Icon } from "../../icon";
 
-import Button from './Button';
+import Button from "./Button";
 
 const getIconSizeForButton = height => {
   if (height <= 28) return 14;
@@ -37,11 +37,10 @@ const IconButton = ({ height, icon, label, ...rest }) => {
 };
 
 IconButton.defaultProps = {
-  appearance: 'default',
-  borderRadius: '50%',
+  appearance: "default",
   height: 40,
   icon: mdiCheckCircle,
-  intent: 'default',
+  intent: "default"
 };
 
 export default IconButton;

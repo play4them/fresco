@@ -1,17 +1,17 @@
-import React from 'react';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { mdiContentCopy } from '@mdi/js';
+import React from "react";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { mdiContentCopy } from "@mdi/js";
 
-import { Box } from '../../box';
-import { IconButton } from '../../buttons';
-import { Text } from '../../typography';
+import { Box } from "../../box";
+import { IconButton } from "../../buttons";
+import { Text } from "../../typography";
 
 const MultiLineCodeSnippet = ({ children }) => (
   <Box
     data-fresco-id="multiLineCodeSnippet"
     position="relative"
     borderRadius="3px"
-    bg="gray.1"
+    bg="blue.0"
   >
     <Box
       data-fresco-id="multiLineCodeSnippet.container"
@@ -24,7 +24,7 @@ const MultiLineCodeSnippet = ({ children }) => (
         as="code"
         size={300}
         fontFamily="mono"
-        color="black"
+        color="blue.7"
       >
         <Box as="pre" m={0}>
           {children}
@@ -37,7 +37,7 @@ const MultiLineCodeSnippet = ({ children }) => (
         data-fresco-id="multiLineCodeSnippet.copyToClipboard"
         label="Copy to clipboard"
         icon={mdiContentCopy}
-        intent="default"
+        intent="primary"
         appearance="minimal"
         position="absolute"
         top={0}
