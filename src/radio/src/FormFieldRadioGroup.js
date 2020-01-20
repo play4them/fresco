@@ -19,7 +19,7 @@ const FormFieldRadioGroup = ({
   ...rest
 }) => {
   return (
-    <Box data-fresco-id="formFieldRadioGroup" {...rest}>
+    <Box data-playground-id="formFieldRadioGroup" {...rest}>
       {label && <FormFieldLabel label={label} />}
       {description && <FormFieldDescription description={description} />}
       <RadioGroup {...radioGroupProps} />

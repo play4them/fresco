@@ -34,13 +34,13 @@ const Select = ({ children, height, id, round, ...rest }) => {
 
   return (
     <Box
-      data-fresco-id="select"
+      data-playground-id="select"
       position="relative"
       display="inline-flex"
       {...rest}
     >
       <Text
-        data-fresco-id="select.control"
+        data-playground-id="select.control"
         as="select"
         id={id}
         size={ts}
@@ -64,7 +64,7 @@ const Select = ({ children, height, id, round, ...rest }) => {
         {children}
       </Text>
       <Icon
-        data-fresco-id="select.icon"
+        data-playground-id="select.icon"
         as="span"
         symbol={mdiMenuDown}
         size={is}

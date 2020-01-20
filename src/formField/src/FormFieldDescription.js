@@ -4,7 +4,7 @@ import { Text } from "../../typography";
 
 const FormFieldDescription = ({ description, ...rest }) => (
   <Text
-    data-fresco-id="formField.description"
+    data-playground-id="formField.description"
     as="p"
     size={300}
     mb="spacing.2"

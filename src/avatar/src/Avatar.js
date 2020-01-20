@@ -23,9 +23,9 @@ const getTextSizeForAvatarSize = size => {
 };
 
 const Avatar = ({ bg, borderRadius, color, image, name, size, ...rest }) => (
-  <Box data-fresco-id="avatar" title={name && name} width={size} {...rest}>
+  <Box data-playground-id="avatar" title={name && name} width={size} {...rest}>
     <Box
-      data-fresco-id="avatar.setSize"
+      data-playground-id="avatar.setSize"
       position="relative"
       pb="100%"
       borderRadius={borderRadius}
@@ -34,7 +34,7 @@ const Avatar = ({ bg, borderRadius, color, image, name, size, ...rest }) => (
     >
       {image && (
         <Box
-          data-fresco-id="avatar.image"
+          data-playground-id="avatar.image"
           as="img"
           src={image}
           position="absolute"
@@ -50,7 +50,7 @@ const Avatar = ({ bg, borderRadius, color, image, name, size, ...rest }) => (
       )}
       {!image && name && (
         <Text
-          data-fresco-id="avatar.initials"
+          data-playground-id="avatar.initials"
           children={getInitials(name)}
           size={getTextSizeForAvatarSize(size)}
           position="absolute"

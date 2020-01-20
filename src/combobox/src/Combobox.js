@@ -29,12 +29,12 @@ const getIconSizeForButton = height => {
 
 const Popover = ({ children }) => (
   <Box
-    data-fresco-id="combobox.popover"
+    data-playground-id="combobox.popover"
     as={Reach.ComboboxPopover}
     mt="spacing.2"
     p="layout.1"
     borderRadius="5px"
-    bg="white"
+    bg="gray.0"
     boxShadow="elevations.3"
   >
     {children}
@@ -44,7 +44,7 @@ const Popover = ({ children }) => (
 // List
 const List = ({ children }) => (
   <Box
-    data-fresco-id="combobox.list"
+    data-playground-id="combobox.list"
     as={Reach.ComboboxList}
     m={0}
     p={0}
@@ -57,7 +57,7 @@ const List = ({ children }) => (
 // Option
 const Option = ({ decoration, value }) => (
   <Text
-    data-fresco-id="combobox.list.item"
+    data-playground-id="combobox.list.item"
     as={Reach.ComboboxOption}
     value={value}
     size={500}
@@ -102,7 +102,7 @@ const Combobox = ({
 
   return (
     <Reach.Combobox
-      data-fresco-id="combobox"
+      data-playground-id="combobox"
       openOnFocus={openOnFocus}
       css={css({
         position: "relative",
@@ -119,7 +119,7 @@ const Combobox = ({
     >
       {iconBefore && (
         <Box
-          data-fresco-id="combobox.iconBefore"
+          data-playground-id="combobox.iconBefore"
           position="absolute"
           top={0}
           left={0}
@@ -134,7 +134,7 @@ const Combobox = ({
         </Box>
       )}
       <Text
-        data-fresco-id="combobox.input"
+        data-playground-id="combobox.input"
         as={Reach.ComboboxInput}
         placeholder={placeholder}
         size={ts}
@@ -146,11 +146,11 @@ const Combobox = ({
         pl={iconBefore ? height + "px" : p + "px"}
         py="10px"
         border={0}
-        color="black"
+        color="gray.9"
         bg="transparent"
         css={css({
           "::placeholder": {
-            color: "black",
+            color: "gray.9",
             opacity: 1 / 3
           },
           ":focus": {
@@ -161,7 +161,7 @@ const Combobox = ({
       />
       {iconAfter && (
         <Box
-          data-fresco-id="combobox.iconAfter"
+          data-playground-id="combobox.iconAfter"
           position="absolute"
           top={0}
           right={0}

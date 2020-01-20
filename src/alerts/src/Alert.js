@@ -42,7 +42,7 @@ const Alert = ({ buttonProps, children, intent, title, ...rest }) => {
 
   return (
     <Box
-      data-fresco-id="alert"
+      data-playground-id="alert"
       as={ReachAlert}
       role="alert"
       position="relative"
@@ -51,13 +51,13 @@ const Alert = ({ buttonProps, children, intent, title, ...rest }) => {
       pl="spacing.5"
       pr="spacing.8"
       borderRadius="4px"
-      bg="white"
+      bg="gray.0"
       overflow="hidden"
       boxShadow="elevations.0"
       {...rest}
     >
       <Box
-        data-fresco-id="alert.highlight"
+        data-playground-id="alert.highlight"
         position="absolute"
         top={0}
         left={0}
@@ -68,7 +68,7 @@ const Alert = ({ buttonProps, children, intent, title, ...rest }) => {
 
       {intents[intent].icon && (
         <Box
-          data-fresco-id="alert.icon"
+          data-playground-id="alert.icon"
           display="flex"
           justifyContent="center"
           alignItems="center"
@@ -83,7 +83,7 @@ const Alert = ({ buttonProps, children, intent, title, ...rest }) => {
         </Box>
       )}
 
-      <Box data-fresco-id="alert.content" flex={1} minHeight={40} py="10px">
+      <Box data-playground-id="alert.content" flex={1} minHeight={40} py="10px">
         <Box display="flex" alignItems="center" flexWrap="wrap" flex={1}>
           {title && (
             <Heading as="h4" size={400} mr={children && "spacing.2"}>
@@ -104,7 +104,7 @@ const Alert = ({ buttonProps, children, intent, title, ...rest }) => {
       </Box>
 
       <Box
-        data-fresco-id="alert.button"
+        data-playground-id="alert.button"
         position="absolute"
         top={0}
         right={0}

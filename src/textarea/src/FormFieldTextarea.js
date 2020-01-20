@@ -22,7 +22,7 @@ const FormFieldTextarea = ({
   const uid = uuidv4();
 
   return (
-    <Box data-fresco-id="formFieldTextarea" {...rest}>
+    <Box data-playground-id="formFieldTextarea" {...rest}>
       {label && <FormFieldLabel label={label} htmlFor={uid} />}
       {description && <FormFieldDescription description={description} />}
       <Textarea id={uid} {...textareaProps} />

@@ -27,7 +27,7 @@ const FormFieldValidationMessage = ({ validationMessage, ...rest }) => {
 
   return (
     <Flex
-      data-fresco-id="formField.validationMessage"
+      data-playground-id="formField.validationMessage"
       alignItems="flex-start"
       mt="spacing.2"
     >

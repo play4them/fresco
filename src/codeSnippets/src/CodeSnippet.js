@@ -10,14 +10,14 @@ const height = 32;
 
 const CodeSnippet = ({ children }) => (
   <Box
-    data-fresco-id="codeSnippet"
+    data-playground-id="codeSnippet"
     position="relative"
     display="flex"
     borderRadius="3px"
     bg="blue.0"
   >
     <Box
-      data-fresco-id="codeSnippet.container"
+      data-playground-id="codeSnippet.container"
       display="flex"
       alignItems="center"
       flex={1}
@@ -25,7 +25,7 @@ const CodeSnippet = ({ children }) => (
       overflowX="auto"
     >
       <Text
-        data-fresco-id="codeSnippet.code"
+        data-playground-id="codeSnippet.code"
         as="code"
         size={300}
         px="spacing.4"
@@ -39,7 +39,7 @@ const CodeSnippet = ({ children }) => (
     </Box>
 
     <Box
-      data-fresco-id="codeSnippet.gradient"
+      data-playground-id="codeSnippet.gradient"
       position="absolute"
       top={0}
       right={height}
@@ -53,7 +53,7 @@ const CodeSnippet = ({ children }) => (
 
     <CopyToClipboard text={children}>
       <IconButton
-        data-fresco-id="codeSnippet.copyToClipboard"
+        data-playground-id="codeSnippet.copyToClipboard"
         label="Copy to clipboard"
         icon={mdiContentCopy}
         intent="primary"

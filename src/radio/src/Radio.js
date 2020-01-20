@@ -22,7 +22,7 @@ const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
 
   return (
     <Text
-      data-fresco-id="radio"
+      data-playground-id="radio"
       role="radio"
       as="label"
       htmlFor={uid}
@@ -33,7 +33,7 @@ const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
       css={{ userSelect: "none", cursor: "pointer" }}
     >
       <Box
-        data-fresco-id="radio.hiddenInput"
+        data-playground-id="radio.hiddenInput"
         role="presentation"
         as="input"
         id={uid}
@@ -79,7 +79,7 @@ const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
         {...rest}
       />
       <Box
-        data-fresco-id="radio.control"
+        data-playground-id="radio.control"
         position="absolute"
         top="spacing.1"
         left={0}
@@ -87,10 +87,10 @@ const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
         width={cs}
         height={cs}
         borderRadius={9999}
-        color="white"
+        color="gray.0"
         bg={bg}
       />
-      <Box data-fresco-id="radio.text" as="span">
+      <Box data-playground-id="radio.text" as="span">
         {children}
       </Box>
     </Text>
@@ -98,7 +98,7 @@ const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
 };
 
 Radio.defaultProps = {
-  bg: "white",
+  bg: "gray.0",
   size: 400
 };
 

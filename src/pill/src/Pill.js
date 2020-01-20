@@ -6,7 +6,7 @@ import pillStyles from "./pillStyles";
 
 const Pill = ({ appearance, children, intent, ...rest }) => (
   <Text
-    data-fresco-id="pill"
+    data-playground-id="pill"
     as="div"
     display="inline-block"
     minWidth="16px"

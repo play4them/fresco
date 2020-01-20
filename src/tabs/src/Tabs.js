@@ -10,7 +10,7 @@ import { Heading } from "../../typography";
 
 const Tab = ({ children, isSelected, ref, ...rest }) => (
   <Reach.Tab
-    data-fresco-id="tab"
+    data-playground-id="tab"
     css={css({
       position: "relative",
       height: 48,
@@ -28,7 +28,7 @@ const Tab = ({ children, isSelected, ref, ...rest }) => (
     {...rest}
   >
     <Heading
-      data-fresco-id="tab.label"
+      data-playground-id="tab.label"
       as="span"
       size={400}
       lineHeight="48px"
@@ -38,7 +38,7 @@ const Tab = ({ children, isSelected, ref, ...rest }) => (
       {children}
     </Heading>
     <Box
-      data-fresco-id="tab.highlight"
+      data-playground-id="tab.highlight"
       as="span"
       position="absolute"
       bottom={0}
@@ -53,10 +53,10 @@ const Tab = ({ children, isSelected, ref, ...rest }) => (
 
 const Tabs = ({ data, ...rest }) => {
   return (
-    <Reach.Tabs data-fresco-id="tabs" {...rest}>
+    <Reach.Tabs data-playground-id="tabs" {...rest}>
       {/* Tabs */}
       <Reach.TabList
-        data-fresco-id="tabs.list"
+        data-playground-id="tabs.list"
         css={css({
           display: "flex",
           width: "100%",
@@ -69,9 +69,9 @@ const Tabs = ({ data, ...rest }) => {
         ))}
       </Reach.TabList>
       {/* Panels */}
-      <Reach.TabPanels data-fresco-id="tabs.panels">
+      <Reach.TabPanels data-playground-id="tabs.panels">
         {data.map((tab, index) => (
-          <Reach.TabPanel data-fresco-id="tabs.panels.item" key={index}>
+          <Reach.TabPanel data-playground-id="tabs.panels.item" key={index}>
             {tab.content}
           </Reach.TabPanel>
         ))}

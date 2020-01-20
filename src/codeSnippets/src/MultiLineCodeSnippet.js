@@ -8,19 +8,19 @@ import { Text } from "../../typography";
 
 const MultiLineCodeSnippet = ({ children }) => (
   <Box
-    data-fresco-id="multiLineCodeSnippet"
+    data-playground-id="multiLineCodeSnippet"
     position="relative"
     borderRadius="3px"
     bg="blue.0"
   >
     <Box
-      data-fresco-id="multiLineCodeSnippet.container"
+      data-playground-id="multiLineCodeSnippet.container"
       flex={1}
       p="spacing.4"
       overflow="auto"
     >
       <Text
-        data-fresco-id="multiLineCodeSnippet.code"
+        data-playground-id="multiLineCodeSnippet.code"
         as="code"
         size={300}
         fontFamily="mono"
@@ -34,7 +34,7 @@ const MultiLineCodeSnippet = ({ children }) => (
 
     <CopyToClipboard text={children}>
       <IconButton
-        data-fresco-id="multiLineCodeSnippet.copyToClipboard"
+        data-playground-id="multiLineCodeSnippet.copyToClipboard"
         label="Copy to clipboard"
         icon={mdiContentCopy}
         intent="primary"

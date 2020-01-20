@@ -1,8 +1,8 @@
-import React from 'react';
-import * as Reach from '@reach/dialog';
-import { useTheme } from 'emotion-theming';
-import css from '@styled-system/css';
-import { rgba } from 'polished';
+import React from "react";
+import * as Reach from "@reach/dialog";
+import { useTheme } from "emotion-theming";
+import css from "@styled-system/css";
+import { rgba } from "polished";
 
 const Dialog = ({ ...rest }) => {
   const theme = useTheme();
@@ -17,16 +17,16 @@ const Dialog = ({ ...rest }) => {
 
       <Reach.DialogOverlay
         css={css({
-          position: 'fixed',
+          position: "fixed",
           top: 0,
           left: 0,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: ['flex-end', 'center'],
-          width: '100%',
-          height: '100%',
-          p: 'spacing.3',
-          bg: rgba(theme.colors.black, 0.5),
+          display: "flex",
+          justifyContent: "center",
+          alignItems: ["flex-end", "center"],
+          width: "100%",
+          height: "100%",
+          p: "spacing.3",
+          bg: rgba(theme.colors.gray[9], 0.5)
         })}
         isOpen={showDialog}
         onDismiss={close}
@@ -34,11 +34,11 @@ const Dialog = ({ ...rest }) => {
       >
         <Reach.DialogContent
           css={css({
-            display: 'inline-block',
-            p: 'spacing.6',
-            borderRadius: '24px',
-            bg: 'white',
-            boxShadow: 'elevations.4',
+            display: "inline-block",
+            p: "spacing.6",
+            borderRadius: "24px",
+            bg: "gray.0",
+            boxShadow: "elevations.4"
           })}
         >
           <p>

@@ -23,14 +23,14 @@ const loadingCircleKeyframes = keyframes`
 
 const Spinner = ({ color, size, ...rest }) => (
   <Box
-    data-fresco-id="spinner"
+    data-playground-id="spinner"
     width={size}
     height={size}
     lineHeight={0}
     {...rest}
   >
     <Box
-      data-fresco-id="spinner.svg"
+      data-playground-id="spinner.svg"
       as="svg"
       x="0px"
       y="0px"
@@ -38,7 +38,7 @@ const Spinner = ({ color, size, ...rest }) => (
       css={{ animation: `${loadingKeyframes} 2s linear infinite` }}
     >
       <Box
-        data-fresco-id="spinner.circle"
+        data-playground-id="spinner.circle"
         as="circle"
         cx="75"
         cy="75"

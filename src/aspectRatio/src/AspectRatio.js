@@ -7,14 +7,14 @@ const AspectRatio = ({ children, ratio, ...rest }) => {
 
   return (
     <Box
-      data-fresco-id="aspectRatio"
+      data-playground-id="aspectRatio"
       position="relative"
       width="100%"
       pb={(padding[1] / padding[0]) * 100 + '%'}
       {...rest}
     >
       <Box
-        data-fresco-id="aspectRatio.setSize"
+        data-playground-id="aspectRatio.setSize"
         position="absolute"
         top={0}
         left={0}

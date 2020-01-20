@@ -4,7 +4,7 @@ import { Box } from "../../box";
 
 const InlineCodeSnippet = ({ children }) => (
   <Box
-    data-fresco-id="inlineCodeSnippet"
+    data-playground-id="inlineCodeSnippet"
     as="button"
     position="relative"
     display="inline"
@@ -19,7 +19,7 @@ const InlineCodeSnippet = ({ children }) => (
     color="blue.7"
     bg="blue.0"
   >
-    <Box data-fresco-id="inlineCodeSnippet.code" as="code" px="spacing.2">
+    <Box data-playground-id="inlineCodeSnippet.code" as="code" px="spacing.2">
       {children}
     </Box>
   </Box>

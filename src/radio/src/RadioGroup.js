@@ -5,13 +5,13 @@ import { Box } from "../../box";
 
 import Radio from "./Radio";
 
-const RadioGroup = ({ options, stack }) => {
+const RadioGroup = ({ options, stack, onChange }) => {
   const uid = uuidv4();
 
   return (
-    <Box data-fresco-id="radioGroup" overflow="hidden">
+    <Box data-playground-id="radioGroup" overflow="hidden">
       <Box
-        data-fresco-id="radioGroup.list"
+        data-playground-id="radioGroup.list"
         role="radiogroup"
         as="ul"
         display="flex"
@@ -27,8 +27,8 @@ const RadioGroup = ({ options, stack }) => {
         }}
       >
         {options.map((option, i) => (
-          <Box data-fresco-id="radioGroup.item" as="li" key={i}>
-            <Radio name={uid} value={option.value}>
+          <Box data-playground-id="radioGroup.item" as="li" key={i}>
+            <Radio name={uid} value={option.value} onChange={onChange}>
               {option.label}
             </Radio>
           </Box>

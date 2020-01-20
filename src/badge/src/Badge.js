@@ -5,7 +5,7 @@ import badgeStyles from './badgeStyles';
 
 const Badge = ({ appearance, children, intent, ...rest }) => (
   <Text
-    data-fresco-id="badge"
+    data-playground-id="badge"
     as="div"
     display="inline-block"
     px="spacing.2"

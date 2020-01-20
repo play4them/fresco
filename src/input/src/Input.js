@@ -1,15 +1,15 @@
-import React from 'react';
-import { useTheme } from 'emotion-theming';
-import css from '@styled-system/css';
-import { rgba } from 'polished';
+import React from "react";
+import { useTheme } from "emotion-theming";
+import css from "@styled-system/css";
+import { rgba } from "polished";
 
-import { Box } from '../../box';
-import { Icon } from '../../icon';
-import { Text } from '../../typography';
+import { Box } from "../../box";
+import { Icon } from "../../icon";
+import { Text } from "../../typography";
 
 const getBorderRadiusForControlHeight = height => {
-  if (height <= 40) return '3px';
-  return '5px';
+  if (height <= 40) return "3px";
+  return "5px";
 };
 
 const getTextSizeForControlHeight = height => {
@@ -35,7 +35,7 @@ const Input = ({ bg, height, iconAfter, iconBefore, ...rest }) => {
 
   return (
     <Box
-      data-fresco-id="input"
+      data-playground-id="input"
       position="relative"
       borderRadius={br}
       bg={bg}
@@ -49,7 +49,7 @@ const Input = ({ bg, height, iconAfter, iconBefore, ...rest }) => {
     >
       {iconBefore && (
         <Box
-          data-fresco-id="input.iconBefore"
+          data-playground-id="input.iconBefore"
           position="absolute"
           top={0}
           left={0}
@@ -58,39 +58,39 @@ const Input = ({ bg, height, iconAfter, iconBefore, ...rest }) => {
           alignItems="center"
           width={height}
           height={height}
-          css={{ userSelect: 'none', pointerEvents: 'none' }}
+          css={{ userSelect: "none", pointerEvents: "none" }}
         >
           <Icon symbol={iconBefore} size={is} color="gray.4" />
         </Box>
       )}
       <Text
-        data-fresco-id="input.field"
+        data-playground-id="input.field"
         as="input"
         size={ts}
         display="block"
         width="100%"
         height={height}
         m={0}
-        pr={iconAfter ? height + 'px' : p + 'px'}
-        pl={iconBefore ? height + 'px' : p + 'px'}
+        pr={iconAfter ? height + "px" : p + "px"}
+        pl={iconBefore ? height + "px" : p + "px"}
         py="10px"
         border={0}
-        color="black"
+        color="gray.9"
         bg="transparent"
         css={css({
-          '::placeholder': {
-            color: 'black',
-            opacity: 1 / 3,
+          "::placeholder": {
+            color: "gray.9",
+            opacity: 1 / 3
           },
-          ':focus': {
-            outline: 0,
-          },
+          ":focus": {
+            outline: 0
+          }
         })}
         {...rest}
       />
       {iconAfter && (
         <Box
-          data-fresco-id="input.iconAfter"
+          data-playground-id="input.iconAfter"
           position="absolute"
           top={0}
           right={0}
@@ -99,7 +99,7 @@ const Input = ({ bg, height, iconAfter, iconBefore, ...rest }) => {
           alignItems="center"
           width={height}
           height={height}
-          css={{ userSelect: 'none', pointerEvents: 'none' }}
+          css={{ userSelect: "none", pointerEvents: "none" }}
         >
           <Icon symbol={iconAfter} size={is} color="gray.4" />
         </Box>
@@ -109,9 +109,9 @@ const Input = ({ bg, height, iconAfter, iconBefore, ...rest }) => {
 };
 
 Input.defaultProps = {
-  bg: 'gray.0',
+  bg: "gray.0",
   height: 40,
-  type: 'text',
+  type: "text"
 };
 
 export default Input;

@@ -29,7 +29,7 @@ const Heading = styled('h2', { shouldForwardProp })(
 );
 
 Heading.defaultProps = {
-  'data-fresco-id': 'typography.heading',
+  'data-playground-id': 'typography.heading',
   mt: 0,
   mb: 0,
   size: 500,

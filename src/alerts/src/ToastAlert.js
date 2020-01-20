@@ -8,7 +8,7 @@ import Alert from './Alert';
 const ToastAlert = ({ ...rest }) => (
   <Portal>
     <Box
-      data-fresco-id="toastAlert"
+      data-playground-id="toastAlert"
       position="fixed"
       top="spacing.3"
       left={0}

@@ -1,6 +1,4 @@
 export default {
-  white: "#ffffff",
-  black: "#050505",
   gray: [
     // https://www.colorbox.io/#steps=10#hue_start=224#hue_end=248#hue_curve=easeInQuad#sat_start=0#sat_end=5#sat_curve=easeOutQuad#sat_rate=102#lum_start=100#lum_end=2#lum_curve=easeOutQuad#minor_steps_map=none
     "#ffffff",

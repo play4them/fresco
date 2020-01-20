@@ -1,12 +1,12 @@
-import React from 'react';
-import VisuallyHidden from '@reach/visually-hidden';
-import * as MaterialIcon from '@mdi/react';
+import React from "react";
+import VisuallyHidden from "@reach/visually-hidden";
+import * as MaterialIcon from "@mdi/react";
 
-import { Box } from '../../box';
+import { Box } from "../../box";
 
 const Icon = ({ color, label, size, symbol, ...rest }) => (
   <Box
-    data-fresco-id="icon"
+    data-playground-id="icon"
     width={size}
     height={size}
     color={color}
@@ -19,18 +19,18 @@ const Icon = ({ color, label, size, symbol, ...rest }) => (
       css={{
         width: size,
         height: size,
-        verticalAlign: 'top',
-        color: 'inherit',
-        fill: 'currentColor',
+        verticalAlign: "top",
+        color: "inherit",
+        fill: "currentColor"
       }}
     />
   </Box>
 );
 
 Icon.defaultProps = {
-  color: 'black',
+  color: "gray.9",
   size: 24,
-  symbol: '',
+  symbol: ""
 };
 
 export default Icon;

@@ -36,7 +36,7 @@ const Toggle = ({ children, size, width, ...rest }) => {
 
   return (
     <Text
-      data-fresco-id="toggle"
+      data-playground-id="toggle"
       as="label"
       htmlFor={uid}
       size={size}
@@ -46,12 +46,12 @@ const Toggle = ({ children, size, width, ...rest }) => {
       css={{ userSelect: "none", cursor: "pointer" }}
     >
       {children && (
-        <Box data-fresco-id="toggle.label" flex={1} pt={p}>
+        <Box data-playground-id="toggle.label" flex={1} pt={p}>
           {children}
         </Box>
       )}
       <Box
-        data-fresco-id="toggle.control"
+        data-playground-id="toggle.control"
         width={controlWidth}
         height={controlHeight}
         ml={children && "spacing.3"}

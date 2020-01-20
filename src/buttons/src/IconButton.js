@@ -18,14 +18,14 @@ const IconButton = ({ height, icon, label, ...rest }) => {
 
   return (
     <Button
-      data-fresco-id="buttons.iconButton"
+      data-playground-id="buttons.iconButton"
       width={height}
       height={height}
       px={0}
       {...rest}
     >
       <Icon
-        data-fresco-id="buttons.iconButton.icon"
+        data-playground-id="buttons.iconButton.icon"
         as="span"
         symbol={icon}
         label={label}
