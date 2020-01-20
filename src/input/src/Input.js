@@ -35,7 +35,7 @@ const Input = ({ bg, height, iconAfter, iconBefore, ...rest }) => {
 
   return (
     <Box
-      data-playground-id="input"
+      data-fresco-id="input"
       position="relative"
       borderRadius={br}
       bg={bg}
@@ -49,7 +49,7 @@ const Input = ({ bg, height, iconAfter, iconBefore, ...rest }) => {
     >
       {iconBefore && (
         <Box
-          data-playground-id="input.iconBefore"
+          data-fresco-id="input.iconBefore"
           position="absolute"
           top={0}
           left={0}
@@ -64,7 +64,7 @@ const Input = ({ bg, height, iconAfter, iconBefore, ...rest }) => {
         </Box>
       )}
       <Text
-        data-playground-id="input.field"
+        data-fresco-id="input.field"
         as="input"
         size={ts}
         display="block"
@@ -90,7 +90,7 @@ const Input = ({ bg, height, iconAfter, iconBefore, ...rest }) => {
       />
       {iconAfter && (
         <Box
-          data-playground-id="input.iconAfter"
+          data-fresco-id="input.iconAfter"
           position="absolute"
           top={0}
           right={0}

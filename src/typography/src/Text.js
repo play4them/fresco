@@ -21,7 +21,7 @@ const Text = styled("p", { shouldForwardProp })(
 );
 
 Text.defaultProps = {
-  "data-playground-id": "typography.text",
+  "data-fresco-id": "typography.text",
   mt: 0,
   mb: 0,
   size: 400

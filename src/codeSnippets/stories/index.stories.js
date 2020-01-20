@@ -10,7 +10,7 @@ export default {
 export const single = () => (
   <CodeSnippet>
     {`<Box
-  data-playground-id="codeSnippet"
+  data-fresco-id="codeSnippet"
   position="relative"
   display="flex"
   pl="spacing.4"
@@ -20,13 +20,13 @@ export const single = () => (
   bg="gray.1"
 >
   <Box
-    data-playground-id="codeSnippet.container"
+    data-fresco-id="codeSnippet.container"
     display="flex"
     alignItems="center"
     flex={1}
   >
     <Text
-      data-playground-id="codeSnippet.code"
+      data-fresco-id="codeSnippet.code"
       as="code"
       size={400}
       px="spacing.2"
@@ -63,7 +63,7 @@ export const inline = () => (
 export const multiLine = () => (
   <MultiLineCodeSnippet>
     {`<Box
-  data-playground-id="codeSnippet"
+  data-fresco-id="codeSnippet"
   position="relative"
   display="flex"
   pl="spacing.4"
@@ -73,13 +73,13 @@ export const multiLine = () => (
   bg="gray.1"
 >
   <Box
-    data-playground-id="codeSnippet.container"
+    data-fresco-id="codeSnippet.container"
     display="flex"
     alignItems="center"
     flex={1}
   >
     <Text
-      data-playground-id="codeSnippet.code"
+      data-fresco-id="codeSnippet.code"
       as="code"
       size={400}
       px="spacing.2"

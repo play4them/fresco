@@ -22,7 +22,7 @@ const Checkbox = ({ bg, children, indeterminate, size, ...rest }) => {
 
   return (
     <Text
-      data-playground-id="checkbox"
+      data-fresco-id="checkbox"
       role="checkbox"
       as="label"
       htmlFor={uid}
@@ -33,7 +33,7 @@ const Checkbox = ({ bg, children, indeterminate, size, ...rest }) => {
       css={{ userSelect: "none", cursor: "pointer" }}
     >
       <Box
-        data-playground-id="checkbox.hiddenInput"
+        data-fresco-id="checkbox.hiddenInput"
         as="input"
         id={uid}
         type="checkbox"
@@ -90,7 +90,7 @@ const Checkbox = ({ bg, children, indeterminate, size, ...rest }) => {
         {...rest}
       />
       <Box
-        data-playground-id="checkbox.control"
+        data-fresco-id="checkbox.control"
         position="absolute"
         top="spacing.1"
         left={0}
@@ -101,7 +101,7 @@ const Checkbox = ({ bg, children, indeterminate, size, ...rest }) => {
         color="gray.0"
         bg={bg}
       />
-      <Box data-playground-id="checkbox.text" as="span">
+      <Box data-fresco-id="checkbox.text" as="span">
         {children}
       </Box>
     </Text>

@@ -6,7 +6,7 @@ import { Box } from "../../box";
 
 const Icon = ({ color, label, size, symbol, ...rest }) => (
   <Box
-    data-playground-id="icon"
+    data-fresco-id="icon"
     width={size}
     height={size}
     color={color}

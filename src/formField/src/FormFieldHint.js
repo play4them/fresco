@@ -4,7 +4,7 @@ import { Text } from "../../typography";
 
 const FormFieldHint = ({ hint, ...rest }) => (
   <Text
-    data-playground-id="formField.hint"
+    data-fresco-id="formField.hint"
     as="p"
     size={300}
     mt="spacing.2"

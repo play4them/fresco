@@ -48,7 +48,7 @@ const Button = React.forwardRef(
 
     return (
       <Text
-        data-playground-id="buttons.button"
+        data-fresco-id="buttons.button"
         ref={ref}
         size={ts}
         position="relative"
@@ -75,7 +75,7 @@ const Button = React.forwardRef(
       >
         {iconBefore && (
           <Icon
-            data-playground-id="buttons.button.iconBefore"
+            data-fresco-id="buttons.button.iconBefore"
             as="span"
             symbol={iconBefore}
             size={is}
@@ -87,7 +87,7 @@ const Button = React.forwardRef(
         {children}
         {iconAfter && (
           <Icon
-            data-playground-id="buttons.button.iconAfter"
+            data-fresco-id="buttons.button.iconAfter"
             as="span"
             symbol={iconAfter}
             size={is}

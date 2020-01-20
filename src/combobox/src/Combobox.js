@@ -29,7 +29,7 @@ const getIconSizeForButton = height => {
 
 const Popover = ({ children }) => (
   <Box
-    data-playground-id="combobox.popover"
+    data-fresco-id="combobox.popover"
     as={Reach.ComboboxPopover}
     mt="spacing.2"
     p="layout.1"
@@ -44,7 +44,7 @@ const Popover = ({ children }) => (
 // List
 const List = ({ children }) => (
   <Box
-    data-playground-id="combobox.list"
+    data-fresco-id="combobox.list"
     as={Reach.ComboboxList}
     m={0}
     p={0}
@@ -57,7 +57,7 @@ const List = ({ children }) => (
 // Option
 const Option = ({ decoration, value }) => (
   <Text
-    data-playground-id="combobox.list.item"
+    data-fresco-id="combobox.list.item"
     as={Reach.ComboboxOption}
     value={value}
     size={500}
@@ -102,7 +102,7 @@ const Combobox = ({
 
   return (
     <Reach.Combobox
-      data-playground-id="combobox"
+      data-fresco-id="combobox"
       openOnFocus={openOnFocus}
       css={css({
         position: "relative",
@@ -119,7 +119,7 @@ const Combobox = ({
     >
       {iconBefore && (
         <Box
-          data-playground-id="combobox.iconBefore"
+          data-fresco-id="combobox.iconBefore"
           position="absolute"
           top={0}
           left={0}
@@ -134,7 +134,7 @@ const Combobox = ({
         </Box>
       )}
       <Text
-        data-playground-id="combobox.input"
+        data-fresco-id="combobox.input"
         as={Reach.ComboboxInput}
         placeholder={placeholder}
         size={ts}
@@ -161,7 +161,7 @@ const Combobox = ({
       />
       {iconAfter && (
         <Box
-          data-playground-id="combobox.iconAfter"
+          data-fresco-id="combobox.iconAfter"
           position="absolute"
           top={0}
           right={0}

@@ -17,7 +17,7 @@ const Box = styled("div", { shouldForwardProp })(
 );
 
 Box.defaultProps = {
-  "data-playground-id": "📦"
+  "data-fresco-id": "📦"
 };
 
 export default Box;

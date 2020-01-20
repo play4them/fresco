@@ -9,7 +9,7 @@ import { mdiClose } from "@mdi/js";
 const CornerDialog = ({ buttonProps, children, title, ...rest }) => (
   <Portal>
     <Box
-      data-playground-id="cornerDialog"
+      data-fresco-id="cornerDialog"
       position="fixed"
       right={["layout.1", "layout.3"]}
       bottom={["layout.1", "layout.3"]}
@@ -19,7 +19,7 @@ const CornerDialog = ({ buttonProps, children, title, ...rest }) => (
       {...rest}
     >
       <Box
-        data-playground-id="cornerDialog.inner"
+        data-fresco-id="cornerDialog.inner"
         display="inline-block"
         width="100%"
         maxWidth={360}

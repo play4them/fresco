@@ -4,7 +4,7 @@ import { Box } from "../../box";
 
 const Card = ({ children, elevation, ...rest }) => (
   <Box
-    data-playground-id="card"
+    data-fresco-id="card"
     boxShadow={"elevations." + elevation}
     {...rest}
   >

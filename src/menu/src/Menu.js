@@ -7,7 +7,7 @@ import { Heading, Text } from "../../typography";
 
 const Item = ({ children, ...rest }) => (
   <Text
-    data-playground-id="menu.list.item"
+    data-fresco-id="menu.list.item"
     size={400}
     px="layout.2"
     py="spacing.2"
@@ -23,7 +23,7 @@ const Menu = () => {
     <Reach.Menu>
       <Button as={Reach.MenuButton}>Actions</Button>
       <Box
-        data-playground-id="menu.popover"
+        data-fresco-id="menu.popover"
         as={Reach.MenuPopover}
         display="inline-block"
         mt="spacing.2"

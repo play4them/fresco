@@ -22,7 +22,7 @@ const FormFieldInput = ({
   const uid = uuidv4();
 
   return (
-    <Box data-playground-id="formFieldInput" {...rest}>
+    <Box data-fresco-id="formFieldInput" {...rest}>
       {label && <FormFieldLabel label={label} htmlFor={uid} />}
       {description && <FormFieldDescription description={description} />}
       <Input id={uid} {...inputProps} />

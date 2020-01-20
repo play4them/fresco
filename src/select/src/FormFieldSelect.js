@@ -22,7 +22,7 @@ const FormFieldSelect = ({
   const uid = uuidv4();
 
   return (
-    <Box data-playground-id="formFieldSelect" {...rest}>
+    <Box data-fresco-id="formFieldSelect" {...rest}>
       {label && <FormFieldLabel label={label} htmlFor={uid} />}
       {description && <FormFieldDescription description={description} />}
       <Select id={uid} {...selectProps} />

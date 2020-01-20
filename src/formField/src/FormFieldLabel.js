@@ -4,7 +4,7 @@ import { Heading } from "../../typography";
 
 const FormFieldLabel = ({ label, ...rest }) => (
   <Heading
-    data-playground-id="formField.label"
+    data-fresco-id="formField.label"
     as="label"
     size={300}
     mb="spacing.1"

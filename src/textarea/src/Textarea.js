@@ -27,7 +27,7 @@ const Textarea = ({ bg, height, ...rest }) => {
 
   return (
     <Box
-      data-playground-id="textarea"
+      data-fresco-id="textarea"
       borderRadius={br}
       bg={bg}
       overflow="hidden"
@@ -39,7 +39,7 @@ const Textarea = ({ bg, height, ...rest }) => {
     `}
     >
       <Text
-        data-playground-id="textarea.field"
+        data-fresco-id="textarea.field"
         as={TextareaAutosize}
         size={ts}
         display="block"

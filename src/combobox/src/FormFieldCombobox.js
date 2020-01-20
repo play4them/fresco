@@ -22,7 +22,7 @@ const FormFieldCombobox = ({
   const uid = uuidv4();
 
   return (
-    <Box data-playground-id="formFieldCombobox" {...rest}>
+    <Box data-fresco-id="formFieldCombobox" {...rest}>
       {label && <FormFieldLabel label={label} htmlFor={"listbox--" + uid} />}
       {description && <FormFieldDescription description={description} />}
       <Combobox id={uid} {...comboboxProps} />
