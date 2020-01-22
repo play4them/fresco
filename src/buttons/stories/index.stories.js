@@ -55,6 +55,16 @@ export const minimalAppearance = () => (
   </>
 );
 
+export const subtleAppearance = () => (
+  <>
+    <Button children="Default" appearance="subtle" />
+    <Button children="Primary" intent="primary" appearance="subtle" />
+    <Button children="Success" intent="success" appearance="subtle" />
+    <Button children="Warning" intent="warning" appearance="subtle" />
+    <Button children="Danger" intent="danger" appearance="subtle" />
+  </>
+);
+
 export const iconDefaultAppearance = () => (
   <>
     <IconButton children="Default" />

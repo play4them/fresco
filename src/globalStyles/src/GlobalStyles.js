@@ -9,7 +9,8 @@ const GlobalStyles = () => (
       body: {
         m: 0,
         fontFamily: "ui",
-        color: "gray.9"
+        color: "gray.9",
+        bg: "gray.0"
       },
       table: { borderCollapse: "collapse" }
     })}

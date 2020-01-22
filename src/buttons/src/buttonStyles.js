@@ -1,3 +1,5 @@
+import { rgba } from "polished";
+
 function buttonStyles(appearance, intent, theme) {
   const intents = {
     default: {
@@ -43,6 +45,11 @@ function buttonStyles(appearance, intent, theme) {
       return {
         color: intents[intent].heavy,
         backgroundColor: "transparent"
+      };
+    case "subtle":
+      return {
+        color: intents[intent].heavy,
+        backgroundColor: rgba(theme.colors.gray[7], 0.075)
       };
     default:
       return {
