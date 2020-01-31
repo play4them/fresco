@@ -7,7 +7,6 @@ export default {
     fontWeight: 400,
     lineHeight: "24px",
     letterSpacing: "-0.0035em"
-    // marginTop: 28,
   },
   "500": {
     fontFamily: fonts.ui,
@@ -15,7 +14,6 @@ export default {
     fontWeight: 400,
     lineHeight: "20px",
     letterSpacing: "-0.0035em"
-    // marginTop: 16,
   },
   // Default
   "400": {
@@ -24,7 +22,6 @@ export default {
     fontWeight: 400,
     lineHeight: "20px",
     letterSpacing: "-0.0035em"
-    // marginTop: 12,
   },
   "300": {
     fontFamily: fonts.ui,
@@ -32,6 +29,5 @@ export default {
     fontWeight: 400,
     lineHeight: "16px",
     letterSpacing: 0
-    // marginTop: 12,
   }
 };

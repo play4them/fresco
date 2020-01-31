@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { useTheme } from "emotion-theming";
 
@@ -41,6 +41,8 @@ const Button = React.forwardRef(
     round,
     ...rest
   }) => {
+    const [isHovering, setIsHovering] = useState(false);
+
     const br = getBorderRadiusForControlHeight(height);
     const is = getIconSizeForButton(height);
     const p = Math.round(height / 3) + "px";
@@ -49,6 +51,7 @@ const Button = React.forwardRef(
     return (
       <Text
         data-fresco-id="buttons.button"
+        className={isHovering === true ? "isHovering" : ""}
         ref={ref}
         size={ts}
         position="relative"
@@ -71,6 +74,8 @@ const Button = React.forwardRef(
           appearance: "none",
           cursor: "pointer"
         }}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
         {...rest}
       >
         {iconBefore && (
