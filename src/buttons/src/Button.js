@@ -7,28 +7,6 @@ import { Text } from "../../typography";
 
 import buttonStyles from "./buttonStyles";
 
-const getBorderRadiusForControlHeight = height => {
-  if (height <= 32) return "3px";
-  return "5px";
-};
-
-const getTextSizeForControlHeight = height => {
-  if (height <= 24) return 300;
-  if (height <= 28) return 300;
-  if (height <= 32) return 400;
-  if (height <= 36) return 400;
-  if (height <= 40) return 400;
-  return 500;
-};
-
-const getIconSizeForButton = height => {
-  if (height <= 28) return 12;
-  if (height <= 32) return 12;
-  if (height <= 40) return 16;
-  if (height <= 48) return 18;
-  return 20;
-};
-
 const Button = React.forwardRef(
   ({
     appearance,
@@ -43,17 +21,39 @@ const Button = React.forwardRef(
   }) => {
     const [isHovering, setIsHovering] = useState(false);
 
-    const br = getBorderRadiusForControlHeight(height);
-    const is = getIconSizeForButton(height);
-    const p = Math.round(height / 3) + "px";
-    const ts = getTextSizeForControlHeight(height);
+    let getBorderRadiusForControlHeight = height => {
+      if (height <= 32) return "3px";
+      return "5px";
+    };
+
+    let getTextSizeForControlHeight = height => {
+      if (height <= 24) return 300;
+      if (height <= 28) return 300;
+      if (height <= 32) return 400;
+      if (height <= 36) return 400;
+      if (height <= 40) return 400;
+      return 500;
+    };
+
+    let getIconSizeForButton = height => {
+      if (height <= 28) return 12;
+      if (height <= 32) return 12;
+      if (height <= 40) return 16;
+      if (height <= 48) return 18;
+      return 20;
+    };
+
+    let BORDER_RADIUS = getBorderRadiusForControlHeight(height);
+    let ICON_SIZE = getIconSizeForButton(height);
+    let PADDING = Math.round(height / 3) + "px";
+    let TEXT_SIZE = getTextSizeForControlHeight(height);
 
     return (
       <Text
         data-fresco-id="buttons.button"
         className={isHovering === true ? "isHovering" : ""}
         ref={ref}
-        size={ts}
+        size={TEXT_SIZE}
         position="relative"
         display="inline-flex"
         justifyContent="center"
@@ -61,15 +61,16 @@ const Button = React.forwardRef(
         flexWrap="nowrap"
         height={height}
         m={0}
-        px={p}
+        px={PADDING}
         py={0}
         border={0}
-        borderRadius={round ? 9999 : br}
+        borderRadius={round ? 9999 : BORDER_RADIUS}
         fontWeight={500}
         lineHeight={height + "px"}
         overflow="hidden"
         css={{
           ...buttonStyles(appearance, intent, useTheme()),
+          textDecoration: "none",
           userSelect: "none",
           appearance: "none",
           cursor: "pointer"
@@ -83,9 +84,9 @@ const Button = React.forwardRef(
             data-fresco-id="buttons.button.iconBefore"
             as="span"
             symbol={iconBefore}
-            size={is}
-            mr={Math.round(is * 0.3) + "px"}
-            ml={"-" + Math.round(is * 0.3) + "px"}
+            size={ICON_SIZE}
+            mr={Math.round(ICON_SIZE * 0.3) + "px"}
+            ml={"-" + Math.round(ICON_SIZE * 0.3) + "px"}
             color="inherit"
           />
         )}
@@ -95,9 +96,9 @@ const Button = React.forwardRef(
             data-fresco-id="buttons.button.iconAfter"
             as="span"
             symbol={iconAfter}
-            size={is}
-            mr={"-" + Math.round(is * 0.3) + "px"}
-            ml={Math.round(is * 0.3) + "px"}
+            size={ICON_SIZE}
+            mr={"-" + Math.round(ICON_SIZE * 0.3) + "px"}
+            ml={Math.round(ICON_SIZE * 0.3) + "px"}
             color="inherit"
           />
         )}
@@ -107,7 +108,8 @@ const Button = React.forwardRef(
 );
 
 Button.propTypes = {
-  appearance: PropTypes.oneOf(["default", "primary", "minimal"]).isRequired,
+  appearance: PropTypes.oneOf(["default", "primary", "minimal", "subtle"])
+    .isRequired,
   children: PropTypes.node,
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   iconAfter: PropTypes.node,
