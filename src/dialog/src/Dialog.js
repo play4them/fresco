@@ -4,7 +4,7 @@ import { useTheme } from "emotion-theming";
 import css from "@styled-system/css";
 import { rgba } from "polished";
 
-const Dialog = ({ ...rest }) => {
+const Dialog = ({ dialogCss, trigger, closeButton, children, ...rest }) => {
   const theme = useTheme();
 
   const [showDialog, setShowDialog] = React.useState(false);
@@ -13,7 +13,13 @@ const Dialog = ({ ...rest }) => {
 
   return (
     <>
-      <button onClick={open}>Show Dialog</button>
+      <div
+        onClick={() => {
+          open();
+        }}
+      >
+        {trigger}
+      </div>
 
       <Reach.DialogOverlay
         css={css({
@@ -38,18 +44,26 @@ const Dialog = ({ ...rest }) => {
             p: "spacing.6",
             borderRadius: "24px",
             bg: "gray.0",
-            boxShadow: "elevations.4"
+            boxShadow: "elevations.4",
+            ...dialogCss
           })}
         >
-          <p>
-            The overlay styles are a white fade instead of the default black
-            fade.
-          </p>
-          <button onClick={close}>Very nice.</button>
+          <div
+            onClick={() => {
+              close();
+            }}
+          >
+            {closeButton}
+          </div>
+          {children && children}
         </Reach.DialogContent>
       </Reach.DialogOverlay>
     </>
   );
+};
+
+Dialog.defaultProps = {
+  dialogCss: {}
 };
 
 export default Dialog;
