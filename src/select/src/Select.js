@@ -27,7 +27,7 @@ const getIconSizeForButton = height => {
   return 20;
 };
 
-const Select = ({ children, height, id, round, ...rest }) => {
+const Select = ({ children, height, id, round, value, onChange, ...rest }) => {
   const br = getBorderRadiusForControlHeight(height);
   const is = getIconSizeForButton(height);
   const ts = getTextSizeForControlHeight(height);
@@ -60,6 +60,8 @@ const Select = ({ children, height, id, round, ...rest }) => {
           appearance: "none",
           cursor: "pointer"
         }}
+        value={value}
+        onChange={onChange}
       >
         {children}
       </Text>
