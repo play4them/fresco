@@ -1,4 +1,8 @@
 {
   "presets": ["@emotion/babel-preset-css-prop"],
-  "plugins": ["emotion"]
+  "plugins": [
+    "transform-es2015-arrow-functions",
+    "@babel/plugin-proposal-object-rest-spread",
+    "emotion"
+  ]
 }
