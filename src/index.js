@@ -9,16 +9,19 @@ export { Checkbox } from "./checkbox";
 export {
   CodeSnippet,
   InlineCodeSnippet,
-  MultiLineCodeSnippet
+  MultiLineCodeSnippet,
 } from "./codeSnippets";
+export { Column } from "./column";
+export { Columns } from "./columns";
 export { CornerDialog } from "./cornerDialog";
 export { Dialog } from "./dialog";
+export { Divider } from "./divider";
 export { Flex } from "./flex";
 export {
   FormFieldDescription,
   FormFieldHint,
   FormFieldLabel,
-  FormFieldValidationMessage
+  FormFieldValidationMessage,
 } from "./formField";
 export { GlobalStyles } from "./globalStyles";
 export { Icon } from "./icon";
@@ -26,7 +29,9 @@ export { FormFieldInput, Input } from "./input";
 export { Pill } from "./pill";
 export { FormFieldRadioGroup, Radio, RadioGroup } from "./radio";
 export { Select } from "./select";
+export { Spacer } from "./spacer";
 export { Spinner } from "./spinner";
+export { HStack, VStack } from "./stacks";
 export {
   COMMON,
   BORDER,
@@ -34,7 +39,7 @@ export {
   LAYOUT,
   POSITION,
   FLEX,
-  GRID
+  GRID,
 } from "./systemProps";
 export { Tabs } from "./tabs";
 export { FormFieldTextarea, Textarea } from "./textarea";

@@ -16,7 +16,7 @@ const InlineCodeSnippet = ({ children }) => (
     fontFamily="mono"
     fontSize="0.875em"
     verticalAlign="baseline"
-    color="blue.7"
+    color="blue.9"
     bg="blue.0"
   >
     <Box data-fresco-id="inlineCodeSnippet.code" as="code" px="spacing.2">

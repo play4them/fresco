@@ -26,7 +26,7 @@ const CornerDialog = ({ buttonProps, children, title, ...rest }) => (
         p="layout.3"
         borderRadius="5px"
         textAlign="initial"
-        bg="gray.0"
+        bg="solid"
         boxShadow="elevations.4"
         css={{ pointerEvents: "all" }}
       >

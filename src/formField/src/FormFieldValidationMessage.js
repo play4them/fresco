@@ -10,19 +10,19 @@ const FormFieldValidationMessage = ({ validationMessage, ...rest }) => {
   const intents = {
     success: {
       icon: mdiCheckCircle,
-      iconColor: "green.5",
-      textColor: "green.7"
+      iconColor: "intent.success.7",
+      textColor: "intent.success.9",
     },
     warning: {
       icon: mdiAlert,
-      iconColor: "yellow.5",
-      textColor: "yellow.7"
+      iconColor: "intent.warning.7",
+      textColor: "intent.warning.9",
     },
     danger: {
       icon: mdiAlertCircle,
-      iconColor: "red.5",
-      textColor: "red.7"
-    }
+      iconColor: "intent.danger.7",
+      textColor: "intent.danger.9",
+    },
   };
 
   return (

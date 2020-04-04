@@ -5,38 +5,38 @@ function buttonStyles(appearance, intent, theme) {
     default: {
       base: theme.colors.gray[8],
       light: theme.colors.gray[0],
-      medium: theme.colors.gray[2],
+      medium: theme.colors.gray[3],
       heavy: theme.colors.gray[9],
-      contrast: "#fff"
+      contrast: "#fff",
     },
     primary: {
-      base: theme.colors.blue[4],
-      light: theme.colors.blue[0],
-      medium: theme.colors.blue[1],
-      heavy: theme.colors.blue[6],
-      contrast: "#fff"
+      base: theme.colors.intent.primary[6],
+      light: theme.colors.intent.primary[0],
+      medium: theme.colors.intent.primary[1],
+      heavy: theme.colors.intent.primary[9],
+      contrast: "#fff",
     },
     success: {
-      base: theme.colors.green[5],
-      light: theme.colors.green[0],
-      medium: theme.colors.green[1],
-      heavy: theme.colors.green[7],
-      contrast: "#fff"
+      base: theme.colors.intent.success[7],
+      light: theme.colors.intent.success[0],
+      medium: theme.colors.intent.success[1],
+      heavy: theme.colors.intent.success[9],
+      contrast: "#fff",
     },
     warning: {
-      base: theme.colors.yellow[5],
-      light: theme.colors.yellow[0],
-      medium: theme.colors.yellow[1],
-      heavy: theme.colors.yellow[6],
-      contrast: "#fff"
+      base: theme.colors.intent.warning[6],
+      light: theme.colors.intent.warning[0],
+      medium: theme.colors.intent.warning[1],
+      heavy: theme.colors.intent.warning[9],
+      contrast: "#fff",
     },
     danger: {
-      base: theme.colors.red[5],
-      light: theme.colors.red[0],
-      medium: theme.colors.red[1],
-      heavy: theme.colors.red[7],
-      contrast: "#fff"
-    }
+      base: theme.colors.intent.danger[7],
+      light: theme.colors.intent.danger[0],
+      medium: theme.colors.intent.danger[1],
+      heavy: theme.colors.intent.danger[9],
+      contrast: "#fff",
+    },
   };
 
   switch (appearance) {
@@ -47,8 +47,8 @@ function buttonStyles(appearance, intent, theme) {
         boxShadow: theme.shadows.elevations[1],
         transition: "background-color 200ms ease-out",
         "&.isHovering": {
-          backgroundColor: intents[intent].heavy
-        }
+          backgroundColor: intents[intent].heavy,
+        },
       };
     case "minimal":
       return {
@@ -56,8 +56,8 @@ function buttonStyles(appearance, intent, theme) {
         backgroundColor: "transparent",
         transition: "background-color 200ms ease-out",
         "&.isHovering": {
-          backgroundColor: rgba(theme.colors.gray[7], 0.1)
-        }
+          backgroundColor: rgba(theme.colors.gray[7], 0.1),
+        },
       };
     case "subtle":
       return {
@@ -65,8 +65,8 @@ function buttonStyles(appearance, intent, theme) {
         backgroundColor: rgba(theme.colors.gray[7], 0.075),
         transition: "background-color 200ms ease-out",
         "&.isHovering": {
-          backgroundColor: rgba(theme.colors.gray[7], 0.15)
-        }
+          backgroundColor: rgba(theme.colors.gray[7], 0.15),
+        },
       };
     default:
       return {
@@ -75,8 +75,8 @@ function buttonStyles(appearance, intent, theme) {
         boxShadow: theme.shadows.elevations[1],
         transition: "background-color 200ms ease-out",
         "&.isHovering": {
-          backgroundColor: intents[intent].medium
-        }
+          backgroundColor: intents[intent].medium,
+        },
       };
   }
 }

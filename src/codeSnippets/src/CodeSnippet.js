@@ -30,7 +30,7 @@ const CodeSnippet = ({ children }) => (
         size={300}
         px="spacing.4"
         fontFamily="mono"
-        color="blue.7"
+        color="blue.9"
       >
         <Box as="pre" m={0} css={{ whiteSpace: "nowrap" }}>
           {children}
@@ -47,7 +47,7 @@ const CodeSnippet = ({ children }) => (
       height="100%"
       color="blue.0"
       css={{
-        backgroundImage: "linear-gradient(to right, transparent, currentColor)"
+        backgroundImage: "linear-gradient(to right, transparent, currentColor)",
       }}
     />
 

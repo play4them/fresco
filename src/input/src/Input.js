@@ -7,19 +7,19 @@ import { Box } from "../../box";
 import { Icon } from "../../icon";
 import { Text } from "../../typography";
 
-const getBorderRadiusForControlHeight = height => {
+const getBorderRadiusForControlHeight = (height) => {
   if (height <= 40) return "3px";
   return "5px";
 };
 
-const getTextSizeForControlHeight = height => {
+const getTextSizeForControlHeight = (height) => {
   if (height <= 32) return 500;
   if (height <= 40) return 500;
   if (height <= 48) return 600;
   return 600;
 };
 
-const getIconSizeForButton = height => {
+const getIconSizeForButton = (height) => {
   if (height <= 32) return 16;
   if (height <= 40) return 20;
   if (height <= 48) return 24;
@@ -60,7 +60,7 @@ const Input = ({ bg, height, iconAfter, iconBefore, ...rest }) => {
           height={height}
           css={{ userSelect: "none", pointerEvents: "none" }}
         >
-          <Icon symbol={iconBefore} size={is} color="gray.4" />
+          <Icon symbol={iconBefore} size={is} color="gray.5" />
         </Box>
       )}
       <Text
@@ -80,11 +80,11 @@ const Input = ({ bg, height, iconAfter, iconBefore, ...rest }) => {
         css={css({
           "::placeholder": {
             color: "gray.9",
-            opacity: 1 / 3
+            opacity: 1 / 3,
           },
           ":focus": {
-            outline: 0
-          }
+            outline: 0,
+          },
         })}
         {...rest}
       />
@@ -101,7 +101,7 @@ const Input = ({ bg, height, iconAfter, iconBefore, ...rest }) => {
           height={height}
           css={{ userSelect: "none", pointerEvents: "none" }}
         >
-          <Icon symbol={iconAfter} size={is} color="gray.4" />
+          <Icon symbol={iconAfter} size={is} color="gray.5" />
         </Box>
       )}
     </Box>
@@ -111,7 +111,7 @@ const Input = ({ bg, height, iconAfter, iconBefore, ...rest }) => {
 Input.defaultProps = {
   bg: "gray.0",
   height: 40,
-  type: "text"
+  type: "text",
 };
 
 export default Input;

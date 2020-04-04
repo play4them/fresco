@@ -8,7 +8,7 @@ import { Text } from "../../typography";
 const Toggle = ({ children, size, width, small, ...rest }) => {
   const uid = uuidv4();
 
-  const getTextOffsetForTextSize = size => {
+  const getTextOffsetForTextSize = (size) => {
     if (size <= 300) return 6;
     if (size <= 400) return 4;
     if (size <= 500) return 4;
@@ -17,7 +17,7 @@ const Toggle = ({ children, size, width, small, ...rest }) => {
   };
   let TEXT_OFFSET = getTextOffsetForTextSize(size) + "px";
 
-  const getControlOffsetForTextSize = size => {
+  const getControlOffsetForTextSize = (size) => {
     if (size <= 300) return -2;
     if (size <= 400) return 0;
     if (size <= 500) return 0;
@@ -88,16 +88,16 @@ const Toggle = ({ children, size, width, small, ...rest }) => {
             borderRadius: "50%",
             bg: "#fff",
             boxShadow: "0 1px 2px rgba(44, 44, 44, 0.2)",
-            transition: "all .2s cubic-bezier(.5,.1,.75,1.35)"
+            transition: "all .2s cubic-bezier(.5,.1,.75,1.35)",
           },
           "&:checked": {
-            bg: "green.5",
+            bg: "intent.success.6",
             "::after": {
               transform:
-                "translateX(" + (CONTROL_WIDTH - CONTROL_HEIGHT) + "px)"
-            }
+                "translateX(" + (CONTROL_WIDTH - CONTROL_HEIGHT) + "px)",
+            },
           },
-          "&:focus": { outline: 0 }
+          "&:focus": { outline: 0 },
         })}
         {...rest}
       />
@@ -106,7 +106,7 @@ const Toggle = ({ children, size, width, small, ...rest }) => {
 };
 
 Toggle.defaultProps = {
-  size: 400
+  size: 400,
 };
 
 export default Toggle;

@@ -24,7 +24,7 @@ const MultiLineCodeSnippet = ({ children }) => (
         as="code"
         size={300}
         fontFamily="mono"
-        color="blue.7"
+        color="blue.9"
       >
         <Box as="pre" m={0}>
           {children}

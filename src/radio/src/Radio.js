@@ -7,7 +7,7 @@ import { hideVisually, rgba } from "polished";
 import { Box } from "../../box";
 import { Text } from "../../typography";
 
-const getControlSizeForTextSize = size => {
+const getControlSizeForTextSize = (size) => {
   if (size <= 300) return 16;
   if (size <= 400) return 20;
   if (size <= 500) return 20;
@@ -38,7 +38,7 @@ const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
         as="input"
         id={uid}
         type="radio"
-        ref={el => el && (el.indeterminate = indeterminate)}
+        ref={(el) => el && (el.indeterminate = indeterminate)}
         css={css({
           ...hideVisually(),
           "+ div": {
@@ -54,27 +54,29 @@ const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
               theme.colors.gray[4],
               0.1
             )}`,
-            userSelect: "none"
+            userSelect: "none",
           },
           ":checked + div": {
-            bg: "blue.4",
+            bg: "intent.primary.6",
             boxShadow: `inset 0 0 0 1px ${rgba(
               theme.colors.gray[9],
               0
             )}, 0 0 1px ${rgba(theme.colors.gray[4], 0.1)}, 0 1px 2px ${rgba(
               theme.colors.gray[4],
               0.1
-            )}`
+            )}`,
           },
           ":active + div": {
-            bg: "blue.1"
+            bg: "intent.primary.3",
           },
           ":focus + div": {
-            boxShadow: `inset 0 0 0 1px ${theme.colors.blue[4]}, 0 0 1px ${rgba(
+            boxShadow: `inset 0 0 0 1px ${
+              theme.colors.intent.primary[7]
+            }, 0 0 1px ${rgba(theme.colors.gray[4], 0.1)}, 0 1px 2px ${rgba(
               theme.colors.gray[4],
               0.1
-            )}, 0 1px 2px ${rgba(theme.colors.gray[4], 0.1)}`
-          }
+            )}`,
+          },
         })}
         {...rest}
       />
@@ -87,7 +89,7 @@ const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
         width={cs}
         height={cs}
         borderRadius={9999}
-        color="gray.0"
+        color="solid"
         bg={bg}
       />
       <Box data-fresco-id="radio.text" as="span">
@@ -98,8 +100,8 @@ const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
 };
 
 Radio.defaultProps = {
-  bg: "gray.0",
-  size: 400
+  bg: "solid",
+  size: 400,
 };
 
 export default Radio;

@@ -8,11 +8,13 @@ const GlobalStyles = () => (
       "*": { boxSizing: "border-box" },
       body: {
         m: 0,
+        overflowX: "hidden",
+        overflowY: "scroll",
         fontFamily: "ui",
         color: "gray.9",
-        bg: "gray.0"
+        bg: "gray.0",
       },
-      table: { borderCollapse: "collapse" }
+      table: { borderCollapse: "collapse" },
     })}
   />
 );

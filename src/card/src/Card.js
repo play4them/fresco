@@ -11,7 +11,7 @@ const Card = ({ children, elevation, ...rest }) => (
 Card.defaultProps = {
   elevation: 0,
   bg: "gray.0",
-  borderRadius: "5px"
+  borderRadius: "5px",
 };
 
 export default Card;

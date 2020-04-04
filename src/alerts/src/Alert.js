@@ -6,7 +6,7 @@ import {
   mdiAlertCircle,
   mdiCheckCircle,
   mdiClose,
-  mdiInformation
+  mdiInformation,
 } from "@mdi/js";
 
 import { Box } from "../../box";
@@ -35,25 +35,25 @@ function Alert({
 
   const intents = {
     default: {
-      color: theme.colors.gray[5],
-      icon: mdiInformation
+      color: theme.colors.gray[6],
+      icon: mdiInformation,
     },
     primary: {
-      color: theme.colors.blue[6],
-      icon: mdiInformation
+      color: theme.colors.intent.primary[7],
+      icon: mdiInformation,
     },
     success: {
-      color: theme.colors.green[6],
-      icon: mdiCheckCircle
+      color: theme.colors.intent.success[7],
+      icon: mdiCheckCircle,
     },
     warning: {
-      color: theme.colors.yellow[5],
-      icon: mdiAlert
+      color: theme.colors.intent.warning[6],
+      icon: mdiAlert,
     },
     danger: {
-      color: theme.colors.red[5],
-      icon: mdiAlertCircle
-    }
+      color: theme.colors.intent.danger[7],
+      icon: mdiAlertCircle,
+    },
   };
 
   return (
@@ -149,7 +149,7 @@ function Alert({
 }
 
 Alert.defaultProps = {
-  intent: "default"
+  intent: "default",
 };
 
 export default Alert;

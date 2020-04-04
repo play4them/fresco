@@ -7,50 +7,50 @@ function badgeStyles(appearance, intent) {
     default: {
       base: theme.colors.gray[9],
       heavy: theme.colors.gray[9],
-      light: theme.colors.gray[1],
-      contrast: "#fff"
+      light: theme.colors.gray[3],
+      contrast: theme.colors.solid,
     },
     primary: {
-      base: theme.colors.blue[4],
-      heavy: theme.colors.blue[6],
-      light: theme.colors.blue[0],
-      contrast: "#fff"
+      base: theme.colors.intent.primary[6],
+      heavy: theme.colors.intent.primary[9],
+      light: theme.colors.intent.primary[1],
+      contrast: theme.colors.solid,
     },
     success: {
-      base: theme.colors.green[5],
-      heavy: theme.colors.green[7],
-      light: theme.colors.green[0],
-      contrast: "#fff"
+      base: theme.colors.intent.success[7],
+      heavy: theme.colors.intent.success[9],
+      light: theme.colors.intent.success[2],
+      contrast: theme.colors.solid,
     },
     warning: {
-      base: theme.colors.yellow[5],
-      heavy: theme.colors.yellow[6],
-      light: theme.colors.yellow[0],
-      contrast: "#fff"
+      base: theme.colors.intent.warning[6],
+      heavy: theme.colors.intent.warning[9],
+      light: theme.colors.intent.warning[1],
+      contrast: theme.colors.solid,
     },
     danger: {
-      base: theme.colors.red[5],
-      heavy: theme.colors.red[7],
-      light: theme.colors.red[0],
-      contrast: "#fff"
-    }
+      base: theme.colors.intent.danger[7],
+      heavy: theme.colors.intent.danger[9],
+      light: theme.colors.intent.danger[2],
+      contrast: theme.colors.solid,
+    },
   };
 
   switch (appearance) {
     case "solid":
       return {
         color: intents[intent].contrast,
-        backgroundColor: intents[intent].base
+        backgroundColor: intents[intent].base,
       };
     case "subtle":
       return {
         color: intents[intent].heavy,
-        backgroundColor: intents[intent].light
+        backgroundColor: intents[intent].light,
       };
     default:
       return {
         color: intents[intent].heavy,
-        backgroundColor: intents[intent].light
+        backgroundColor: intents[intent].light,
       };
   }
 }

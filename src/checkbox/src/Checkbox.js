@@ -7,7 +7,7 @@ import { hideVisually, rgba } from "polished";
 import { Box } from "../../box";
 import { Text } from "../../typography";
 
-const getControlSizeForTextSize = size => {
+const getControlSizeForTextSize = (size) => {
   if (size <= 300) return 16;
   if (size <= 400) return 20;
   if (size <= 500) return 20;
@@ -37,7 +37,7 @@ const Checkbox = ({ bg, children, indeterminate, size, ...rest }) => {
         as="input"
         id={uid}
         type="checkbox"
-        ref={el => el && (el.indeterminate = indeterminate)}
+        ref={(el) => el && (el.indeterminate = indeterminate)}
         css={css({
           ...hideVisually(),
           "+ div": {
@@ -53,20 +53,20 @@ const Checkbox = ({ bg, children, indeterminate, size, ...rest }) => {
               theme.colors.gray[4],
               0.1
             )}`,
-            userSelect: "none"
+            userSelect: "none",
           },
           ":checked + div": {
-            bg: "blue.4",
+            bg: "intent.primary.6",
             boxShadow: `inset 0 0 0 1px ${rgba(
               theme.colors.gray[9],
               0
             )}, 0 0 1px ${rgba(theme.colors.gray[4], 0.1)}, 0 1px 2px ${rgba(
               theme.colors.gray[4],
               0.1
-            )}`
+            )}`,
           },
           ":indeterminate + div": {
-            bg: "blue.4",
+            bg: "intent.primary.6",
             backgroundImage:
               "url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDggOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgOCA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0wLDN2Mmg4VjNIMHoiLz4NCjwvc3ZnPg0K)",
             boxShadow: `inset 0 0 0 1px ${rgba(
@@ -75,17 +75,19 @@ const Checkbox = ({ bg, children, indeterminate, size, ...rest }) => {
             )}, 0 0 1px ${rgba(theme.colors.gray[4], 0.1)}, 0 1px 2px ${rgba(
               theme.colors.gray[4],
               0.1
-            )}`
+            )}`,
           },
           ":active + div": {
-            bg: "blue.1"
+            bg: "intent.primary.3",
           },
           ":focus + div": {
-            boxShadow: `inset 0 0 0 1px ${theme.colors.blue[4]}, 0 0 1px ${rgba(
+            boxShadow: `inset 0 0 0 1px ${
+              theme.colors.intent.primary[7]
+            }, 0 0 1px ${rgba(theme.colors.gray[4], 0.1)}, 0 1px 2px ${rgba(
               theme.colors.gray[4],
               0.1
-            )}, 0 1px 2px ${rgba(theme.colors.gray[4], 0.1)}`
-          }
+            )}`,
+          },
         })}
         {...rest}
       />
@@ -98,7 +100,7 @@ const Checkbox = ({ bg, children, indeterminate, size, ...rest }) => {
         width={cs}
         height={cs}
         borderRadius="2px"
-        color="gray.0"
+        color="solid"
         bg={bg}
       />
       <Box data-fresco-id="checkbox.text" as="span">
@@ -109,8 +111,8 @@ const Checkbox = ({ bg, children, indeterminate, size, ...rest }) => {
 };
 
 Checkbox.defaultProps = {
-  bg: "gray.0",
-  size: 400
+  bg: "solid",
+  size: 400,
 };
 
 export default Checkbox;

@@ -32,7 +32,7 @@ const Dialog = ({ dialogCss, trigger, closeButton, children, ...rest }) => {
           width: "100%",
           height: "100%",
           p: "spacing.3",
-          bg: rgba(theme.colors.gray[9], 0.5)
+          bg: rgba(theme.colors.gray[9], 0.75),
         })}
         isOpen={showDialog}
         onDismiss={close}
@@ -43,9 +43,9 @@ const Dialog = ({ dialogCss, trigger, closeButton, children, ...rest }) => {
             display: "inline-block",
             p: "spacing.6",
             borderRadius: "24px",
-            bg: "gray.0",
+            bg: "solid",
             boxShadow: "elevations.4",
-            ...dialogCss
+            ...dialogCss,
           })}
         >
           <div
@@ -63,7 +63,7 @@ const Dialog = ({ dialogCss, trigger, closeButton, children, ...rest }) => {
 };
 
 Dialog.defaultProps = {
-  dialogCss: {}
+  dialogCss: {},
 };
 
 export default Dialog;
