@@ -15,7 +15,11 @@ const Dialog = ({ dialogCss, trigger, closeButton, children, ...rest }) => {
     <>
       <div
         onClick={() => {
-          open();
+          if (!showDialog) {
+            open();
+          } else {
+            close();
+          }
         }}
       >
         {trigger}
