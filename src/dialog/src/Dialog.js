@@ -22,7 +22,7 @@ const Dialog = ({ dialogCss, trigger, closeButton, children, ...rest }) => {
           }
         }}
       >
-        {trigger}
+        {React.cloneElement(trigger, { showDialog: showDialog, close: close })}
       </div>
 
       <Reach.DialogOverlay
@@ -59,7 +59,10 @@ const Dialog = ({ dialogCss, trigger, closeButton, children, ...rest }) => {
           >
             {closeButton}
           </div>
-          {React.cloneElement(children, { close: close })}
+          {React.cloneElement(children, {
+            showDialog: showDialog,
+            close: close,
+          })}
         </Reach.DialogContent>
       </Reach.DialogOverlay>
     </>
