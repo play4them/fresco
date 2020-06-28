@@ -14,7 +14,7 @@
     "build-storybook": "build-storybook"
   },
   "keywords": [],
-  "author": "Jesse McLean <jesse@builtbyfield.com>",
+  "author": "Jesse McLean <jesse@tillen.co>",
   "license": "MIT",
   "peerDependencies": {
     "@emotion/core": "10.x",
