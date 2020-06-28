@@ -2,6 +2,7 @@ export { Alert, ToastAlert } from "./alerts";
 export { AspectRatio } from "./aspectRatio";
 export { Avatar } from "./avatar";
 export { Badge } from "./badge";
+export { BlurHash } from "./blurHash";
 export { Box } from "./box";
 export { Button, IconButton } from "./buttons";
 export { Card } from "./card";
