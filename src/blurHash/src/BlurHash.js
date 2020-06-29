@@ -1,5 +1,5 @@
+import React, { useRef, useEffect } from "react";
 import { decode } from "blurhash";
-import { useRef, useEffect } from "react";
 
 function BlurHash({ hash, aspectRatio, ...rest }) {
   const blurRef = useRef(null);

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { css } from "@emotion/core";
 
 import { BlurHash } from "../../blurHash";
 import { Box } from "../../box";
@@ -47,6 +48,7 @@ function Avatar({
       >
         {blurHash && (
           <BlurHash
+            aspectRatio="1"
             hash={blurHash}
             style={{ opacity: opacity === 1 ? 0 : 1 }}
             css={css({
@@ -76,7 +78,7 @@ function Avatar({
             style={{ opacity }}
           />
         )}
-        {!image && name && (
+        {!image && !blurHash && name && (
           <Text
             data-fresco-id="avatar.initials"
             children={getInitials(name)}
