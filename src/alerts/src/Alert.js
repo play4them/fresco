@@ -116,7 +116,7 @@ function Alert({
             </Box>
             {buttonProps && (
               <Box mt="8px">
-                <Button height={32} {...buttonProps} />
+                <Button height={32} theme={theme} {...buttonProps} />
               </Box>
             )}
           </Box>
@@ -133,6 +133,7 @@ function Alert({
             height={40}
           >
             <IconButton
+              theme={theme}
               icon={mdiClose}
               appearance="minimal"
               intent="default"

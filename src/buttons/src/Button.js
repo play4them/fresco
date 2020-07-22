@@ -17,16 +17,17 @@ const Button = React.forwardRef(
     intent,
     ref,
     round,
+    theme,
     ...rest
   }) => {
     const [isHovering, setIsHovering] = useState(false);
 
-    let getBorderRadiusForControlHeight = height => {
+    let getBorderRadiusForControlHeight = (height) => {
       if (height <= 32) return "3px";
       return "5px";
     };
 
-    let getTextSizeForControlHeight = height => {
+    let getTextSizeForControlHeight = (height) => {
       if (height <= 24) return 300;
       if (height <= 28) return 300;
       if (height <= 32) return 400;
@@ -35,7 +36,7 @@ const Button = React.forwardRef(
       return 500;
     };
 
-    let getIconSizeForButton = height => {
+    let getIconSizeForButton = (height) => {
       if (height <= 28) return 12;
       if (height <= 32) return 12;
       if (height <= 40) return 16;
@@ -69,11 +70,11 @@ const Button = React.forwardRef(
         lineHeight={height + "px"}
         overflow="hidden"
         css={{
-          ...buttonStyles(appearance, intent, useTheme()),
+          ...buttonStyles(appearance, intent, theme ? theme : useTheme()),
           textDecoration: "none",
           userSelect: "none",
           appearance: "none",
-          cursor: "pointer"
+          cursor: "pointer",
         }}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
@@ -119,16 +120,16 @@ Button.propTypes = {
     "primary",
     "success",
     "warning",
-    "danger"
+    "danger",
   ]).isRequired,
-  round: PropTypes.bool
+  round: PropTypes.bool,
 };
 
 Button.defaultProps = {
   appearance: "default",
   as: "button",
   height: 40,
-  intent: "default"
+  intent: "default",
 };
 
 export default Button;
