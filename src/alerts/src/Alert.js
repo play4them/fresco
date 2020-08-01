@@ -1,58 +1,45 @@
 import React, { useState, useEffect } from "react";
 import { useTheme } from "emotion-theming";
 import { default as ReachAlert } from "@reach/alert";
-import {
-  mdiAlert,
-  mdiAlertCircle,
-  mdiCheckCircle,
-  mdiClose,
-  mdiInformation,
-} from "@mdi/js";
 
 import { Box } from "../../box";
-import { Button, IconButton } from "../../buttons";
+import { IconButton } from "../../buttons";
 import { Icon } from "../../icon";
-import { Heading, Paragraph } from "../../typography";
+import { VStack } from "../../stacks";
+import { Heading, Text } from "../../typography";
 
-function Alert({
-  closeCallback,
-  buttonProps,
-  children,
-  intent,
-  title,
-  ...rest
-}) {
+function Alert({ close, caption, intent, title, ...rest }) {
   const [open, setOpen] = useState(true);
 
-  //when props update, force toast to reoopen, even if closed
+  // When props update, force toast to re-open, even if closed
   useEffect(() => {
     if (rest) {
       setOpen(true);
     }
-  }, [children]);
+  }, [caption]);
 
-  const theme = useTheme();
+  const THEME = useTheme();
 
   const intents = {
     default: {
-      color: theme.colors.gray[6],
-      icon: mdiInformation,
+      color: THEME.colors.label[1],
+      icon: "information-line",
     },
     primary: {
-      color: theme.colors.intent.primary[7],
-      icon: mdiInformation,
+      color: THEME.colors.tint.blue,
+      icon: "information-line",
     },
     success: {
-      color: theme.colors.intent.success[7],
-      icon: mdiCheckCircle,
+      color: THEME.colors.tint.green,
+      icon: "checkbox-circle-line",
     },
     warning: {
-      color: theme.colors.intent.warning[6],
-      icon: mdiAlert,
+      color: THEME.colors.tint.orange,
+      icon: "alert-line",
     },
     danger: {
-      color: theme.colors.intent.danger[7],
-      icon: mdiAlertCircle,
+      color: THEME.colors.tint.red,
+      icon: "error-warning-line",
     },
   };
 
@@ -60,84 +47,89 @@ function Alert({
     <>
       {open && (
         <Box
-          data-fresco-id="alert"
+          data-fresco-id="alerts.alert"
           as={ReachAlert}
           role="alert"
           position="relative"
           display="inline-flex"
           alignItems="flex-start"
+          width={192}
           pl="spacing.5"
           pr="spacing.8"
-          borderRadius="4px"
-          bg="gray.0"
+          borderWidth={1}
+          borderColor="fill.0"
+          borderRadius="corners.1"
+          bg="background.2"
           overflow="hidden"
           boxShadow="elevations.0"
           {...rest}
         >
           <Box
-            data-fresco-id="alert.highlight"
+            data-fresco-id="alerts.alert.highlight"
             position="absolute"
             top={0}
             left={0}
-            width="4px"
+            width={4}
             height="100%"
             bg={intents[intent].color}
           />
 
           {intents[intent].icon && (
             <Box
-              data-fresco-id="alert.icon"
+              data-fresco-id="alerts.alert.icon"
               display="flex"
               justifyContent="center"
               alignItems="center"
-              height={40}
+              height={32}
               pr="spacing.3"
             >
               <Icon
                 symbol={intents[intent].icon}
-                size={20}
+                size={18}
                 color={intents[intent].color}
               />
             </Box>
           )}
 
-          <Box data-fresco-id="alert.content" flex={1} minHeight={40} py="10px">
+          <Box
+            data-fresco-id="alerts.alert.content"
+            flex={1}
+            minHeight={38}
+            py="9px"
+          >
             <Box display="flex" alignItems="center" flexWrap="wrap" flex={1}>
-              {title && (
-                <Heading as="h4" size={400} mr={children && "spacing.2"}>
-                  {title}
-                </Heading>
-              )}
-              {children && (
-                <Paragraph as="p" size={400} color="gray.7">
-                  {children}
-                </Paragraph>
-              )}
+              <VStack space="spacing.3">
+                {title && (
+                  <Heading as="span" size={500} mr={caption && "spacing.2"}>
+                    {title}
+                  </Heading>
+                )}
+                {caption && (
+                  <Text as="span" size={400} color="label.1">
+                    {caption}
+                  </Text>
+                )}
+              </VStack>
             </Box>
-            {buttonProps && (
-              <Box mt="8px">
-                <Button height={32} theme={theme} {...buttonProps} />
-              </Box>
-            )}
           </Box>
 
           <Box
-            data-fresco-id="alert.button"
+            data-fresco-id="alerts.alert.button"
             position="absolute"
             top={0}
             right={0}
             display="flex"
             justifyContent="center"
             alignItems="center"
-            width={40}
-            height={40}
+            width={32}
+            height={32}
           >
             <IconButton
-              theme={theme}
-              icon={mdiClose}
-              appearance="minimal"
+              theme={THEME}
+              symbol="close-fill"
               intent="default"
-              height={32}
+              appearance="minimal"
+              height={24}
               onClick={() => {
                 setOpen(false);
               }}

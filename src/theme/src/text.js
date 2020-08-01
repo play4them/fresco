@@ -1,33 +1,57 @@
-import fonts from "./fonts";
+import capsize from "capsize";
+
+import breakpoints from "./breakpoints";
+
+const fontMetrics = {
+  capHeight: 2048,
+  ascent: 2728,
+  descent: -680,
+  lineGap: 0,
+  unitsPerEm: 2816,
+};
 
 export default {
   "600": {
-    fontFamily: fonts.display,
-    fontSize: "20px",
     fontWeight: 400,
-    lineHeight: "24px",
-    letterSpacing: "-0.0035em"
+    letterSpacing: "-0.015em",
+    ...capsize({
+      fontMetrics,
+      capHeight: 14,
+      lineGap: 8,
+    }),
+    [`@media screen and (min-width: ${breakpoints.md})`]: {
+      ...capsize({
+        fontMetrics,
+        capHeight: 16,
+        lineGap: 8,
+      }),
+    },
   },
   "500": {
-    fontFamily: fonts.ui,
-    fontSize: "16px",
     fontWeight: 400,
-    lineHeight: "20px",
-    letterSpacing: "-0.0035em"
+    letterSpacing: "-0.015em",
+    ...capsize({
+      fontMetrics,
+      capHeight: 12,
+      lineGap: 8,
+    }),
   },
-  // Default
   "400": {
-    fontFamily: fonts.ui,
-    fontSize: "14px",
     fontWeight: 400,
-    lineHeight: "20px",
-    letterSpacing: "-0.0035em"
+    letterSpacing: "-0.015em",
+    ...capsize({
+      fontMetrics,
+      capHeight: 10,
+      lineGap: 8,
+    }),
   },
   "300": {
-    fontFamily: fonts.ui,
-    fontSize: "12px",
     fontWeight: 400,
-    lineHeight: "16px",
-    letterSpacing: 0
-  }
+    letterSpacing: "-0.015em",
+    ...capsize({
+      fontMetrics,
+      capHeight: 8,
+      lineGap: 8,
+    }),
+  },
 };

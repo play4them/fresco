@@ -1,25 +1,20 @@
-import React from "react";
-import { mdiMenuDown } from "@mdi/js";
+import React, { useState } from "react";
+import css from "@styled-system/css";
+import { useTheme } from "emotion-theming";
 
 import { Box } from "../../box";
 import { Icon } from "../../icon";
-import { Text } from "../../typography";
 
-const getBorderRadiusForControlHeight = height => {
-  if (height <= 40) return "3px";
-  return "5px";
+const getTextSizeForControlHeight = (height) => {
+  if (height <= 24) return 14;
+  if (height <= 28) return 14;
+  if (height <= 32) return 16;
+  if (height <= 36) return 16;
+  if (height <= 40) return 16;
+  return 16;
 };
 
-const getTextSizeForControlHeight = height => {
-  if (height <= 24) return 300;
-  if (height <= 28) return 300;
-  if (height <= 32) return 400;
-  if (height <= 36) return 400;
-  if (height <= 40) return 400;
-  return 500;
-};
-
-const getIconSizeForButton = height => {
+const getIconSizeForButton = (height) => {
   if (height <= 28) return 16;
   if (height <= 32) return 16;
   if (height <= 40) return 16;
@@ -28,47 +23,77 @@ const getIconSizeForButton = height => {
 };
 
 const Select = ({ children, height, id, round, value, onChange, ...rest }) => {
-  const br = getBorderRadiusForControlHeight(height);
+  const [isHovering, setIsHovering] = useState(false);
+  const THEME = useTheme();
+
   const is = getIconSizeForButton(height);
   const ts = getTextSizeForControlHeight(height);
 
   return (
     <Box
       data-fresco-id="select"
+      className={isHovering === true ? "isHovering" : undefined}
       position="relative"
       display="inline-flex"
+      borderRadius={round ? "round" : "corners.1"}
+      css={css({
+        "&:focus-within": {
+          select: {
+            borderColor: "tint.blue",
+            outline: 0,
+            boxShadow: `inset 0 0 0 2px ${THEME.colors.fill[0]}`,
+          },
+        },
+        "&.isHovering": {
+          select: {
+            borderColor: "fill.3",
+          },
+          select: {
+            "&:focus, &:focus-within": {
+              borderColor: "tint.blue",
+            },
+          },
+        },
+      })}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
       {...rest}
     >
-      <Text
+      <Box
         data-fresco-id="select.control"
         as="select"
         id={id}
-        size={ts}
         width="100%"
         height={height}
         m={0}
         pl={Math.round(height / 4) + "px"}
         pr={Math.round(height / 1.5) + "px"}
         py={0}
-        border={0}
-        borderRadius={round ? 9999 : br}
-        fontWeight={600}
-        lineHeight={height + "px"}
+        borderWidth={1}
+        borderColor="fill.0"
+        borderRadius={round ? "round" : "corners.2"}
+        fontSize={ts}
+        fontWeight={400}
+        lineHeight={height - 2 + "px"}
+        color="label.0"
+        bg="background.0"
         boxShadow="elevations.1"
-        css={{
+        css={css({
           userSelect: "none",
           appearance: "none",
-          cursor: "pointer"
-        }}
+          cursor: "pointer",
+          "&:focus": {
+            outline: 0,
+          },
+        })}
         value={value}
         onChange={onChange}
       >
         {children}
-      </Text>
+      </Box>
       <Icon
         data-fresco-id="select.icon"
-        as="span"
-        symbol={mdiMenuDown}
+        symbol="arrow-down-s-fill"
         size={is}
         position="absolute"
         top="50%"
@@ -76,7 +101,7 @@ const Select = ({ children, height, id, round, value, onChange, ...rest }) => {
         color="inherit"
         css={{
           pointerEvents: "none",
-          transform: "translateY(-50%)"
+          transform: "translateY(-50%)",
         }}
       />
     </Box>
@@ -84,8 +109,7 @@ const Select = ({ children, height, id, round, value, onChange, ...rest }) => {
 };
 
 Select.defaultProps = {
-  height: 32,
-  size: 300
+  height: 40,
 };
 
 export default Select;

@@ -1,6 +1,6 @@
 import React from "react";
 import { useTheme } from "emotion-theming";
-import uuidv4 from "uuid/v4";
+import { v4 as uuidv4 } from "uuid";
 import css from "@styled-system/css";
 import { hideVisually, rgba } from "polished";
 
@@ -9,34 +9,43 @@ import { Text } from "../../typography";
 
 const getControlSizeForTextSize = (size) => {
   if (size <= 300) return 16;
-  if (size <= 400) return 20;
-  if (size <= 500) return 20;
-  if (size <= 600) return 24;
-  return 24;
+  if (size <= 400) return 16;
+  if (size <= 500) return 16;
+  if (size <= 600) return 20;
+  return 20;
+};
+
+const getTextOffsetForTextSize = (size) => {
+  if (size <= 300) return 4;
+  if (size <= 400) return 3;
+  if (size <= 500) return 2;
+  return 2;
 };
 
 const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
-  const uid = uuidv4();
-  const theme = useTheme();
-  const cs = getControlSizeForTextSize(size) - 4;
+  const THEME = useTheme();
+  const UID = uuidv4();
+  const CS = getControlSizeForTextSize(size);
+  const TEXT_OFFSET = getTextOffsetForTextSize(size) + "px";
 
   return (
-    <Text
+    <Box
       data-fresco-id="radio"
       role="radio"
       as="label"
-      htmlFor={uid}
-      size={size}
+      htmlFor={UID}
       position="relative"
       display="inline-block"
-      pl={`calc(${cs + "px"} + 4px)`}
+      height={CS}
+      pl={`calc(${CS + "px"} + 4px)`}
+      verticalAlign="top"
       css={{ userSelect: "none", cursor: "pointer" }}
     >
       <Box
         data-fresco-id="radio.hiddenInput"
         role="presentation"
         as="input"
-        id={uid}
+        id={UID}
         type="radio"
         ref={(el) => el && (el.indeterminate = indeterminate)}
         css={css({
@@ -48,34 +57,32 @@ const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
             backgroundPosition: "50% 50%",
             backgroundRepeat: "no-repeat",
             boxShadow: `inset 0 0 0 1px ${rgba(
-              theme.colors.gray[9],
+              THEME.colors.fill[0],
               0.2
-            )}, 0 0 1px ${rgba(theme.colors.gray[4], 0.1)}, 0 1px 2px ${rgba(
-              theme.colors.gray[4],
+            )}, 0 0 1px ${rgba(THEME.colors.fill[0], 0.1)}, 0 1px 2px ${rgba(
+              THEME.colors.fill[0],
               0.1
             )}`,
             userSelect: "none",
           },
           ":checked + div": {
-            bg: "intent.primary.6",
+            bg: "tint.blue",
             boxShadow: `inset 0 0 0 1px ${rgba(
-              theme.colors.gray[9],
+              THEME.colors.fill[0],
               0
-            )}, 0 0 1px ${rgba(theme.colors.gray[4], 0.1)}, 0 1px 2px ${rgba(
-              theme.colors.gray[4],
+            )}, 0 0 1px ${rgba(THEME.colors.fill[0], 0.1)}, 0 1px 2px ${rgba(
+              THEME.colors.fill[0],
               0.1
             )}`,
           },
           ":active + div": {
-            bg: "intent.primary.3",
+            bg: "tint.blue",
           },
           ":focus + div": {
-            boxShadow: `inset 0 0 0 1px ${
-              theme.colors.intent.primary[7]
-            }, 0 0 1px ${rgba(theme.colors.gray[4], 0.1)}, 0 1px 2px ${rgba(
-              theme.colors.gray[4],
+            boxShadow: `inset 0 0 0 1px ${THEME.colors.fill[0]}, 0 0 1px ${rgba(
+              THEME.colors.fill[0],
               0.1
-            )}`,
+            )}, 0 1px 2px ${rgba(THEME.colors.fill[0], 0.1)}`,
           },
         })}
         {...rest}
@@ -83,24 +90,25 @@ const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
       <Box
         data-fresco-id="radio.control"
         position="absolute"
-        top="spacing.1"
         left={0}
         display="block"
-        width={cs}
-        height={cs}
+        width={CS}
+        height={CS}
         borderRadius={9999}
-        color="solid"
+        color="white"
         bg={bg}
       />
-      <Box data-fresco-id="radio.text" as="span">
-        {children}
+      <Box pt={TEXT_OFFSET}>
+        <Text data-fresco-id="radio.text" size={size}>
+          {children}
+        </Text>
       </Box>
-    </Text>
+    </Box>
   );
 };
 
 Radio.defaultProps = {
-  bg: "solid",
+  bg: "white",
   size: 400,
 };
 

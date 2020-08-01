@@ -1,15 +1,15 @@
-import React from 'react';
-import { Tooltip } from '..';
-import { Button } from '../..';
+import React from "react";
+
+import { Box } from "../..";
+
+import { Tooltip } from "..";
 
 export default {
-  title: 'Tooltip',
+  title: "Tooltip",
 };
 
 export const standard = () => (
-  <>
-    <Tooltip label="Calendar">
-      <Button>afdfs</Button>
-    </Tooltip>
-  </>
+  <Tooltip label="Tooltip">
+    <Box width={64} height={64} bg="fill.0" />
+  </Tooltip>
 );

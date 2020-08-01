@@ -3,47 +3,22 @@ import React from "react";
 import { Alert, ToastAlert } from "..";
 
 export default {
-  title: "Alert"
+  title: "Alerts",
 };
 
 export const standard = () => (
-  <Alert title="Default Alert">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-  </Alert>
-);
-
-export const primary = () => (
-  <Alert title="Primary Alert" intent="primary">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-  </Alert>
-);
-
-export const success = () => (
-  <Alert title="Success Alert" intent="success">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-  </Alert>
-);
-
-export const warning = () => (
-  <Alert title="Warning Alert" intent="warning">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-  </Alert>
-);
-
-export const danger = () => (
-  <Alert
-    title="Danger Alert"
-    buttonProps={{
-      children: "Try Again"
-    }}
-    intent="danger"
-  >
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-  </Alert>
+  <Alert title="Title" caption="Caption" intent="default" close />
 );
 
 export const toast = () => (
-  <ToastAlert title="Toast Alert" intent="warning">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
-  </ToastAlert>
+  <ToastAlert title="Title" caption="Caption" intent="default" />
+);
+
+export const withIntent = () => (
+  <ToastAlert
+    title="Title"
+    caption="Caption"
+    intent="default"
+    intent="danger"
+  />
 );

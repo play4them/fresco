@@ -1,36 +1,31 @@
-import React from "react";
-import VisuallyHidden from "@reach/visually-hidden";
-import * as MaterialIcon from "@mdi/react";
+import React, { forwardRef } from "react";
 
 import { Box } from "../../box";
 
-const Icon = ({ color, label, size, symbol, ...rest }) => (
-  <Box
-    data-fresco-id="icon"
-    width={size}
-    height={size}
-    color={color}
-    {...rest}
-  >
-    <VisuallyHidden>{label}</VisuallyHidden>
-    <MaterialIcon.Icon
-      path={symbol}
-      size={null}
-      css={{
-        width: size,
-        height: size,
-        verticalAlign: "top",
-        color: "inherit",
-        fill: "currentColor"
-      }}
-    />
-  </Box>
+const Icon = forwardRef(
+  ({ color = "label.0", size = 24, symbol = "", ...rest }, ref) => {
+    return (
+      <Box
+        data-fresco-id="icon"
+        ref={ref}
+        as="span"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        width={size + "px"}
+        height={size + "px"}
+        fontSize={size + "px"}
+        color={color}
+        {...rest}
+      >
+        <Box
+          as="i"
+          className={`${"ri-" + symbol}`}
+          css={{ lineHeight: size + "px" }}
+        />
+      </Box>
+    );
+  }
 );
-
-Icon.defaultProps = {
-  color: "gray.9",
-  size: 24,
-  symbol: ""
-};
 
 export default Icon;

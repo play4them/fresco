@@ -1,6 +1,15 @@
+/**
+ * HStack
+ *
+ * HStack allows us to horizontally stack elements by a value
+ * define by the space prop. It accepts most units and values
+ * as well as spacing properties in the Theme.
+ */
+
 import React, { Children } from "react";
 
 import { Box } from "../../box";
+import { Divider } from "../../divider";
 
 function flexAlign(x) {
   if (x === "start") return "flex-start";
@@ -9,7 +18,14 @@ function flexAlign(x) {
   return undefined;
 }
 
-function HStack({ align, as = "div", children, dividers = false, space = 0 }) {
+function HStack({
+  align,
+  as = "div",
+  children,
+  dividers = false,
+  dividerColor,
+  space = 0,
+}) {
   const stackItems = Children.toArray(children);
 
   const isList = as === "ol" || as === "ul";
@@ -24,29 +40,21 @@ function HStack({ align, as = "div", children, dividers = false, space = 0 }) {
       alignItems={flexAlign(align)}
       m={0}
       p={0}
-      css={{ listStyle: "none" }}
+      css={isList && { listStyle: "none" }}
     >
       {stackItems.map((child, index) => (
         <Box
           data-fresco-id="stacks.hStack.child"
           as={stackItemComponent}
           display="flex"
+          minWidth={0}
           pr={dividers ? undefined : space}
           css={{ ":last-of-type": { paddingRight: 0 } }}
           key={"child" + index}
         >
           {dividers && index > 0 ? (
             <Box data-fresco-id="stacks.hStack.child.divider" px={space}>
-              <Box data-fresco-id="divider" position="relative" height="100%">
-                <Box
-                  data-fresco-id="divider.line"
-                  position="absolute"
-                  width="1px"
-                  height="100%"
-                  bg="gray.3"
-                  css={{ transform: "translateX(-50%)" }}
-                />
-              </Box>
+              <Divider color={dividerColor} vertical />
             </Box>
           ) : null}
           {child}

@@ -1,12 +1,21 @@
 import React from "react";
+
+import { Text } from "../..";
+
 import { Flex } from "..";
 
 export default {
-  title: "Flex"
+  title: "Flex",
 };
 
 export const standard = () => (
-  <>
-    <Flex height="100px" width="100px" bg="gray.1" />
-  </>
+  <Flex
+    justifyContent="flex-end"
+    alignItems="flex-end"
+    width={256}
+    height={256}
+    bg="fill.0"
+  >
+    <Text children="Child" />
+  </Flex>
 );

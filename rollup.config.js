@@ -6,11 +6,10 @@ import { terser } from "rollup-plugin-terser";
 
 import packageJSON from "./package.json";
 const input = "./src/index.js";
-const minifyExtension = pathToFile => pathToFile.replace(/\.js$/, ".min.js");
+const minifyExtension = (pathToFile) => pathToFile.replace(/\.js$/, ".min.js");
 
 const namedExports = {
   "@mdi/react": ["Icon"],
-  "react-copy-to-clipboard": ["CopyToClipboard"],
 
   // node_modules/prop-types/factoryWithTypeCheckers.js#L115
   "prop-types": [
@@ -31,8 +30,8 @@ const namedExports = {
     "oneOf",
     "oneOfType",
     "shape",
-    "exact"
-  ]
+    "exact",
+  ],
 };
 
 export default [
@@ -41,35 +40,35 @@ export default [
     input,
     output: {
       file: packageJSON.main,
-      format: "cjs"
+      format: "cjs",
     },
     plugins: [
       babel({
-        exclude: "node_modules/**"
+        exclude: "node_modules/**",
       }),
       external(),
       resolve(),
       commonjs({
-        namedExports: namedExports
-      })
-    ]
+        namedExports: namedExports,
+      }),
+    ],
   },
   {
     input,
     output: {
       file: minifyExtension(packageJSON.main),
-      format: "cjs"
+      format: "cjs",
     },
     plugins: [
       babel({
-        exclude: "node_modules/**"
+        exclude: "node_modules/**",
       }),
       external(),
       resolve(),
       commonjs({
-        namedExports: namedExports
-      })
-    ]
+        namedExports: namedExports,
+      }),
+    ],
   },
   // UMD
   {
@@ -81,19 +80,19 @@ export default [
       globals: {
         react: "React",
         "@emotion/styled": "styled",
-        "@emotion/core": "core"
-      }
+        "@emotion/core": "core",
+      },
     },
     plugins: [
       babel({
-        exclude: "node_modules/**"
+        exclude: "node_modules/**",
       }),
       external(),
       resolve(),
       commonjs({
-        namedExports: namedExports
-      })
-    ]
+        namedExports: namedExports,
+      }),
+    ],
   },
   {
     input,
@@ -104,20 +103,20 @@ export default [
       globals: {
         react: "React",
         "@emotion/styled": "styled",
-        "@emotion/core": "core"
-      }
+        "@emotion/core": "core",
+      },
     },
     plugins: [
       babel({
-        exclude: "node_modules/**"
+        exclude: "node_modules/**",
       }),
       external(),
       resolve(),
       commonjs({
-        namedExports: namedExports
+        namedExports: namedExports,
       }),
-      terser()
-    ]
+      terser(),
+    ],
   },
   // ES
   {
@@ -125,36 +124,36 @@ export default [
     output: {
       file: packageJSON.module,
       format: "es",
-      exports: "named"
+      exports: "named",
     },
     plugins: [
       babel({
-        exclude: "node_modules/**"
+        exclude: "node_modules/**",
       }),
       external(),
       resolve(),
       commonjs({
-        namedExports: namedExports
-      })
-    ]
+        namedExports: namedExports,
+      }),
+    ],
   },
   {
     input,
     output: {
       file: minifyExtension(packageJSON.module),
       format: "es",
-      exports: "named"
+      exports: "named",
     },
     plugins: [
       babel({
-        exclude: "node_modules/**"
+        exclude: "node_modules/**",
       }),
       external(),
       resolve(),
       commonjs({
-        namedExports: namedExports
+        namedExports: namedExports,
       }),
-      terser()
-    ]
-  }
+      terser(),
+    ],
+  },
 ];

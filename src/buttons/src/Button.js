@@ -1,33 +1,37 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+/**
+ * Button
+ */
+
+import React, { forwardRef, useState } from "react";
 import { useTheme } from "emotion-theming";
 
+import { Box } from "../../box";
 import { Icon } from "../../icon";
+import { Spinner } from "../../spinner";
 import { Text } from "../../typography";
 
-import buttonStyles from "./buttonStyles";
+import buttonStyles from "./utils/buttonStyles";
 
-const Button = React.forwardRef(
-  ({
-    appearance,
-    children,
-    height,
-    iconAfter,
-    iconBefore,
-    intent,
-    ref,
-    round,
-    theme,
-    ...rest
-  }) => {
+const Button = forwardRef(
+  (
+    {
+      as = "button",
+      appearance = "default",
+      intent = "default",
+      children,
+      height = 40,
+      iconBefore,
+      iconAfter,
+      loading,
+      round,
+      theme,
+      ...rest
+    },
+    ref
+  ) => {
     const [isHovering, setIsHovering] = useState(false);
 
-    let getBorderRadiusForControlHeight = (height) => {
-      if (height <= 32) return "3px";
-      return "5px";
-    };
-
-    let getTextSizeForControlHeight = (height) => {
+    const getTextSizeForControlHeight = (height) => {
       if (height <= 24) return 300;
       if (height <= 28) return 300;
       if (height <= 32) return 400;
@@ -36,7 +40,7 @@ const Button = React.forwardRef(
       return 500;
     };
 
-    let getIconSizeForButton = (height) => {
+    const getIconSizeForButton = (height) => {
       if (height <= 28) return 12;
       if (height <= 32) return 12;
       if (height <= 40) return 16;
@@ -44,92 +48,82 @@ const Button = React.forwardRef(
       return 20;
     };
 
-    let BORDER_RADIUS = getBorderRadiusForControlHeight(height);
-    let ICON_SIZE = getIconSizeForButton(height);
-    let PADDING = Math.round(height / 3) + "px";
-    let TEXT_SIZE = getTextSizeForControlHeight(height);
+    const ICON_SIZE = getIconSizeForButton(height);
+    const PADDING = Math.round(height / 3) + "px";
+    const TEXT_SIZE = getTextSizeForControlHeight(height);
 
     return (
-      <Text
-        data-fresco-id="buttons.button"
-        className={isHovering === true ? "isHovering" : ""}
+      <Box
+        data-fresco-id="button"
         ref={ref}
-        size={TEXT_SIZE}
+        as={as}
+        className={isHovering === true ? "isHovering" : undefined}
         position="relative"
         display="inline-flex"
         justifyContent="center"
         alignItems="center"
         flexWrap="nowrap"
-        height={height}
-        m={0}
+        height={height + "px"}
         px={PADDING}
-        py={0}
-        border={0}
-        borderRadius={round ? 9999 : BORDER_RADIUS}
-        fontWeight={500}
-        lineHeight={height + "px"}
+        borderRadius={round ? "round" : "corners.2"}
         overflow="hidden"
+        // lineHeight={height + "px"}
         css={{
           ...buttonStyles(appearance, intent, theme ? theme : useTheme()),
-          textDecoration: "none",
           userSelect: "none",
-          appearance: "none",
+          whiteSpace: "nowrap",
           cursor: "pointer",
+          "&:focus": { outline: 0 },
+          "&:disabled": { opacity: 0.5, pointerEvents: "none" },
         }}
         onMouseEnter={() => setIsHovering(true)}
         onMouseLeave={() => setIsHovering(false)}
         {...rest}
       >
         {iconBefore && (
-          <Icon
-            data-fresco-id="buttons.button.iconBefore"
+          <Box
+            data-fresco-id="button.iconBefore"
             as="span"
-            symbol={iconBefore}
-            size={ICON_SIZE}
-            mr={Math.round(ICON_SIZE * 0.3) + "px"}
-            ml={"-" + Math.round(ICON_SIZE * 0.3) + "px"}
-            color="inherit"
-          />
+            pr="spacing.2"
+            style={{ opacity: loading && 0 }}
+          >
+            <Icon symbol={iconBefore} size={ICON_SIZE} color="currentColor" />
+          </Box>
         )}
-        {children}
+        <Text
+          data-fresco-id="button.content"
+          as="span"
+          size={TEXT_SIZE}
+          fontWeight={600}
+          color="currentColor"
+          style={{ opacity: loading && 0 }}
+        >
+          {children}
+        </Text>
         {iconAfter && (
-          <Icon
-            data-fresco-id="buttons.button.iconAfter"
+          <Box
+            data-fresco-id="button.iconAfter"
             as="span"
-            symbol={iconAfter}
-            size={ICON_SIZE}
-            mr={"-" + Math.round(ICON_SIZE * 0.3) + "px"}
-            ml={Math.round(ICON_SIZE * 0.3) + "px"}
-            color="inherit"
-          />
+            pl="spacing.2"
+            style={{ opacity: loading && 0 }}
+          >
+            <Icon symbol={iconAfter} size={ICON_SIZE} color="currentColor" />
+          </Box>
         )}
-      </Text>
+        {loading && (
+          <Box
+            data-fresco-id="button.spinner"
+            position="absolute"
+            top="50%"
+            left="50%"
+            css={{ transform: "translate(-50%, -50%)" }}
+          >
+            <Spinner size={height / 2} color="currentColor" />
+          </Box>
+        )}
+      </Box>
     );
   }
 );
-
-Button.propTypes = {
-  appearance: PropTypes.oneOf(["default", "primary", "minimal", "subtle"])
-    .isRequired,
-  children: PropTypes.node,
-  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  iconAfter: PropTypes.node,
-  iconBefore: PropTypes.node,
-  intent: PropTypes.oneOf([
-    "default",
-    "primary",
-    "success",
-    "warning",
-    "danger",
-  ]).isRequired,
-  round: PropTypes.bool,
-};
-
-Button.defaultProps = {
-  appearance: "default",
-  as: "button",
-  height: 40,
-  intent: "default",
-};
 
 export default Button;

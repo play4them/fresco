@@ -1,17 +1,16 @@
-import React from "react";
+/**
+ * Card
+ *
+ * Rather than nesting content in arbitrary ‘Box’ elements,
+ * you may prefer to use standard ‘Card’ elements instead.
+ */
+
+import React, { forwardRef } from "react";
 
 import { Box } from "../../box";
 
-const Card = ({ children, elevation, ...rest }) => (
-  <Box data-fresco-id="card" boxShadow={"elevations." + elevation} {...rest}>
-    {children}
-  </Box>
-);
-
-Card.defaultProps = {
-  elevation: 0,
-  bg: "gray.0",
-  borderRadius: "5px",
-};
+const Card = forwardRef(({ ...props }, ref) => {
+  return <Box data-fresco-id="card" ref={ref} {...props} />;
+});
 
 export default Card;

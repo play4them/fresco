@@ -1,9 +1,13 @@
 import React from "react";
 import { configure, addDecorator } from "@storybook/react";
 import { ThemeProvider } from "emotion-theming";
+
+import "remixicon/fonts/remixicon.css";
+import "@reach/tooltip/styles.css";
+
 import { GlobalStyles, Theme } from "../src";
 
-addDecorator(story => (
+addDecorator((story) => (
   <ThemeProvider theme={Theme}>
     <>
       <GlobalStyles />

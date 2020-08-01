@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { css } from "@emotion/core";
+import css from "@styled-system/css";
+import { useTheme } from "emotion-theming";
+import { rgba } from "polished";
 
-import { BlurHash } from "../../blurHash";
 import { Box } from "../../box";
-import { Text } from "../../typography";
+import { BlurHash } from "../../blurHash";
 
 function getInitials(name, fallback = "?") {
   if (!name || typeof name !== "string") return fallback;
@@ -15,40 +16,31 @@ function getInitials(name, fallback = "?") {
     .join("");
 }
 
-const getTextSizeForAvatarSize = (size) => {
-  if (size <= 24) return 300;
-  if (size <= 28) return 300;
-  if (size <= 32) return 300;
-  if (size <= 36) return 400;
-  if (size <= 40) return 500;
-  return 600;
-};
-
 function Avatar({
-  bg,
-  borderRadius,
-  color,
-  image,
-  blurHash,
-  fadeIn,
-  name,
   size,
+  blurHash,
+  image,
+  name,
+  borderRadius = "round",
+  color = "label.1",
+  bg = "gray.4",
   ...rest
 }) {
-  const [opacity, setOpacity] = useState(!blurHash || !fadeIn ? 1 : 0);
+  const [opacity, setOpacity] = useState(0);
+  const THEME = useTheme();
+
   return (
-    <Box data-fresco-id="avatar" title={name && name} width={size} {...rest}>
-      <Box
-        data-fresco-id="avatar.setSize"
-        position="relative"
-        pb="100%"
-        borderRadius={borderRadius}
-        bg={bg}
-        overflow="hidden"
-      >
+    <Box
+      data-fresco-id="avatar"
+      aria-label={name}
+      width={size + "px"}
+      borderRadius={borderRadius}
+      overflow="hidden"
+      {...rest}
+    >
+      <Box position="relative" pb="100%" bg={bg}>
         {blurHash && (
           <BlurHash
-            aspectRatio="1"
             hash={blurHash}
             style={{ opacity: opacity === 1 ? 0 : 1 }}
             css={css({
@@ -58,20 +50,32 @@ function Avatar({
         )}
         {image && (
           <Box
-            data-fresco-id="avatar.image"
             as="img"
             src={image}
+            data-fresco-id="avatar.image"
             position="absolute"
             top={0}
             left={0}
             width="100%"
             height="100%"
-            css={{
+            css={css({
               opacity: 0,
               objectFit: "cover",
-              objectPosition: "center",
               transition: "opacity 300ms ease-in",
-            }}
+              "&::after": {
+                content: "''",
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                borderRadius: borderRadius,
+                boxShadow: `inset 0 0 2px 0 ${rgba(
+                  THEME.colors.label[0],
+                  0.25
+                )}`,
+              },
+            })}
             onLoad={() => {
               setOpacity(1);
             }}
@@ -79,31 +83,51 @@ function Avatar({
           />
         )}
         {!image && !blurHash && name && (
-          <Text
+          <Box
             data-fresco-id="avatar.initials"
             children={getInitials(name)}
-            size={getTextSizeForAvatarSize(size)}
+            as="span"
             position="absolute"
-            top="50%"
-            left="50%"
+            top={0}
+            left={0}
+            width="100%"
+            fontSize={Math.round(size / 2.5) + "px"}
+            fontWeight={600}
+            lineHeight={size + "px"}
             textAlign="center"
             color={color}
-            css={{
-              transform: "translate(-50%, -50%)",
-            }}
+            css={{ userSelect: "none", pointerEvents: "none" }}
+          />
+        )}
+        {/* Shadow Ring */}
+        {image && (
+          <Box
+            data-fresco-id="avatar.ring"
+            position="absolute"
+            top={0}
+            left={0}
+            width="100%"
+            height="100%"
+            css={css({
+              "&::after": {
+                content: "''",
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                borderRadius: borderRadius,
+                boxShadow: `inset 0 0 2px 0 ${rgba(
+                  THEME.colors.label[0],
+                  0.25
+                )}`,
+              },
+            })}
           />
         )}
       </Box>
     </Box>
   );
 }
-
-Avatar.defaultProps = {
-  bg: "gray.4",
-  borderRadius: "50%",
-  color: "gray.8",
-  fadeIn: true,
-  size: 40,
-};
 
 export default Avatar;

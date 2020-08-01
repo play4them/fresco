@@ -1,78 +1,143 @@
-import fonts from "./fonts";
+import capsize from "capsize";
+
+import breakpoints from "./breakpoints";
+
+const fontMetrics = {
+  capHeight: 2048,
+  ascent: 2728,
+  descent: -680,
+  lineGap: 0,
+  unitsPerEm: 2816,
+};
 
 export default {
   "900": {
-    fontFamily: fonts.display,
-    fontSize: "35px",
-    fontWeight: 800,
-    lineHeight: "40px",
-    letterSpacing: "-0.01em"
-    // marginTop: '52px',
+    fontWeight: 600,
+    letterSpacing: "-0.03em",
+    ...capsize({
+      fontMetrics,
+      capHeight: 24,
+      lineGap: 10,
+    }),
+    [`@media screen and (min-width: ${breakpoints.md})`]: {
+      ...capsize({
+        fontMetrics,
+        capHeight: 32,
+        lineGap: 12,
+      }),
+    },
+    [`@media screen and (min-width: ${breakpoints.lg})`]: {
+      ...capsize({
+        fontMetrics,
+        capHeight: 40,
+        lineGap: 12,
+      }),
+    },
   },
   "800": {
-    fontFamily: fonts.display,
-    fontSize: "29px",
-    fontWeight: 800,
-    lineHeight: "32px",
-    letterSpacing: "-0.01em"
-    // marginTop: '40px',
+    fontWeight: 600,
+    letterSpacing: "-0.03em",
+    ...capsize({
+      fontMetrics,
+      capHeight: 20,
+      lineGap: 10,
+    }),
+    [`@media screen and (min-width: ${breakpoints.md})`]: {
+      ...capsize({
+        fontMetrics,
+        capHeight: 24,
+        lineGap: 12,
+      }),
+    },
+    [`@media screen and (min-width: ${breakpoints.lg})`]: {
+      ...capsize({
+        fontMetrics,
+        capHeight: 32,
+        lineGap: 12,
+      }),
+    },
   },
   "700": {
-    fontFamily: fonts.display,
-    fontSize: "24px",
-    fontWeight: 800,
-    lineHeight: "28px",
-    letterSpacing: "-0.01em"
-    // marginTop: '40px',
+    fontWeight: 600,
+    letterSpacing: "-0.03em",
+    ...capsize({
+      fontMetrics,
+      capHeight: 18,
+      lineGap: 8,
+    }),
+    [`@media screen and (min-width: ${breakpoints.md})`]: {
+      ...capsize({
+        fontMetrics,
+        capHeight: 20,
+        lineGap: 10,
+      }),
+    },
+    [`@media screen and (min-width: ${breakpoints.lg})`]: {
+      ...capsize({
+        fontMetrics,
+        capHeight: 24,
+        lineGap: 10,
+      }),
+    },
   },
   "600": {
-    fontFamily: fonts.display,
-    fontSize: "20px",
-    fontWeight: 700,
-    lineHeight: "24px",
-    letterSpacing: "-0.008em"
-    // marginTop: '28px',
+    fontWeight: 600,
+    letterSpacing: "-0.015em",
+    ...capsize({
+      fontMetrics,
+      capHeight: 14,
+      lineGap: 8,
+    }),
+    [`@media screen and (min-width: ${breakpoints.md})`]: {
+      ...capsize({
+        fontMetrics,
+        capHeight: 16,
+        lineGap: 8,
+      }),
+    },
+    [`@media screen and (min-width: ${breakpoints.lg})`]: {
+      ...capsize({
+        fontMetrics,
+        capHeight: 18,
+        lineGap: 8,
+      }),
+    },
   },
-  // Default
   "500": {
-    fontFamily: fonts.ui,
-    fontSize: "16px",
-    fontWeight: 700,
-    lineHeight: "20px",
-    letterSpacing: "-0.006em"
-    // marginTop: '24px',
+    fontWeight: 600,
+    letterSpacing: "-0.015em",
+    ...capsize({
+      fontMetrics,
+      capHeight: 12,
+      lineGap: 6,
+    }),
   },
   "400": {
-    fontFamily: fonts.ui,
-    fontSize: "14px",
     fontWeight: 600,
-    lineHeight: "20px",
-    letterSpacing: "-0.003em"
-    // marginTop: '16px',
+    letterSpacing: "-0.015em",
+    ...capsize({
+      fontMetrics,
+      capHeight: 10,
+      lineGap: 6,
+    }),
   },
   "300": {
-    fontFamily: fonts.ui,
-    fontSize: "12px",
     fontWeight: 600,
-    lineHeight: "16px",
-    letterSpacing: 0
-    // marginTop: '16px',
-  },
-  "200": {
-    fontFamily: fonts.ui,
-    fontSize: "11px",
-    fontWeight: 600,
-    lineHeight: "16px",
-    letterSpacing: 0
-    // marginTop: '16px',
+    letterSpacing: "-0.015em",
+    ...capsize({
+      fontMetrics,
+      capHeight: 8,
+      lineGap: 4,
+    }),
   },
   "100": {
-    fontFamily: fonts.ui,
-    fontSize: "11px",
     fontWeight: 600,
+    letterSpacing: "0.02em",
     textTransform: "uppercase",
-    lineHeight: "16px",
-    letterSpacing: "0.054em"
-    // marginTop: '16px',
-  }
+    ...capsize({
+      fontMetrics,
+      capHeight: 8,
+      lineGap: 4,
+    }),
+  },
 };

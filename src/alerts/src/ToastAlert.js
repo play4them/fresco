@@ -1,29 +1,29 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Portal from "@reach/portal";
 
 import { Box } from "../../box";
 
 import Alert from "./Alert";
 
-const calculatePosition = side => {
-  if (!side || side === "top") {
+const calculatePosition = (position) => {
+  if (!position || position === "top") {
     return {
       top: "spacing.3",
-      left: 0
+      left: 0,
     };
   }
-  if (side === "bottom") {
+  if (position === "bottom") {
     return {
       bottom: "spacing.3",
-      left: 0
+      left: 0,
     };
   }
 };
 
-function ToastAlert({ side, ...rest }) {
+function ToastAlert({ position, ...rest }) {
   const [open, setOpen] = useState(true);
 
-  //when props update, force toast to reoopen, even if closed
+  // When props update, force toast to re-open, even if closed
   useEffect(() => {
     if (rest) {
       setOpen(true);
@@ -35,13 +35,13 @@ function ToastAlert({ side, ...rest }) {
       {open && (
         <Portal>
           <Box
-            data-fresco-id="toastAlert"
+            data-fresco-id="alerts.toastAlert"
             position="fixed"
             width="100%"
             px="spacing.3"
             textAlign="center"
             css={{ pointerEvents: "none" }}
-            {...calculatePosition(side)}
+            {...calculatePosition(position)}
           >
             <Box
               display="inline-block"
@@ -51,10 +51,10 @@ function ToastAlert({ side, ...rest }) {
             >
               <Alert
                 boxShadow="elevations.4"
-                {...rest}
-                closeCallback={() => {
+                close={() => {
                   setOpen(false);
                 }}
+                {...rest}
               />
             </Box>
           </Box>
@@ -63,9 +63,5 @@ function ToastAlert({ side, ...rest }) {
     </>
   );
 }
-
-ToastAlert.defaultProps = {
-  side: "top"
-};
 
 export default ToastAlert;

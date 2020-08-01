@@ -1,8 +1,11 @@
-import React from 'react';
-import { Checkbox } from '..';
+import React from "react";
+
+import { Box, ColorMode } from "../..";
+
+import { Checkbox } from "..";
 
 export default {
-  title: 'Checkbox',
+  title: "Checkbox",
 };
 
 export const regular = () => <Checkbox defaultChecked>Checkbox</Checkbox>;
@@ -13,4 +16,12 @@ export const indeterminate = () => (
   <Checkbox indeterminate size={500}>
     Checkbox
   </Checkbox>
+);
+
+export const darkMode = () => (
+  <ColorMode mode="dark">
+    <Box p="layout.3" bg="background.0">
+      <Checkbox defaultChecked>Checkbox</Checkbox>
+    </Box>
+  </ColorMode>
 );

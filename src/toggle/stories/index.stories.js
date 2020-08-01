@@ -1,10 +1,11 @@
 import React from "react";
+
 import { Toggle } from "..";
 
 export default {
-  title: "Toggle"
+  title: "Toggle",
 };
 
-export const regular = () => <Toggle>Turn on notifications</Toggle>;
+export const regular = () => <Toggle children="Toggle" size={500} />;
 
-export const small = () => <Toggle small>Dark Mode</Toggle>;
+export const small = () => <Toggle children="Small" size={400} small />;

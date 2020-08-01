@@ -7,11 +7,11 @@
  * an ‘Inline’ component.
  */
 
-import { Children } from "react";
+import React, { Children } from "react";
 import styled from "@emotion/styled";
 import { system, get } from "styled-system";
 
-import { Box } from "components";
+import { Box } from "../../box";
 
 function flexAlign(x) {
   if (x === "start") return "flex-start";
@@ -45,12 +45,12 @@ const StyledBox = styled(Box)(
         if (typeof n === "string") {
           if (n.indexOf("px") !== -1) {
             let number = parseInt(n.replace("px", ""));
-            return "-" + number / 2 + "px";
+            return "-" + number + "px";
           } else {
-            return "-" + value / 2 + "px";
+            return "-" + value + "px";
           }
         } else {
-          return "-" + value / 2 + "px";
+          return "-" + value + "px";
         }
       },
     },
@@ -65,12 +65,12 @@ const StyledBox = styled(Box)(
         if (typeof n === "string") {
           if (n.indexOf("px") !== -1) {
             let number = parseInt(n.replace("px", ""));
-            return "-" + number / 2 + "px";
+            return "-" + number + "px";
           } else {
-            return "-" + value / 2 + "px";
+            return "-" + value + "px";
           }
         } else {
-          return "-" + value / 2 + "px";
+          return "-" + value + "px";
         }
       },
     },
@@ -91,12 +91,12 @@ const InnerStyledBox = styled(Box)(
         if (typeof n === "string") {
           if (n.indexOf("px") !== -1) {
             let number = parseInt(n.replace("px", ""));
-            return number / 2 + "px";
+            return number + "px";
           } else {
-            return value / 2 + "px";
+            return value + "px";
           }
         } else {
-          return value / 2 + "px";
+          return value + "px";
         }
       },
     },
@@ -111,12 +111,12 @@ const InnerStyledBox = styled(Box)(
         if (typeof n === "string") {
           if (n.indexOf("px") !== -1) {
             let number = parseInt(n.replace("px", ""));
-            return number / 2 + "px";
+            return number + "px";
           } else {
-            return value / 2 + "px";
+            return value + "px";
           }
         } else {
-          return value / 2 + "px";
+          return value + "px";
         }
       },
     },
@@ -136,7 +136,7 @@ function Inline({
 
   return (
     <StyledBox
-      data-component-id="inline"
+      data-fresco-id="inline"
       as={as}
       display="flex"
       flexWrap="wrap"
@@ -148,7 +148,7 @@ function Inline({
       {Children.map(children, (child) =>
         child !== null && child !== undefined ? (
           <InnerStyledBox
-            data-component-id="inline.child"
+            data-fresco-id="inline.child"
             as={stackItemComponent}
             minWidth={0}
             gutterX={spaceX ? spaceX : space}

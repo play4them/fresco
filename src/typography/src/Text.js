@@ -1,7 +1,9 @@
+import React, { forwardRef } from "react";
 import styled from "@emotion/styled";
 import shouldForwardProp from "@styled-system/should-forward-prop";
 import { compose, variant } from "styled-system";
 
+import { Box } from "../../box";
 import {
   COMMON,
   BORDER,
@@ -9,22 +11,54 @@ import {
   LAYOUT,
   POSITION,
   FLEX,
-  GRID
+  GRID,
 } from "../../systemProps";
 
-const Text = styled("p", { shouldForwardProp })(
+const StyledElement = styled("span", { shouldForwardProp })(
   variant({
     prop: "size",
-    scale: "text"
+    scale: "text",
   }),
   compose(COMMON, BORDER, TYPOGRAPHY, LAYOUT, POSITION, FLEX, GRID)
 );
 
+const Text = forwardRef(({ children, ellipsis, clamp, size, ...rest }, ref) => {
+  return (
+    <StyledElement
+      data-fresco-id={`typography.text.${size}`}
+      ref={ref}
+      size={size}
+      {...rest}
+    >
+      <Box
+        data-fresco-id={`typography.text.${size}.content`}
+        as="span"
+        children={children}
+        css={[
+          clamp > 0 && {
+            display: "-webkit-box",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            WebkitBoxOrient: "vertical",
+            MozBoxOrient: "vertical",
+            WebkitLineClamp: clamp,
+          },
+          ellipsis && {
+            display: "block",
+            whiteSpace: "nowrap",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+          },
+        ]}
+      />
+    </StyledElement>
+  );
+});
+
 Text.defaultProps = {
-  "data-fresco-id": "typography.text",
-  mt: 0,
-  mb: 0,
-  size: 400
+  display: "block",
+  size: 500,
+  color: "label.0",
 };
 
 export default Text;

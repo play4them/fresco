@@ -1,4 +1,17 @@
-import React from "react";
+/**
+ * Column
+ *
+ * We use the Column component directly inside and only inside of the
+ * Columns component. This gives us control over setting column width
+ * and allows us to pass down spacing properties from Columns to each
+ * individual Column.
+ *
+ * When we use a Column in another component, we must pass all props
+ * into the Column so that the props from Columns are absorbed
+ * properly. Use a spread operator like {...props} to do this.
+ */
+
+import React, { forwardRef } from "react";
 import styled from "@emotion/styled";
 import { system, get } from "styled-system";
 
@@ -49,32 +62,40 @@ const StyledBox = styled(Box)(
   })
 );
 
-function Column({
-  children,
-  columnComponent,
-  display,
-  order,
-  space = 0,
-  spaceX,
-  spaceY,
-  width,
-}) {
-  return (
-    <StyledBox
-      data-fresco-id="column"
-      as={columnComponent}
-      display={display}
-      order={order}
-      width={width}
-      minWidth={0}
-      gutterX={spaceX ? spaceX : space}
-      gutterY={spaceY ? spaceY : space}
-    >
-      <Box data-fresco-id="column.inner" height="100%">
-        {children}
-      </Box>
-    </StyledBox>
-  );
-}
+const Column = forwardRef(
+  (
+    {
+      children,
+      columnComponent,
+      display,
+      order,
+      space = 0,
+      spaceX,
+      spaceY,
+      width,
+    },
+    ref
+  ) => {
+    return (
+      <StyledBox
+        data-fresco-id="column"
+        ref={ref}
+        as={columnComponent}
+        display={display}
+        flex={!width && 1}
+        flexShrink={width === "content" && 0}
+        order={order}
+        width={width !== "content" ? width : null}
+        minWidth={0}
+        gutterX={spaceX ? spaceX : space}
+        gutterY={spaceY ? spaceY : space}
+      >
+        <Box data-fresco-id="column.inner" minWidth={0} height="100%">
+          {children}
+        </Box>
+      </StyledBox>
+    );
+  }
+);
 
 export default Column;

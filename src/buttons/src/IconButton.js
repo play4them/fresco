@@ -1,46 +1,92 @@
-import React from "react";
-import { mdiCheckCircle } from "@mdi/js";
+/**
+ * Icon Button
+ */
 
+import React, { forwardRef, useState } from "react";
+import { useTheme } from "emotion-theming";
+
+import { Box } from "../../box";
 import { Icon } from "../../icon";
+import { Spinner } from "../../spinner";
 
-import Button from "./Button";
+import buttonStyles from "./utils/buttonStyles";
 
-const getIconSizeForButton = height => {
-  if (height <= 28) return 14;
-  if (height <= 32) return 16;
-  if (height <= 40) return 20;
-  if (height <= 48) return 24;
-  return 24;
-};
+const IconButton = forwardRef(
+  (
+    {
+      as = "button",
+      appearance = "default",
+      intent = "default",
+      height = 40,
+      loading,
+      symbol,
+      round,
+      theme,
+      ...rest
+    },
+    ref
+  ) => {
+    const [isHovering, setIsHovering] = useState(false);
 
-const IconButton = ({ height, icon, label, ...rest }) => {
-  const is = getIconSizeForButton(height);
+    const getIconSizeForButton = (height) => {
+      if (height <= 24) return 16;
+      if (height <= 28) return 18;
+      if (height <= 32) return 20;
+      if (height <= 40) return 24;
+      if (height <= 48) return 24;
+      return 24;
+    };
 
-  return (
-    <Button
-      data-fresco-id="buttons.iconButton"
-      width={height}
-      height={height}
-      px={0}
-      {...rest}
-    >
-      <Icon
-        data-fresco-id="buttons.iconButton.icon"
-        as="span"
-        symbol={icon}
-        label={label}
-        size={is}
-        color="inherit"
-      />
-    </Button>
-  );
-};
+    const ICON_SIZE = getIconSizeForButton(height);
 
-IconButton.defaultProps = {
-  appearance: "default",
-  height: 40,
-  icon: mdiCheckCircle,
-  intent: "default"
-};
+    return (
+      <Box
+        data-fresco-id="iconButton"
+        ref={ref}
+        as={as}
+        className={isHovering === true ? "isHovering" : undefined}
+        position="relative"
+        display="inline-flex"
+        justifyContent="center"
+        alignItems="center"
+        flexWrap="nowrap"
+        width={height + "px"}
+        height={height + "px"}
+        borderRadius={round ? "round" : "corners.2"}
+        overflow="hidden"
+        fontWeight={500}
+        css={{
+          ...buttonStyles(appearance, intent, theme ? theme : useTheme()),
+          userSelect: "none",
+          whiteSpace: "nowrap",
+          cursor: "pointer",
+          "&:focus": { outline: 0 },
+          "&:disabled": { opacity: 0.5, pointerEvents: "none" },
+        }}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+        {...rest}
+      >
+        <Icon
+          symbol={symbol}
+          size={ICON_SIZE}
+          color="currentColor"
+          style={{ opacity: loading && 0 }}
+        />
+        {loading && (
+          <Box
+            data-fresco-id="button.spinner"
+            position="absolute"
+            top="50%"
+            left="50%"
+            css={{ transform: "translate(-50%, -50%)" }}
+          >
+            <Spinner size={height / 2} color="currentColor" />
+          </Box>
+        )}
+      </Box>
+    );
+  }
+);
 
 export default IconButton;

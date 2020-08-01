@@ -1,8 +1,11 @@
 import React from "react";
-import { FormFieldRadioGroup, Radio, RadioGroup } from "..";
+
+import { Box, ColorMode } from "../..";
+
+import { Radio, RadioGroup } from "..";
 
 export default {
-  title: "Radio"
+  title: "Radio",
 };
 
 export const regular = () => <Radio>Just a regular radio by itself</Radio>;
@@ -12,12 +15,12 @@ export const group = () => (
     options={[
       {
         label: "Option 1",
-        value: 1
+        value: 1,
       },
       {
         label: "Option 2",
-        value: 2
-      }
+        value: 2,
+      },
     ]}
   />
 );
@@ -27,35 +30,33 @@ export const groupStack = () => (
     options={[
       {
         label: "Option 1",
-        value: 1
+        value: 1,
       },
       {
         label: "Option 2",
-        value: 2
-      }
+        value: 2,
+      },
     ]}
     stack
   />
 );
 
-export const formFieldRadioGroup = () => (
-  <FormFieldRadioGroup
-    label="Message"
-    description="Write a message to your donors"
-    radioGroupProps={{
-      options: [
-        {
-          label: "Option 1",
-          value: 1
-        },
-        {
-          label: "Option 2",
-          value: 2
-        }
-      ],
-      stack: true
-    }}
-    hint="This could be a message of thanks or congratulations"
-    validationMessage={{ message: "This field is required", intent: "danger" }}
-  />
+export const darkMode = () => (
+  <ColorMode mode="dark">
+    <Box p="layout.3" bg="background.0">
+      <RadioGroup
+        options={[
+          {
+            label: "Option 1",
+            value: 1,
+          },
+          {
+            label: "Option 2",
+            value: 2,
+          },
+        ]}
+        stack
+      />
+    </Box>
+  </ColorMode>
 );

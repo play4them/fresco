@@ -18,6 +18,7 @@ function BlurHash({ hash, aspectRatio, ...rest }) {
     return (
       <>
         <canvas
+          data-fresco-id="blurHash"
           ref={blurRef}
           width={32}
           height={32}

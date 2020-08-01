@@ -5,7 +5,7 @@ import { Box } from "../../box";
 
 import Radio from "./Radio";
 
-const RadioGroup = ({ options, stack, onChange }) => {
+const RadioGroup = ({ options, stack }) => {
   const uid = uuidv4();
 
   return (
@@ -28,7 +28,7 @@ const RadioGroup = ({ options, stack, onChange }) => {
       >
         {options.map((option, i) => (
           <Box data-fresco-id="radioGroup.item" as="li" key={i}>
-            <Radio name={uid} value={option.value} onChange={onChange}>
+            <Radio name={uid} value={option.value}>
               {option.label}
             </Radio>
           </Box>

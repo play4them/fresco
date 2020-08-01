@@ -1,75 +1,57 @@
-import React from "react";
-import { useTheme } from "emotion-theming";
+import React, { useState } from "react";
 import TextareaAutosize from "react-textarea-autosize";
 import css from "@styled-system/css";
-import { rgba } from "polished";
+import { useTheme } from "emotion-theming";
 
-import { Box } from "../../box";
-import { Text } from "../../typography";
-
-const getBorderRadiusForControlHeight = height => {
-  if (height <= 40) return "3px";
-  return "5px";
-};
-
-const getTextSizeForControlHeight = height => {
-  if (height <= 32) return 500;
-  if (height <= 40) return 500;
-  if (height <= 48) return 600;
-  return 600;
-};
-
-const Textarea = ({ bg, height, ...rest }) => {
-  const theme = useTheme();
-  const br = getBorderRadiusForControlHeight(height);
-  const ts = getTextSizeForControlHeight(height);
-  const p = Math.round(height / 4);
+function Textarea({ id, type, maxRows, minRows, placeholder, ...rest }) {
+  const [isHovering, setIsHovering] = useState(false);
+  const THEME = useTheme();
 
   return (
-    <Box
+    <TextareaAutosize
       data-fresco-id="textarea"
-      borderRadius={br}
-      bg={bg}
-      overflow="hidden"
-      boxShadow={`
-        ${rgba(theme.colors.gray[9], 0.1)} 
-        0 0 0 1px inset, 
-        ${rgba(theme.colors.gray[9], 0.1)}
-        0 1px 2px inset
-    `}
-    >
-      <Text
-        data-fresco-id="textarea.field"
-        as={TextareaAutosize}
-        size={ts}
-        display="block"
-        width="100%"
-        height={height}
-        m={0}
-        px={p + "px"}
-        py="10px"
-        border={0}
-        color="gray.9"
-        bg="transparent"
-        css={css({
-          resize: "none",
-          "::placeholder": {
-            color: "gray.9",
-            opacity: 1 / 3
+      className={isHovering === true ? "isHovering" : undefined}
+      maxRows={maxRows}
+      minRows={minRows}
+      id={id}
+      placeholder={placeholder}
+      css={css({
+        width: "100%",
+        minHeight: 40 + "px",
+        px: "spacing.4",
+        py: "9px",
+        borderWidth: 1,
+        borderColor: "fill.0",
+        borderRadius: "corners.2",
+        overflow: "hidden",
+        fontSize: 16,
+        fontWeight: 400,
+        lineHeight: 24 + "px",
+        color: "label.0",
+        bg: "background.0",
+        transition:
+          "border-color 200ms ease-out, background-color 200ms ease-out, color 200ms ease-out",
+        "&:focus": {
+          borderColor: "tint.blue",
+          outline: 0,
+          boxShadow: `inset 0 0 0 2px ${THEME.colors.fill[0]}`,
+        },
+        "&.isHovering": {
+          borderColor: "fill.3",
+          "&:focus": {
+            borderColor: "tint.blue",
           },
-          ":focus": {
-            outline: 0
-          }
-        })}
-        {...rest}
-      />
-    </Box>
+        },
+        "::placeholder": {
+          color: "placeholderText",
+          opacity: 1,
+        },
+      })}
+      onMouseEnter={() => setIsHovering(true)}
+      onMouseLeave={() => setIsHovering(false)}
+      {...rest}
+    />
   );
-};
-
-Textarea.defaultProps = {
-  bg: "gray.0",
-  height: 40
-};
+}
 
 export default Textarea;

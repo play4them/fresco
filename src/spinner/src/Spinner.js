@@ -1,7 +1,11 @@
-import React from 'react';
-import { keyframes } from '@emotion/core';
+/**
+ * Spinner
+ */
 
-import { Box } from '../../box';
+import React from "react";
+import { keyframes } from "@emotion/core";
+
+import { Box } from "../../box";
 
 const loadingKeyframes = keyframes`
   0% {
@@ -23,14 +27,14 @@ const loadingCircleKeyframes = keyframes`
 
 const Spinner = ({ color, size, ...rest }) => (
   <Box
-    data-fresco-id="spinner"
+    data-component-id="spinner"
     width={size}
     height={size}
     lineHeight={0}
     {...rest}
   >
     <Box
-      data-fresco-id="spinner.svg"
+      data-component-id="spinner.svg"
       as="svg"
       x="0px"
       y="0px"
@@ -38,7 +42,7 @@ const Spinner = ({ color, size, ...rest }) => (
       css={{ animation: `${loadingKeyframes} 2s linear infinite` }}
     >
       <Box
-        data-fresco-id="spinner.circle"
+        data-component-id="spinner.circle"
         as="circle"
         cx="75"
         cy="75"
@@ -49,10 +53,10 @@ const Spinner = ({ color, size, ...rest }) => (
           strokeDasharray: 300,
           strokeWidth: 12,
           strokeMiterlimit: 10,
-          strokeLinecap: 'round',
+          strokeLinecap: "round",
           animation: `${loadingCircleKeyframes} 1.6s cubic-bezier(0.4, 0.15, 0.6, 0.85) infinite`,
-          stroke: 'currentColor',
-          fill: 'transparent',
+          stroke: "currentColor",
+          fill: "transparent",
         }}
       />
     </Box>
@@ -60,7 +64,7 @@ const Spinner = ({ color, size, ...rest }) => (
 );
 
 Spinner.defaultProps = {
-  color: 'gray.4',
+  color: "fill.0",
   size: 40,
 };
 

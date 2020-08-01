@@ -13,7 +13,6 @@ export const standard = () => (
       <Column width={1 / 4}>
         <Box pb="50%" bg="gray.3" />
       </Column>
-
       <Column width={1 / 4}>
         <Box pb="50%" bg="gray.3" />
       </Column>

@@ -1,4 +1,11 @@
-import * as styledSystem from 'styled-system';
+/**
+ * System Props
+ *
+ * Here we organize and export styled-system style props
+ * into categories that make sense to us.
+ */
+
+import * as styledSystem from "styled-system";
 
 export const COMMON = styledSystem.compose(
   styledSystem.display,
