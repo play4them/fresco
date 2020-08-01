@@ -33,25 +33,25 @@
     "remixicon": "^2.5.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.8.6",
-    "@emotion/core": "10.x",
-    "@emotion/styled": "10.x",
-    "@storybook/addon-actions": "^5.2.6",
-    "@storybook/addon-links": "^5.2.6",
-    "@storybook/addons": "^5.2.6",
-    "@storybook/react": "^5.2.6",
-    "babel-loader": "^8.0.6",
-    "emotion-theming": "^10.0.19",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "@babel/preset-env": "^7.11.0",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "babel-loader": "^8.1.0",
+    "emotion-theming": "^10.0.27",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "remixicon": "^2.5.0",
-    "rollup": "^1.26.3",
-    "rollup-plugin-babel": "^4.3.3",
+    "rollup": "^2.23.0",
+    "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.0",
-    "rollup-plugin-terser": "^5.1.2",
-    "rollup-plugin-uglify": "^6.0.3"
+    "rollup-plugin-peer-deps-external": "^2.2.3",
+    "rollup-plugin-terser": "^6.1.0",
+    "rollup-plugin-uglify": "^6.0.4"
   },
   "dependencies": {
     "@babel/core": "^7.11.0",
@@ -71,6 +71,7 @@
     "prop-types": "^15.7.2",
     "react-spring": "^8.0.27",
     "react-textarea-autosize": "^8.2.0",
-    "styled-system": "^5.1.5"
+    "styled-system": "^5.1.5",
+    "uuid": "^8.3.0"
   }
 }
