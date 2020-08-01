@@ -11,6 +11,7 @@ export { ColorMode } from "./colorMode";
 export { Column } from "./column";
 export { Columns } from "./columns";
 export { ContentBlock } from "./contentBlock";
+export { Dialog } from "./dialog";
 export { Divider } from "./divider";
 export { Flex } from "./flex";
 export { GlobalStyles } from "./globalStyles";

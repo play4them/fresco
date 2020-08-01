@@ -1,6 +1,6 @@
 {
   "name": "@tillen/fresco",
-  "version": "0.0.2-alpha.2",
+  "version": "0.0.2-alpha.3",
   "description": "Tillen's design system",
   "main": "lib/index.js",
   "browser": "lib/index.umd.js",
