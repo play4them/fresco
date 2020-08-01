@@ -12,3 +12,10 @@ export const standard = () => (
     <option children="Option 1" />
   </Select>
 );
+
+export const error = () => (
+  <Select validationMessage="Uh oh">
+    <option children="Choose an option" disabled selected />
+    <option children="Option 1" />
+  </Select>
+);

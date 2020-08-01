@@ -9,3 +9,7 @@ export default {
 export const standard = () => (
   <Textarea placeholder="Placeholder" minRows={6} />
 );
+
+export const error = () => (
+  <Textarea placeholder="Placeholder" type="text" validationMessage="Uh oh" />
+);

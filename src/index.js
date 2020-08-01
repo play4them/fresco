@@ -37,5 +37,6 @@ export { TextLink } from "./textLink";
 export { Theme } from "./theme";
 export { Toggle } from "./toggle";
 export { Tooltip } from "./tooltip";
+export { ValidationMessage } from "./validationMessage";
 export { Heading, Paragraph, Text } from "./typography";
 export { Wrapper } from "./wrapper";

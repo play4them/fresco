@@ -41,6 +41,23 @@ export const groupStack = () => (
   />
 );
 
+export const groupStackError = () => (
+  <RadioGroup
+    options={[
+      {
+        label: "Option 1",
+        value: 1,
+      },
+      {
+        label: "Option 2",
+        value: 2,
+      },
+    ]}
+    validationMessage="Uh oh"
+    stack
+  />
+);
+
 export const darkMode = () => (
   <ColorMode mode="dark">
     <Box p="layout.3" bg="background.0">
