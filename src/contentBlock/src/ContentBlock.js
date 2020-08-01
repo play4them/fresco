@@ -12,7 +12,7 @@ import React from "react";
 
 import { Box } from "../../box";
 
-function ContentBlock({ maxWidth = 1600, ...rest }) {
+function ContentBlock({ maxWidth = 1400, ...rest }) {
   return (
     <Box
       data-fresco-id="contentBlock"

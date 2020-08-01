@@ -17,11 +17,12 @@ import { ContentBlock } from "../../contentBlock";
 
 function Wrapper({
   as,
+  bg,
   children,
   maxWidth,
   pb,
   pt,
-  px = { _: "layout.1", md: "layout.3" },
+  px = { _: "layout.1", md: "layout.3", lg: "layout.4", xlg: "layout.5" },
   overflow,
   ...rest
 }) {
