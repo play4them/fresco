@@ -26,7 +26,7 @@ function Alert({ close, caption, intent, title, ...rest }) {
       icon: "information-line",
     },
     primary: {
-      color: THEME.colors.tint.blue,
+      color: THEME.colors.tint.indigo,
       icon: "information-line",
     },
     success: {

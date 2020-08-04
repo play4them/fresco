@@ -43,14 +43,14 @@ function Textarea({
           transition:
             "border-color 200ms ease-out, background-color 200ms ease-out, color 200ms ease-out",
           "&:focus": {
-            borderColor: "tint.blue",
+            borderColor: "tint.indigo",
             outline: 0,
             boxShadow: `inset 0 0 0 2px ${THEME.colors.fill[0]}`,
           },
           "&.isHovering": {
             borderColor: "fill.3",
             "&:focus": {
-              borderColor: "tint.blue",
+              borderColor: "tint.indigo",
             },
           },
           "::placeholder": {

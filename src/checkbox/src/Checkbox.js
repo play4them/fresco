@@ -65,7 +65,7 @@ const Checkbox = ({ bg, children, indeterminate, size, ...rest }) => {
             userSelect: "none",
           },
           ":checked + div": {
-            bg: "tint.blue",
+            bg: "tint.indigo",
             boxShadow: `inset 0 0 0 1px ${rgba(
               THEME.colors.fill[0],
               0
@@ -75,7 +75,7 @@ const Checkbox = ({ bg, children, indeterminate, size, ...rest }) => {
             )}`,
           },
           ":indeterminate + div": {
-            bg: "tint.blue",
+            bg: "tint.indigo",
             backgroundImage:
               "url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNy4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB3aWR0aD0iOHB4IiBoZWlnaHQ9IjhweCIgdmlld0JveD0iMCAwIDggOCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgOCA4IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0wLDN2Mmg4VjNIMHoiLz4NCjwvc3ZnPg0K)",
             boxShadow: `inset 0 0 0 1px ${rgba(
@@ -87,11 +87,11 @@ const Checkbox = ({ bg, children, indeterminate, size, ...rest }) => {
             )}`,
           },
           ":active + div": {
-            bg: "tint.blue",
+            bg: "tint.indigo",
           },
           ":focus + div": {
             boxShadow: `inset 0 0 0 1px ${
-              THEME.colors.tint.blue
+              THEME.colors.tint.indigo
             }, 0 0 1px ${rgba(THEME.colors.fill[0], 0.1)}, 0 1px 2px ${rgba(
               THEME.colors.fill[0],
               0.1

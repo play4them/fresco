@@ -16,17 +16,17 @@ export default {
   placeholderText: rgba(60, 60, 67, 0.3),
   background: [
     rgba(255, 255, 255, 1),
-    rgba(242, 242, 247, 1),
+    rgba(246, 248, 250, 1),
     rgba(255, 255, 255, 1),
   ],
   groupedBackground: [
-    rgba(242, 242, 247, 1),
+    rgba(246, 248, 250, 1),
     rgba(255, 255, 255, 1),
-    rgba(242, 242, 247, 1),
+    rgba(246, 248, 250, 1),
   ],
   separator: rgba(60, 60, 67, 0.29),
   opaqueSeparator: rgba(198, 198, 200, 1),
-  link: rgba(0, 122, 255, 1),
+  link: "#5856D6",
   darkText: rgba(0, 0, 0, 1),
   lightText: rgba(255, 255, 255, 0.6),
   tint: {
@@ -80,15 +80,25 @@ export default {
         rgba(118, 118, 128, 0.18),
       ],
       placeholderText: rgba(235, 235, 245, 0.3),
-      background: [rgba(0, 0, 0, 1), rgba(28, 28, 30, 1), rgba(44, 44, 46, 1)],
-      groupedBackground: [
-        rgba(0, 0, 0, 1),
+      // background: [rgba(0, 0, 0, 1), rgba(28, 28, 30, 1), rgba(44, 44, 46, 1)],
+      background: [
         rgba(28, 28, 30, 1),
         rgba(44, 44, 46, 1),
+        rgba(58, 58, 60, 1),
+      ],
+      // groupedBackground: [
+      //   rgba(0, 0, 0, 1),
+      //   rgba(28, 28, 30, 1),
+      //   rgba(44, 44, 46, 1),
+      // ],
+      groupedBackground: [
+        rgba(28, 28, 30, 1),
+        rgba(44, 44, 46, 1),
+        rgba(58, 58, 60, 1),
       ],
       separator: rgba(84, 84, 88, 0.6),
       opaqueSeparator: rgba(56, 56, 58, 1),
-      link: rgba(9, 132, 255, 1),
+      link: "#5E5CE6",
       darkText: rgba(0, 0, 0, 1),
       lightText: rgba(255, 255, 255, 0.6),
       tint: {

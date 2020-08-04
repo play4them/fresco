@@ -50,7 +50,7 @@ const Select = ({
         css={css({
           "&:focus-within": {
             select: {
-              borderColor: "tint.blue",
+              borderColor: "tint.indigo",
               outline: 0,
               boxShadow: `inset 0 0 0 2px ${THEME.colors.fill[0]}`,
             },
@@ -61,7 +61,7 @@ const Select = ({
             },
             select: {
               "&:focus, &:focus-within": {
-                borderColor: "tint.blue",
+                borderColor: "tint.indigo",
               },
             },
           },

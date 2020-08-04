@@ -12,7 +12,7 @@ const fontMetrics = {
 
 export default {
   "900": {
-    fontWeight: 600,
+    fontWeight: 700,
     letterSpacing: "-0.03em",
     ...capsize({
       fontMetrics,
@@ -35,7 +35,7 @@ export default {
     },
   },
   "800": {
-    fontWeight: 600,
+    fontWeight: 700,
     letterSpacing: "-0.03em",
     ...capsize({
       fontMetrics,
@@ -58,7 +58,7 @@ export default {
     },
   },
   "700": {
-    fontWeight: 600,
+    fontWeight: 700,
     letterSpacing: "-0.03em",
     ...capsize({
       fontMetrics,
@@ -81,7 +81,7 @@ export default {
     },
   },
   "600": {
-    fontWeight: 600,
+    fontWeight: 700,
     letterSpacing: "-0.015em",
     ...capsize({
       fontMetrics,

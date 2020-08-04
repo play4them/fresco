@@ -66,7 +66,7 @@ const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
             userSelect: "none",
           },
           ":checked + div": {
-            bg: "tint.blue",
+            bg: "tint.indigo",
             boxShadow: `inset 0 0 0 1px ${rgba(
               THEME.colors.fill[0],
               0
@@ -76,7 +76,7 @@ const Radio = ({ bg, children, indeterminate, size, ...rest }) => {
             )}`,
           },
           ":active + div": {
-            bg: "tint.blue",
+            bg: "tint.indigo",
           },
           ":focus + div": {
             boxShadow: `inset 0 0 0 1px ${THEME.colors.fill[0]}, 0 0 1px ${rgba(

@@ -7,7 +7,7 @@ function buttonStyles(appearance, intent, theme) {
       contrast: theme.colors.background[0],
     },
     primary: {
-      base: theme.colors.tint.blue,
+      base: theme.colors.tint.indigo,
       contrast: theme.colors.fixed.white,
     },
     success: {
